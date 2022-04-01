@@ -19,9 +19,12 @@ namespace Terminal
     /// </summary>
     public partial class WindowInf : Window
     {
+        private int clickID = 0;
+
         public WindowInf()
         {
             InitializeComponent();
+            Init();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,11 +34,31 @@ namespace Terminal
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            int choice = 1;
-            
+            string nameButton = ((Button)sender).Name;
+
+            nameButton = nameButton.Replace("Line", "");
+
+            int choice = int.Parse(nameButton);
+ 
             FrameForm frameForm = new FrameForm(choice);
             
             frameForm.ShowDialog();
+        }
+
+        private void Init()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Button button = new Button();
+
+                button.Height = 100;
+                button.Width = 100;
+                button.Margin = new Thickness(12, 12, 12, 12);
+                button.Name = "Line" + (i+1).ToString(); //Исправить
+                button.Click += Button_Click_1;
+
+                panelKorpus.Children.Add(button);
+            }
         }
     }
 }

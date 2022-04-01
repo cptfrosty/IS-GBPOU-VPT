@@ -33,10 +33,13 @@ namespace Terminal
         {
             InitializeComponent();
             this.Choice = id;
-        
+
             //PS ссылка на картинку в XML файле должна быть
-            Picture.Source = new BitmapImage(new Uri($"pack://application:,,,/{id}.jpg"));
+            //Picture.Source = new BitmapImage(new Uri($"pack://application:,,,/{id}.jpg"));
+            Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{id}.jpg"));
             ShowInfo(id);
+
+            
             
         }
 

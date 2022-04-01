@@ -17,8 +17,9 @@
                 <ImageBrush ImageSource="logo.png"/>
             </Image.OpacityMask>
         </Image>
-        <Button Content="" HorizontalAlignment="Left" Margin="65,95,0,0" VerticalAlignment="Top" Width="103" Background="#FFF7F7F7" BorderBrush="#FFFBFBFB" Height="111" Click="Button_Click_1"/>
-        <Label Content="Первый Корпус" HorizontalAlignment="Left" Margin="65,182,0,0" VerticalAlignment="Top" Width="103"/>
+
+        <StackPanel x:Name="panelKorpus" Margin="0,80, 0, 0" Orientation="Horizontal" VerticalAlignment="Top">
+        </StackPanel>
 
     </Grid>
 </Window>
