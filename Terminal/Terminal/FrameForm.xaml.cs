@@ -103,5 +103,10 @@ namespace Terminal
             EmailLabel.Content = emailElement.Value;
             GraphicLabel.Content = graphicElement.Value;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

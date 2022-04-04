@@ -5,19 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Terminal"
         mc:Ignorable="d"
-        Title="WindowInf" Height="450" Width="800" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#273340">
+        Title="WindowInf" Height="1080" Width="1920" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#273340">
     <Grid>
-        <Image x:Name="Picture" HorizontalAlignment="Left" Height="268" Margin="48,79,0,0" VerticalAlignment="Top" Width="264" OpacityMask="Black"/>
-        
-        <Label Content="Корпус:" Margin="356,96,394,0" VerticalAlignment="Top"  RenderTransformOrigin="0.513,0.634"/>
-        <Label Content="Режим и график работы:" Margin="356,0,300,152" VerticalAlignment="Bottom"  RenderTransformOrigin="0.513,0.634" d:LayoutOverrides="Width"/>
-        <Label Content="Телефон:" Margin="356,179,386,0"  RenderTransformOrigin="0.513,0.634" d:LayoutOverrides="Width" VerticalAlignment="Top"/>
-        <Label Content="Email:" HorizontalAlignment="Left" Margin="356,224,0,202"  RenderTransformOrigin="0.513,0.634" d:LayoutOverrides="Height"/>
-        <Label Content="Адрес:" HorizontalAlignment="Left" Margin="356,140,0,0" VerticalAlignment="Top"  RenderTransformOrigin="0.513,0.634"/>
-        <Label x:Name="CorpLabel" Content=" " HorizontalAlignment="Right" Margin="0,96,378,0" VerticalAlignment="Top"  RenderTransformOrigin="0.513,0.634"/>
-        <Label x:Name="GraphicLabel" Content=" " HorizontalAlignment="Right" Margin="0,0,284,152" VerticalAlignment="Bottom"  RenderTransformOrigin="0.513,0.634"/>
-        <Label x:Name="TelephoneLabel" Content=" " HorizontalAlignment="Right" Margin="0,179,370,0"  RenderTransformOrigin="0.513,0.634" VerticalAlignment="Top"/>
-        <Label x:Name="EmailLabel" Content=" " Margin="395,224,394,202"  RenderTransformOrigin="0.513,0.634" d:LayoutOverrides="Width, Height"/>
-        <Label x:Name="AdressLabel" Content=" " HorizontalAlignment="Right" Margin="0,140,386,0" VerticalAlignment="Top"  RenderTransformOrigin="0.513,0.634"/>
+        <Image HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="104" Source="logo.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="logo.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <Button Content="" BorderBrush="#273340" Height="74" HorizontalAlignment="Right" Width="86" VerticalAlignment="Top" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Image x:Name="Picture" HorizontalAlignment="Left" Height="370" Margin="100,130,0,0" VerticalAlignment="Top" Width="500" OpacityMask="Black" Stretch="Fill"/>
+
+
+        <Label x:Name="CorpLabel" Content="1" HorizontalAlignment="Left" Margin="650,150,0,0" Foreground="White" FontFamily="Arial" FontSize="20" VerticalAlignment="Top"/>
+        <Label x:Name="TelephoneLabel" Content="1" HorizontalAlignment="Left" Margin="650,180,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="20"/>
+        <Label x:Name="EmailLabel" Content="1" HorizontalAlignment="Left" Margin="650,210,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="20"/>
+        <Label x:Name="GraphicLabel" Content="1" HorizontalAlignment="Left" Margin="650,240,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="20"/>
+        <Label x:Name="AdressLabel" Content="1" HorizontalAlignment="Left" Margin="650,270,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="20"/>
+
+
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="100,130,0,0" VerticalAlignment="Top" Width="500"/>
     </Grid>
 </Window>
