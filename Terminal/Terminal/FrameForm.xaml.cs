@@ -98,7 +98,7 @@ namespace Terminal
         public void PlaceInfo(XAttribute nameAttribute, XElement adressElement, XElement telephoneElement, XElement emailElement, XElement graphicElement)
         {
             CorpLabel.Content = nameAttribute.Value;
-            AdressLabel.Content = adressElement.Value;
+            AdressLabel.Text = adressElement.Value;
             TelephoneLabel.Content = telephoneElement.Value;
             EmailLabel.Content = emailElement.Value;
             GraphicLabel.Content = graphicElement.Value;

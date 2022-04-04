@@ -56,6 +56,9 @@ namespace Terminal
                 button.Margin = new Thickness(12, 12, 12, 12);
                 button.Name = "Line" + (i+1).ToString(); //Исправить
                 button.Click += Button_Click_1;
+                //button.Background = new BitmapImage(new Uri("pack://application:,,,/img/1.jpg"));
+                
+
 
                 panelKorpus.Children.Add(button);
             }

@@ -24,8 +24,7 @@
         <Label x:Name="TelephoneLabel" Content="1" HorizontalAlignment="Left" Margin="650,180,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="20"/>
         <Label x:Name="EmailLabel" Content="1" HorizontalAlignment="Left" Margin="650,210,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="20"/>
         <Label x:Name="GraphicLabel" Content="1" HorizontalAlignment="Left" Margin="650,240,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="20"/>
-        <Label x:Name="AdressLabel" Content="1" HorizontalAlignment="Left" Margin="650,270,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="20"/>
-
+        <TextBlock x:Name="AdressLabel" HorizontalAlignment="Left" Margin="655,270,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="20"/>
 
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="100,130,0,0" VerticalAlignment="Top" Width="500"/>
     </Grid>
