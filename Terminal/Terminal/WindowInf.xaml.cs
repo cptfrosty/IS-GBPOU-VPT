@@ -36,7 +36,7 @@ namespace Terminal
         {
             string nameButton = ((Button)sender).Name;
 
-            nameButton = nameButton.Replace("Line", "");
+            nameButton = nameButton.Replace("id", "");
 
             int choice = int.Parse(nameButton);
  
@@ -47,20 +47,38 @@ namespace Terminal
 
         private void Init()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 1; i <= 4; i++)
             {
-                Button button = new Button();
+                Button btn = new Button();
+                btn.Width = 211;
+                btn.Height = 160;
+                btn.Margin = new Thickness(15, 100, 15, 15);
+                btn.Background = Brushes.White;
+                btn.Name = "id" + i;
 
-                button.Height = 100;
-                button.Width = 100;
-                button.Margin = new Thickness(12, 12, 12, 12);
-                button.Name = "Line" + (i+1).ToString(); //Исправить
-                button.Click += Button_Click_1;
-                //button.Background = new BitmapImage(new Uri("pack://application:,,,/img/1.jpg"));
-                
+                btn.Click += Button_Click_1;
 
+                StackPanel sp = new StackPanel();
 
-                panelKorpus.Children.Add(button);
+                BitmapImage bm = new BitmapImage();
+                bm.BeginInit();
+                bm.UriSource = new Uri("Icon/logo2.png", UriKind.Relative);
+                bm.EndInit();
+
+                Image img = new Image();
+                img.Source = bm;
+                img.Width = 70;
+                img.Height = 70;
+
+                Label label = new Label();
+                label.Content = $"Корпус {i}";
+
+                btn.Content = sp;
+                sp.Children.Add(img);
+                sp.Children.Add(label);
+
+                panelKorpus.Children.Add(btn);
+
             }
         }
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Terminal"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920" WindowStyle="None" Visibility="Visible" WindowStartupLocation="CenterOwner" WindowState="Maximized" Background="#273340">
+        Title="MainWindow" Height="1080" Width="1920" WindowStyle="None" Visibility="Visible" WindowStartupLocation="CenterOwner" WindowState="Maximized" Background="#ECF0F5">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="956*"/>
@@ -36,7 +36,7 @@
         <Label Content="«Волжский политехнический техникум»" HorizontalAlignment="Left" Margin="614,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,0.788" FontSize="36" Foreground="White" FontFamily="Arial" Grid.ColumnSpan="2" Height="50" Width="668"/>
         <Label Content="Государственное бюджетное профессиональное образовательное учреждение" HorizontalAlignment="Left" Margin="614,55,0,0" VerticalAlignment="Top" Height="36" Width="710" Foreground="White" FontSize="19" Grid.ColumnSpan="2" FontFamily="Arial"/>
         <Label x:Name="Time" Content="" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,7.5,0" VerticalAlignment="Top" RenderTransformOrigin="1.132,0.577" Height="73" Width="154" FontSize="56" Foreground="White" FontFamily="Arial"/>
-        <Label Content="Основные сведения" HorizontalAlignment="Left" Margin="81,348,0,0" VerticalAlignment="Top" Width="252" Foreground="White" FontSize="24" FontFamily="Arial"/>
+        <Label Content="Основные сведения" HorizontalAlignment="Left" Margin="90,348,0,0" VerticalAlignment="Top" Width="252" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
         <Button Content="" HorizontalAlignment="Left" Margin="81,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" Click="MainInformation" >
             <Button.Background>
                 <ImageBrush ImageSource="logo2.png" Stretch="UniformToFill"/>
