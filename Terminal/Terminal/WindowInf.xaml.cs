@@ -19,7 +19,7 @@ namespace Terminal
     /// </summary>
     public partial class WindowInf : Window
     {
-        private int clickID = 0;
+        
 
         public WindowInf()
         {

@@ -71,6 +71,7 @@
     <Compile Include="WindowInf.xaml.cs">
       <DependentUpon>WindowInf.xaml</DependentUpon>
     </Compile>
+    <Compile Include="XmlCorps.cs" />
     <Page Include="FrameForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

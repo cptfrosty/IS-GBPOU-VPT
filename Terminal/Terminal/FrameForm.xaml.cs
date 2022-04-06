@@ -37,7 +37,11 @@ namespace Terminal
             //PS ссылка на картинку в XML файле должна быть
             //Picture.Source = new BitmapImage(new Uri($"pack://application:,,,/{id}.jpg"));
             Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{id}.jpg"));
-            ShowInfo(id);
+            
+
+            XmlCorps xmlCorps = new XmlCorps();
+
+            xmlCorps.ShowInfo(id);
 
             
             
@@ -86,6 +90,7 @@ namespace Terminal
                 }
             }
         }
+        
 
         /// <summary>
         /// Информация о корпусе
@@ -95,7 +100,7 @@ namespace Terminal
         /// <param name="telephoneElement"></param>
         /// <param name="emailElement"></param>
         /// <param name="graphicElement"></param>
-        public void PlaceInfo(XAttribute nameAttribute, XElement adressElement, XElement telephoneElement, XElement emailElement, XElement graphicElement)
+        public void PlaceInfo()
         {
             CorpLabel.Content = nameAttribute.Value;
             AdressLabel.Text = adressElement.Value;
