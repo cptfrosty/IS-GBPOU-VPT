@@ -39,9 +39,8 @@ namespace Terminal
             Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{id}.jpg"));
             
 
-            XmlCorps xmlCorps = new XmlCorps();
 
-            xmlCorps.ShowInfo(id);
+            ShowInfo(id);
 
             
             
@@ -90,7 +89,7 @@ namespace Terminal
                 }
             }
         }
-        
+
 
         /// <summary>
         /// Информация о корпусе
@@ -100,7 +99,7 @@ namespace Terminal
         /// <param name="telephoneElement"></param>
         /// <param name="emailElement"></param>
         /// <param name="graphicElement"></param>
-        public void PlaceInfo()
+        public void PlaceInfo(XAttribute nameAttribute,XElement adressElement, XElement telephoneElement, XElement emailElement, XElement graphicElement)
         {
             CorpLabel.Content = nameAttribute.Value;
             AdressLabel.Text = adressElement.Value;

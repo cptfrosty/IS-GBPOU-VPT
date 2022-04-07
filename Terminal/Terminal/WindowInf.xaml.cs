@@ -21,8 +21,12 @@ namespace Terminal
     {
         
 
+        public int countCorp;
+
+        // public List<InfoCorp> ListInfoCorp = new List<InfoCorp>();
         public WindowInf()
         {
+            
             InitializeComponent();
             Init();
         }
@@ -44,10 +48,11 @@ namespace Terminal
             
             frameForm.ShowDialog();
         }
-
         private void Init()
         {
-            for (int i = 1; i <= 4; i++)
+            XmlCorps xmlCorps = new XmlCorps();
+
+            for (int i = 1; i <= 5; i++)
             {
                 Button btn = new Button();
                 btn.Width = 211;
