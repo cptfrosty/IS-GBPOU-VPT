@@ -24,7 +24,6 @@ namespace Terminal
         //public List<InfoCorp> ListInfoCorp = new List<InfoCorp>();
         public WindowInf()
         {
-            
             InitializeComponent();
             Init();
         }
@@ -37,10 +36,10 @@ namespace Terminal
         private void Init()
         {
             XmlCollegeBuilding xmlCorps = new XmlCollegeBuilding();
+            int count = XmlCollegeBuilding.Instance().GetCountCorp;
 
-            for (int i = 1; i <= XmlCollegeBuilding.Instance().GetCountCorp; i++)
+            for (int i = 1; i <= count; i++)
             {
-
                 Button btn = new Button();               
                 btn.Width = 211;
                 btn.Height = 160;
@@ -48,55 +47,37 @@ namespace Terminal
                 
                 btn.Name = "id" + i;
 
-                Grid grid = new Grid();
-                RowDefinition rowImage = new RowDefinition();
-                RowDefinition rowText = new RowDefinition();
-                rowImage.Height = new GridLength(120);
-                rowText.Height = new GridLength(60);
-                grid.RowDefinitions.Add(rowImage);
-                grid.RowDefinitions.Add(rowText);
-
                 btn.Click += CollegeBuildingInformation;
 
-                //StackPanel sp = new StackPanel();
+                Label label = new Label();
+                label.Height = 40;
+                label.Margin = new Thickness(0, 130, 0, 0);
+                label.Content = $"Корпус {i}";
+                DockPanel dp = new DockPanel();
+                dp.LastChildFill = true;
+                DockPanel.SetDock(label, Dock.Bottom);
+                dp.Children.Add(label);
 
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
-                bm.UriSource = new Uri("Icon/logo2copy.png", UriKind.Relative);
+                bm.UriSource = new Uri("Icon/logo2.png", UriKind.Relative);
                 bm.EndInit();
                 
-
-                Image img = new Image();
-                img.Source = bm;
-                img.Width = 140;
-                img.Height = 140;
-
                 ImageBrush imageBrush = new ImageBrush(bm);
+                imageBrush.Stretch = Stretch.UniformToFill;
                 btn.Background = imageBrush;
 
-                Label label = new Label();
-                label.Content = $"Корпус {i}";
-
-                btn.Content = grid;
-                Grid.SetRow(img, 0);
-                Grid.SetRow(label, 1);
-
-                grid.Children.Add(img);
-                grid.Children.Add(label);
-                grid.Children.Add(img);
-                //sp.Children.Add(label);
+                btn.Content = dp;
 
                 panelKorpus.Children.Add(btn);
-
             }
         }
-
 
         private void CollegeBuildingInformation(object sender, RoutedEventArgs e)
         {
             string nameButton = ((Button)sender).Name;
 
-            _ = MethodWithDelayAsync(nameButton,400);
+            _ = MethodWithDelayAsync(nameButton, 400);
         }
         public async Task MethodWithDelayAsync(string btnName,int milliseconds)
         {
