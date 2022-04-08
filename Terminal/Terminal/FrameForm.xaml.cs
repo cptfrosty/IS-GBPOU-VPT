@@ -35,59 +35,15 @@ namespace Terminal
             this.Choice = id;
 
             //PS ссылка на картинку в XML файле должна быть
-            //Picture.Source = new BitmapImage(new Uri($"pack://application:,,,/{id}.jpg"));
             Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{id}.jpg"));
             
-
-
-            ShowInfo(id);
-
-            
-            
+            InitButton(id);
         }
 
-        public void ShowInfo(int id)
+        public void InitButton(int id)
         {
-            XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Corps.xml");
-            foreach (XElement informations in xdoc.Element("informations").Elements("info"))
-            {
-                XAttribute nameAttribute = informations.Attribute("name");
-                XElement adressElement = informations.Element("adress");
-                XElement telephoneElement = informations.Element("telephone");
-                XElement emailElement = informations.Element("email");
-                XElement graphicElement = informations.Element("graphic");
-
-                
-
-                switch (id)
-                {
-                    default: break;
-                    case 1:
-                        if(nameAttribute.Value == "Корпус 1")
-                        {
-                            PlaceInfo(nameAttribute, adressElement, telephoneElement, emailElement, graphicElement);
-                        }
-                        break;
-                    case 2:
-                        if (nameAttribute.Value == "Корпус 2")
-                        {
-                            PlaceInfo(nameAttribute, adressElement, telephoneElement, emailElement, graphicElement);
-                        }
-                        break;
-                    case 3:
-                        if (nameAttribute.Value == "Корпус 3")
-                        {
-                            PlaceInfo(nameAttribute, adressElement, telephoneElement, emailElement, graphicElement);
-                        }
-                        break;
-                    case 4:
-                        if (nameAttribute.Value == "Корпус 4")
-                        {
-                            PlaceInfo(nameAttribute, adressElement, telephoneElement, emailElement, graphicElement);
-                        }
-                        break;
-                }
-            }
+            CollegeBuilding currentCorp = XmlCollegeBuilding.Instance().GetCollegeBuilding[id-1];
+            PlaceInfo(currentCorp);
         }
 
 
@@ -99,18 +55,19 @@ namespace Terminal
         /// <param name="telephoneElement"></param>
         /// <param name="emailElement"></param>
         /// <param name="graphicElement"></param>
-        public void PlaceInfo(XAttribute nameAttribute,XElement adressElement, XElement telephoneElement, XElement emailElement, XElement graphicElement)
+        public void PlaceInfo(CollegeBuilding corp)
         {
-            CorpLabel.Content = nameAttribute.Value;
-            AdressLabel.Text = adressElement.Value;
-            TelephoneLabel.Content = telephoneElement.Value;
-            EmailLabel.Content = emailElement.Value;
-            GraphicLabel.Content = graphicElement.Value;
+            CorpLabel.Content = corp.nameAttribute;
+            AdressLabel.Text = corp.adressElement;
+            TelephoneLabel.Content = corp.telephoneElement;
+            EmailLabel.Content = corp.emailElement;
+            GraphicLabel.Content = corp.workSchedule;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
     }
 }

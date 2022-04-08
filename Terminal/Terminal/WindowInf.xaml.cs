@@ -19,11 +19,9 @@ namespace Terminal
     /// </summary>
     public partial class WindowInf : Window
     {
-        
-
         public int countCorp;
 
-        // public List<InfoCorp> ListInfoCorp = new List<InfoCorp>();
+        //public List<InfoCorp> ListInfoCorp = new List<InfoCorp>();
         public WindowInf()
         {
             
@@ -36,55 +34,79 @@ namespace Terminal
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            string nameButton = ((Button)sender).Name;
-
-            nameButton = nameButton.Replace("id", "");
-
-            int choice = int.Parse(nameButton);
- 
-            FrameForm frameForm = new FrameForm(choice);
-            
-            frameForm.ShowDialog();
-        }
         private void Init()
         {
-            XmlCorps xmlCorps = new XmlCorps();
+            XmlCollegeBuilding xmlCorps = new XmlCollegeBuilding();
 
-            for (int i = 1; i <= 5; i++)
+            for (int i = 1; i <= XmlCollegeBuilding.Instance().GetCountCorp; i++)
             {
-                Button btn = new Button();
+
+                Button btn = new Button();               
                 btn.Width = 211;
                 btn.Height = 160;
                 btn.Margin = new Thickness(15, 100, 15, 15);
-                btn.Background = Brushes.White;
+                
                 btn.Name = "id" + i;
 
-                btn.Click += Button_Click_1;
+                Grid grid = new Grid();
+                RowDefinition rowImage = new RowDefinition();
+                RowDefinition rowText = new RowDefinition();
+                rowImage.Height = new GridLength(120);
+                rowText.Height = new GridLength(60);
+                grid.RowDefinitions.Add(rowImage);
+                grid.RowDefinitions.Add(rowText);
 
-                StackPanel sp = new StackPanel();
+                btn.Click += CollegeBuildingInformation;
+
+                //StackPanel sp = new StackPanel();
 
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
-                bm.UriSource = new Uri("Icon/logo2.png", UriKind.Relative);
+                bm.UriSource = new Uri("Icon/logo2copy.png", UriKind.Relative);
                 bm.EndInit();
+                
 
                 Image img = new Image();
                 img.Source = bm;
-                img.Width = 70;
-                img.Height = 70;
+                img.Width = 140;
+                img.Height = 140;
+
+                ImageBrush imageBrush = new ImageBrush(bm);
+                btn.Background = imageBrush;
 
                 Label label = new Label();
                 label.Content = $"Корпус {i}";
 
-                btn.Content = sp;
-                sp.Children.Add(img);
-                sp.Children.Add(label);
+                btn.Content = grid;
+                Grid.SetRow(img, 0);
+                Grid.SetRow(label, 1);
+
+                grid.Children.Add(img);
+                grid.Children.Add(label);
+                grid.Children.Add(img);
+                //sp.Children.Add(label);
 
                 panelKorpus.Children.Add(btn);
 
             }
+        }
+
+
+        private void CollegeBuildingInformation(object sender, RoutedEventArgs e)
+        {
+            string nameButton = ((Button)sender).Name;
+
+            _ = MethodWithDelayAsync(nameButton,400);
+        }
+        public async Task MethodWithDelayAsync(string btnName,int milliseconds)
+        {
+            await Task.Delay(milliseconds);
+
+            btnName = btnName.Replace("id", "");
+            int choice = int.Parse(btnName);
+
+            FrameForm frameForm = new FrameForm(choice);
+            frameForm.ShowDialog();
         }
     }
 }

@@ -71,7 +71,7 @@
     <Compile Include="WindowInf.xaml.cs">
       <DependentUpon>WindowInf.xaml</DependentUpon>
     </Compile>
-    <Compile Include="XmlCorps.cs" />
+    <Compile Include="XmlCollegeBuilding.cs" />
     <Page Include="FrameForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icon\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\logo2copy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />
