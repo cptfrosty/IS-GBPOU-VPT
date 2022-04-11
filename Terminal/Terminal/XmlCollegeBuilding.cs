@@ -16,6 +16,7 @@ namespace Terminal
         public string telephoneElement;
         public string emailElement;
         public string workSchedule;
+        public string history;
     }
     
     /*
@@ -62,6 +63,7 @@ namespace Terminal
                 infoCorp.telephoneElement = informations.Element("telephone").Value;
                 infoCorp.emailElement = informations.Element("email").Value;
                 infoCorp.workSchedule = informations.Element("graphic").Value;
+                infoCorp.history = informations.Element("history").Value;
 
                 collegeBuilding.Add(infoCorp);
             }

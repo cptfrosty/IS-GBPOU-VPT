@@ -44,5 +44,12 @@ namespace Terminal
             WindowInf windowInf = new WindowInf();
             windowInf.ShowDialog();
         }
+        
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MuseumWin museumWin = new MuseumWin();
+            museumWin.ShowDialog();
+        }
     }
 }

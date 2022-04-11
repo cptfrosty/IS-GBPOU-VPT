@@ -42,5 +42,11 @@
                 <ImageBrush ImageSource="logo2.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
+        <Button Content="" HorizontalAlignment="Left" Margin="436,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Button_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="museum.png" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Музей" HorizontalAlignment="Left" Margin="520,348,0,0" VerticalAlignment="Top" Width="80" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
     </Grid>
 </Window>

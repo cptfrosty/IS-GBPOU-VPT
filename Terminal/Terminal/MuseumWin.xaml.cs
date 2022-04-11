@@ -11,62 +11,48 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Terminal
 {
     /// <summary>
-    /// Логика взаимодействия для WindowInf.xaml
+    /// Логика взаимодействия для MuseumWin.xaml
     /// </summary>
-    public partial class WindowInf : Window
+    public partial class MuseumWin : Window
     {
-        public int countCorp;
-
-        //public List<InfoCorp> ListInfoCorp = new List<InfoCorp>();
-        public WindowInf()
+        public MuseumWin()
         {
             InitializeComponent();
             Init();
         }
-        // Кнопка выхода
-        private void Exit(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-        // Создание кнопок
         private void Init()
         {
-            XmlCollegeBuilding xmlCorps = new XmlCollegeBuilding();
-            int count = XmlCollegeBuilding.Instance().GetCountCorp;
-
+            XmlMuseum xmlMuseum = new XmlMuseum();
+            int count = XmlMuseum.Instance().GetCountMuseum;
             for (int i = 1; i <= count; i++)
             {
-                Button btn = new Button();               
+                Button btn = new Button();
                 btn.Width = 211;
                 btn.Height = 160;
                 btn.Margin = new Thickness(15, 100, 15, 15);
-                
+
                 btn.Name = "id" + i;
 
-                btn.Click += CollegeBuildingInformation;
+                btn.Click += MuseumInformation;
 
                 Label label = new Label();
                 label.Height = 40;
                 label.Margin = new Thickness(0, 130, 0, 0);
-                label.Content = $"Корпус {i}";  
+                label.Content = "";
                 DockPanel dp = new DockPanel();
                 dp.LastChildFill = true;
                 DockPanel.SetDock(label, Dock.Bottom);
                 dp.Children.Add(label);
-               
 
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
-                bm.UriSource = new Uri("Icon/logo2.png", UriKind.Relative);
+                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Museum/{i}.jpg", UriKind.Relative);
                 bm.EndInit();
-
-                //Border bd = new Border();
-                //bd.BorderBrush = Brushes.Black;
-                //bd.BorderThickness = new Thickness(25, 120, 25, 25);
 
                 ImageBrush imageBrush = new ImageBrush(bm);
                 imageBrush.Stretch = Stretch.UniformToFill;
@@ -74,25 +60,30 @@ namespace Terminal
 
                 btn.Content = dp;
 
-                panelKorpus.Children.Add(btn);
+                panelMuseum.Children.Add(btn);
             }
         }
         // Задержка при клике
-        private void CollegeBuildingInformation(object sender, RoutedEventArgs e)
+        private void MuseumInformation(object sender, RoutedEventArgs e)
         {
             string nameButton = ((Button)sender).Name;
 
             _ = MethodWithDelayAsync(nameButton, 400);
         }
-        public async Task MethodWithDelayAsync(string btnName,int milliseconds)
+        public async Task MethodWithDelayAsync(string btnName, int milliseconds)
         {
             await Task.Delay(milliseconds);
 
             btnName = btnName.Replace("id", "");
             int choice = int.Parse(btnName);
 
-            FrameForm frameForm = new FrameForm(choice);
-            frameForm.ShowDialog();
+            MuseumInf museumInf = new MuseumInf(choice);
+            museumInf.ShowDialog();
+        }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

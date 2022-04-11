@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,62 +11,36 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Security.Policy;
-using Microsoft.Win32;
-using System.Xml.Linq;
-using System.IO;
 
 namespace Terminal
 {
     /// <summary>
-    /// Логика взаимодействия для FrameForm.xaml
+    /// Логика взаимодействия для MuseumInf.xaml
     /// </summary>
-    public partial class FrameForm : Window
+    public partial class MuseumInf : Window
     {
-        public int Choice;
-        /// <summary>
-        /// Конструктор формы
-        /// </summary>
-        /// <param name="id">id позиции</param>
-        public FrameForm(int id)
+        public int choice;
+        public MuseumInf(int id)
         {
+            choice = id;
             InitializeComponent();
-            this.Choice = id;
 
-            //PS ссылка на картинку в XML файле должна быть
-            Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{id}.jpg"));
-            
+            Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Museum/{id}.jpg"));
+
             InitButton(id);
         }
-
         public void InitButton(int id)
         {
-            CollegeBuilding currentCorp = XmlCollegeBuilding.Instance().GetCollegeBuilding[id-1];
-            PlaceInfo(currentCorp);
+            MuseumInformation museumInformation = XmlMuseum.Instance().GetMuseumInfo[id - 1];
+            PlaceInfo(museumInformation);
         }
 
-
-        /// <summary>
-        /// Информация о корпусе
-        /// </summary>
         /// <param name="nameAttribute"></param>
-        /// <param name="adressElement"></param>
-        /// <param name="telephoneElement"></param>
-        /// <param name="emailElement"></param>
-        /// <param name="graphicElement"></param>
-        public void PlaceInfo(CollegeBuilding corp)
+        /// <param name="dataElement"></param>
+        public void PlaceInfo(MuseumInformation mus)
         {
-            CorpLabel.Content = corp.nameAttribute;
-            AdressLabel.Text = corp.adressElement;
-            TelephoneLabel.Content = corp.telephoneElement;
-            EmailLabel.Content = corp.emailElement;
-            GraphicLabel.Content = corp.workSchedule;
-            HistoryLabel.Text = corp.history;
-        }
-
-        private void Exit(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            NameLabel.Content = mus.nameAttribute;
+            Data.Text = mus.dataElement;   
         }
         //TEST
         private System.Windows.Point scrollTarget;
@@ -124,6 +97,11 @@ namespace Terminal
             }
 
             base.OnPreviewMouseUp(e);
+        }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
