@@ -48,5 +48,13 @@
             </Button.Background>
         </Button>
         <Label Content="Музей" HorizontalAlignment="Left" Margin="520,348,0,0" VerticalAlignment="Top" Width="80" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+
+        <!--Контейнер для погоды-->
+        <Grid Grid.Column="1">
+            <Label x:Name="LabelTemp" Content="?°" HorizontalAlignment="Left" Margin="498,315,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.819,0.771" FontSize="48" Height="71" Width="94"/>
+            <Label x:Name="LabelCity" Content="City" HorizontalAlignment="Left" Margin="448,200,0,0" VerticalAlignment="Top" FontSize="36"/>
+            <Label x:Name="LabelMain" Content="Main" HorizontalAlignment="Left" Margin="429,430,0,0" VerticalAlignment="Top" FontSize="36"/>
+        </Grid>
+
     </Grid>
 </Window>
