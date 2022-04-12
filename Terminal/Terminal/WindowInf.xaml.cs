@@ -20,8 +20,7 @@ namespace Terminal
     public partial class WindowInf : Window
     {
         public int countCorp;
-
-        //public List<InfoCorp> ListInfoCorp = new List<InfoCorp>();
+        
         public WindowInf()
         {
             InitializeComponent();

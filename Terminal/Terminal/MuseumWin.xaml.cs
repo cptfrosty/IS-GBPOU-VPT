@@ -25,6 +25,8 @@ namespace Terminal
             InitializeComponent();
             Init();
         }
+
+        //Инициализация кнопок для UI интерфейса
         private void Init()
         {
             XmlMuseum xmlMuseum = new XmlMuseum();
@@ -63,13 +65,16 @@ namespace Terminal
                 panelMuseum.Children.Add(btn);
             }
         }
-        // Задержка при клике
+
+
+        // Задержка при клике 
         private void MuseumInformation(object sender, RoutedEventArgs e)
         {
             string nameButton = ((Button)sender).Name;
 
             _ = MethodWithDelayAsync(nameButton, 400);
         }
+
         public async Task MethodWithDelayAsync(string btnName, int milliseconds)
         {
             await Task.Delay(milliseconds);

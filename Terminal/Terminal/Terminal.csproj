@@ -164,13 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FrameTest\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icon\logo2.png" />
+    <Resource Include="Resources\Icon\logo2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icon\logo2copy.png" />
+    <Resource Include="Resources\Icon\logo2copy.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Corps.xml" />
@@ -192,6 +191,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Frame\Corps.xml" />
+    <Resource Include="Resources\Frame\Museum.xml" />
+    <Resource Include="Resources\Image\Corp\1.jpg" />
+    <Resource Include="Resources\Image\Corp\2.jpg" />
+    <Resource Include="Resources\Image\Corp\3.jpg" />
+    <Resource Include="Resources\Image\Corp\4.jpg" />
+    <Resource Include="Resources\Image\Museum\1.jpg" />
+    <Resource Include="Resources\Image\Museum\2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />
