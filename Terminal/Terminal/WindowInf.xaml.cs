@@ -63,9 +63,10 @@ namespace Terminal
                 bm.UriSource = new Uri("Icon/logo2.png", UriKind.Relative);
                 bm.EndInit();
 
-                //Border bd = new Border();
-                //bd.BorderBrush = Brushes.Black;
-                //bd.BorderThickness = new Thickness(25, 120, 25, 25);
+                
+                btn.BorderBrush = Brushes.Black;
+                btn.BorderThickness = new Thickness(2);
+                
 
                 ImageBrush imageBrush = new ImageBrush(bm);
                 imageBrush.Stretch = Stretch.UniformToFill;

@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Terminal.OpenWeather;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -84,6 +85,16 @@ namespace Terminal
             LabelMain.Content = oW.weather[0].main;
 
             LabelCity.Content = city;
-        } 
+
+            WeatherImage.Source = oW.weather[0].Icon;
+
+            
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Specialties specialties = new Specialties();
+            specialties.ShowDialog();
+        }
     }
 }

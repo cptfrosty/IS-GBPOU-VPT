@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Media.Imaging;
 
 namespace Terminal.OpenWeather
 {
@@ -17,11 +18,11 @@ namespace Terminal.OpenWeather
 
         public string icon;
 
-        public Bitmap Icon
+        public BitmapImage Icon
         {
             get
             {
-                return new Bitmap(Image.FromFile($"icons/{icon}.png"));
+                return new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/icons/{icon}.png"));
             }
         }
 

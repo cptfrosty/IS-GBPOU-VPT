@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
+
 namespace Terminal.OpenWeather
 {
     class OpenWeather

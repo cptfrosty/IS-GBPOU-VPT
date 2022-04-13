@@ -49,11 +49,15 @@
         </Button>
         <Label Content="Музей" HorizontalAlignment="Left" Margin="520,348,0,0" VerticalAlignment="Top" Width="80" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
 
+
+
         <!--Контейнер для погоды-->
-        <Grid Grid.Column="1">
-            <Label x:Name="LabelTemp" Content="?°" HorizontalAlignment="Left" Margin="498,315,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.819,0.771" FontSize="48" Height="71" Width="94"/>
-            <Label x:Name="LabelCity" Content="City" HorizontalAlignment="Left" Margin="448,200,0,0" VerticalAlignment="Top" FontSize="36"/>
-            <Label x:Name="LabelMain" Content="Main" HorizontalAlignment="Left" Margin="429,430,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Grid Grid.Column="1" Grid.ColumnSpan="2" Margin="250,0,2.5,0">
+            <Label x:Name="LabelCity" Content="Волжский" HorizontalAlignment="Left" Margin="269,200,0,0" VerticalAlignment="Top" FontSize="36"/>
+            <Label x:Name="LabelTemp" Content="?°" HorizontalAlignment="Left" Margin="400,315,0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="94"/>
+            <Label x:Name="LabelMain" Content="Main" HorizontalAlignment="Left" Margin="400,430,0,0" VerticalAlignment="Top" FontSize="36"/>
+            <Label x:Name="LabelImage" Content="Image" HorizontalAlignment="Left" Margin="200,315,0,0" VerticalAlignment="Top" FontSize="48" Height="67" Width="67"/>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="544" Margin="98,200,0,0" VerticalAlignment="Top" Width="520"/>
         </Grid>
 
     </Grid>

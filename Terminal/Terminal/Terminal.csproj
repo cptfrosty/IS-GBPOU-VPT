@@ -96,6 +96,12 @@
     <Compile Include="MuseumWin.xaml.cs">
       <DependentUpon>MuseumWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Specialties.xaml.cs">
+      <DependentUpon>Specialties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialtiesInf.xaml.cs">
+      <DependentUpon>SpecialtiesInf.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Weather\Connector.cs" />
     <Compile Include="Weather\OpenWeather\clouds.cs" />
     <Compile Include="Weather\OpenWeather\coord.cs" />
@@ -110,6 +116,7 @@
     </Compile>
     <Compile Include="XmlCollegeBuilding.cs" />
     <Compile Include="XmlMuseum.cs" />
+    <Compile Include="XmlSpecialties.cs" />
     <Page Include="FrameForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,6 +138,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MuseumWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Specialties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecialtiesInf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
