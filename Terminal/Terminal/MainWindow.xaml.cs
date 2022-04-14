@@ -86,12 +86,12 @@ namespace Terminal
 
             LabelCity.Content = city;
 
-            WeatherImage.Source = oW.weather[0].Icon;
+           // WeatherImage.Source = oW.weather[0].Icon;
 
             
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void SpecialtiesClick(object sender, RoutedEventArgs e)
         {
             Specialties specialties = new Specialties();
             specialties.ShowDialog();

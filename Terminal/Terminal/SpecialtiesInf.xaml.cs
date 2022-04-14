@@ -26,8 +26,19 @@ namespace Terminal
             InitializeComponent();
 
             Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{id}.jpg"));
-        }
 
+            InitButton(id);
+        }
+        public void InitButton(int id)
+        {
+            InformationSpecialties informationSpecialties = XmlSpecialties.Instance().GetSpecialtiesInfo[id - 1];
+            PlaceInfo(informationSpecialties);
+        }
+        public void PlaceInfo(InformationSpecialties spec)
+        {
+            NameLabel.Content = spec.nameAttribute;
+            Data.Text = spec.dataElement;
+        }
         private void Exit(object sender, RoutedEventArgs e)
         {
             this.Close();

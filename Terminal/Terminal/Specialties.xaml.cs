@@ -22,6 +22,7 @@ namespace Terminal
         public Specialties()
         {
             InitializeComponent();
+            Init();
         }
 
         private void Exit(object sender, RoutedEventArgs e)
@@ -48,7 +49,7 @@ namespace Terminal
                 Label label = new Label();
                 label.Height = 40;
                 label.Margin = new Thickness(0, 130, 0, 0);
-                label.Content = $"Корпус {i}";
+                label.Content = "";
                 DockPanel dp = new DockPanel();
                 dp.LastChildFill = true;
                 DockPanel.SetDock(label, Dock.Bottom);
@@ -57,7 +58,7 @@ namespace Terminal
 
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
-                bm.UriSource = new Uri("Icon/logo2.png", UriKind.Relative);
+                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{i}.jpg", UriKind.Relative);
                 bm.EndInit();
 
 
@@ -71,7 +72,7 @@ namespace Terminal
 
                 btn.Content = dp;
 
-                panelKorpus.Children.Add(btn);
+                panelSpecialties.Children.Add(btn);
             }
         }
         private void SpecialtiesInformation(object sender, RoutedEventArgs e)
@@ -87,7 +88,7 @@ namespace Terminal
             btnName = btnName.Replace("id", "");
             int choice = int.Parse(btnName);
 
-            SpecialtiesInf specialtiesInf = new SpecialtiesInf();
+            SpecialtiesInf specialtiesInf = new SpecialtiesInf(choice);
             specialtiesInf.ShowDialog();
         }
     }

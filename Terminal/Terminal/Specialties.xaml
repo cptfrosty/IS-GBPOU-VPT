@@ -25,6 +25,6 @@
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <StackPanel x:Name="panelKorpus" Margin="0,80, 0, 0" Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
+        <StackPanel x:Name="panelSpecialties" Margin="0,80, 0, 0" Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
     </Grid>
 </Window>
