@@ -48,22 +48,33 @@
             </Button.Background>
         </Button>
         <Label Content="Музей" HorizontalAlignment="Left" Margin="437,348,0,0" VerticalAlignment="Top" Width="80" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+        <Label Content="Специальности" HorizontalAlignment="Left" Margin="684,349,0,0" VerticalAlignment="Top" Width="180" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
 
 
 
         <!--Контейнер для погоды-->
-        <Grid Grid.Column="1" Grid.ColumnSpan="2" Margin="250,0,2.5,0">
+        <Grid x:Name="GridWeather" Grid.Column="1" Grid.ColumnSpan="2" Margin="250,0,2.5,0">
             <Label x:Name="LabelCity" Content="Волжский" HorizontalAlignment="Left" Margin="269,200,0,0" VerticalAlignment="Top" FontSize="36"/>
-            <Label x:Name="LabelTemp" Content="?°" HorizontalAlignment="Left" Margin="400,315,0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="94"/>
-            <Label x:Name="LabelMain" Content="Main" HorizontalAlignment="Left" Margin="400,430,0,0" VerticalAlignment="Top" FontSize="36"/>
-            <Label x:Name="LabelImage" Content="Image" HorizontalAlignment="Left" Margin="200,315,0,0" VerticalAlignment="Top" FontSize="48" Height="67" Width="67"/>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="544" Margin="98,200,0,0" VerticalAlignment="Top" Width="520"/>
+            <Label x:Name="LabelTemp" Content="?°" HorizontalAlignment="Left" Margin="420,315,0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="94"/>
+            <Label x:Name="LabelMain" Content="Main" FontSize="36" Margin="100,440,84.5,574" Width="520" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="58"/>
+            <Image x:Name="IconWeather" HorizontalAlignment="Left" Height="120" Margin="250,315,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+
+            <Image x:Name="Image_Pressure" HorizontalAlignment="Left" Height="60" Margin="130,560,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/davleniye.png" />
+            <Image x:Name="Image_Humidity" HorizontalAlignment="Left" Height="60" Margin="130,665,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/Kaplya.png" />
+            <Image x:Name="Image_Wind" HorizontalAlignment="Left" Height="60" Margin="380,560,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/veter.png" />
+            <Image x:Name="Image_Direction" HorizontalAlignment="Left" Height="60" Margin="380,665,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/strelka.png" />
+
+            <Label x:Name="Text_Pressure" Content="Давление" Grid.Column="1" HorizontalAlignment="Left" Margin="200,560,0,0" VerticalAlignment="Top" FontSize="32"/>
+            <Label x:Name="Text_Direction" Content="Направление" Grid.Column="1" HorizontalAlignment="Left" Margin="450,670,0,0" VerticalAlignment="Top" FontSize="32"/>
+            <Label x:Name="Text_Wind" Content="Ветер" Grid.Column="1" HorizontalAlignment="Left" Margin="450,560,0,0" VerticalAlignment="Top" FontSize="32"/>
+            <Label x:Name="Text_Humidity" Content="Влажность" Grid.Column="1" HorizontalAlignment="Left" Margin="200,670,0,0" VerticalAlignment="Top" FontSize="32"/>
+
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="544" Margin="100,200,0,0" VerticalAlignment="Top" Width="520"/>
         </Grid>
         <Button Content="" HorizontalAlignment="Left" Margin="650,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="SpecialtiesClick"  >
             <Button.Background>
                 <ImageBrush ImageSource="logo2.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Label Content="Специальности" HorizontalAlignment="Left" Margin="684,348,0,0" VerticalAlignment="Top" Width="180" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
     </Grid>
 </Window>

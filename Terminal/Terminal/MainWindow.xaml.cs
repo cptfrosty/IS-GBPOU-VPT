@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Terminal.Weather;
 using Terminal.OpenWeather;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -17,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.Sockets;
 
 namespace Terminal
 {
@@ -29,13 +31,24 @@ namespace Terminal
         {
             InitializeComponent();
 
+            CheckNetwork();
+
             Weather();
 
+
+            //Время
             var timer = new System.Windows.Threading.DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.IsEnabled = true;
             timer.Tick += (o, t) => { Time.Content = DateTime.Now.ToShortTimeString(); };
             timer.Start();
+
+            //Обновление погоды
+            var timerWeather = new System.Windows.Threading.DispatcherTimer();
+            timerWeather.Interval = new TimeSpan(0, 0, 5);
+            timerWeather.IsEnabled = true;
+            timerWeather.Tick += (o, t) => { Weather(); };
+            timerWeather.Start();
         }
 
         private void MainInformation(object sender, RoutedEventArgs e)
@@ -60,35 +73,70 @@ namespace Terminal
         //Погода
         private async void Weather()
         {
-            string city = "Волжский";
-            WebRequest request = null;
-            WebResponse response = await Call.CallWeather(city, request).GetResponseAsync();
-
-            string answer = string.Empty;
-
-            using (Stream s = response.GetResponseStream())
+            if (CheckNetwork())
             {
-                using (StreamReader reader = new StreamReader(s))
+                
+
+                string city = "Волжский";
+                WebRequest request = null;
+                WebResponse response = await Call.CallWeather(city, request).GetResponseAsync();
+
+                string answer = string.Empty;
+
+                using (Stream s = response.GetResponseStream())
                 {
-                    answer = await reader.ReadToEndAsync();
+                    using (StreamReader reader = new StreamReader(s))
+                    {
+                        answer = await reader.ReadToEndAsync();
+                    }
                 }
+
+                response.Close();
+
+                OpenWeather.OpenWeather oW = JsonConvert.DeserializeObject<OpenWeather.OpenWeather>(answer);
+
+                //string icon = oW.weather[0].icon;
+
+                LabelTemp.Content = oW.main.temp.ToString("#") + "°";
+
+                Translate translate = new Translate(oW.weather[0].main);
+
+                LabelMain.Content = translate.GetWord();
+
+                LabelCity.Content = city;
+
+                Text_Pressure.Content = ((int)oW.main.pressure).ToString() + "мм";
+
+                Text_Humidity.Content = oW.main.humidity.ToString() + "%";
+
+                Text_Wind.Content = oW.wind.deg.ToString() + "°";
+
+                Text_Direction.Content = oW.wind.speed.ToString() + "м/с";
+
+                IconWeather.Source = oW.weather[0].Icon;
+
+                GridWeather.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                GridWeather.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private bool CheckNetwork()
+        {
+            if (!System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            {
+                return false;
             }
 
-            response.Close();
-
-            OpenWeather.OpenWeather oW = JsonConvert.DeserializeObject<OpenWeather.OpenWeather>(answer);
-
-            //string icon = oW.weather[0].icon;
-
-            LabelTemp.Content = oW.main.temp.ToString("#") + "°";
-
-            LabelMain.Content = oW.weather[0].main;
-
-            LabelCity.Content = city;
-
-           // WeatherImage.Source = oW.weather[0].Icon;
-
-            
+            bool isConnected = false;
+            using (var tcpClient = new TcpClient())
+            {
+                tcpClient.Connect("209.85.148.138", 443); // google
+                isConnected = tcpClient.Connected;
+                return true;
+            }
         }
 
         private void SpecialtiesClick(object sender, RoutedEventArgs e)

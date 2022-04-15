@@ -102,7 +102,6 @@
     <Compile Include="SpecialtiesInf.xaml.cs">
       <DependentUpon>SpecialtiesInf.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Weather\Connector.cs" />
     <Compile Include="Weather\OpenWeather\clouds.cs" />
     <Compile Include="Weather\OpenWeather\coord.cs" />
     <Compile Include="Weather\OpenWeather\main.cs" />
@@ -110,7 +109,7 @@
     <Compile Include="Weather\OpenWeather\sys.cs" />
     <Compile Include="Weather\OpenWeather\weather.cs" />
     <Compile Include="Weather\OpenWeather\wind.cs" />
-    <Compile Include="Weather\Settings.cs" />
+    <Compile Include="Weather\Translate.cs" />
     <Compile Include="WindowInf.xaml.cs">
       <DependentUpon>WindowInf.xaml</DependentUpon>
     </Compile>
