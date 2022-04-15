@@ -36,8 +36,11 @@ namespace Terminal
 
             //PS ссылка на картинку в XML файле должна быть
             Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{id}.jpg"));
-            
+
+            PictureMapping.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{id + 100}.jpg"));
+
             InitButton(id);
+            
         }
 
         public void InitButton(int id)
@@ -45,7 +48,6 @@ namespace Terminal
             CollegeBuilding currentCorp = XmlCollegeBuilding.Instance().GetCollegeBuilding[id-1];
             PlaceInfo(currentCorp);
         }
-
 
         /// <summary>
         /// Информация о корпусе

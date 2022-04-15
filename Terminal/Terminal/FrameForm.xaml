@@ -26,7 +26,9 @@
             </Button.Background>
         </Button>
         <Image x:Name="Picture" HorizontalAlignment="Left" Height="370" Margin="100,180,0,0" VerticalAlignment="Top" Width="500" OpacityMask="Black" Stretch="Fill"/>
-
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="100,180,0,0" VerticalAlignment="Top" Width="500"/>
+        <Image x:Name="PictureMapping" HorizontalAlignment="Left" Height="370" Margin="100,625,0,0" VerticalAlignment="Top" Width="500" OpacityMask="Black" Stretch="Fill"/>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="100,625,0,0" VerticalAlignment="Top" Width="500"/>
         <ScrollViewer x:Name="scrollViewer" Margin="0, 150, 0, 0" PanningMode="Both">
             <StackPanel>
                 <Label x:Name="CorpLabel" Content="1" HorizontalAlignment="Left" Margin="650,40,0,0" Foreground="#1C2631" FontFamily="Arial" FontSize="20" VerticalAlignment="Top"/>
@@ -37,7 +39,5 @@
                 <TextBlock x:Name="HistoryLabel" HorizontalAlignment="Left" Margin="655,10,0,0"  TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
             </StackPanel>
         </ScrollViewer>
-
-        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="100,180,0,0" VerticalAlignment="Top" Width="500"/>
     </Grid>
 </Window>
