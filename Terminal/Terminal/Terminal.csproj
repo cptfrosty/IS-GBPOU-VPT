@@ -233,6 +233,9 @@
     <Resource Include="Resources\Image\Museum\2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="m-removebg-preview.png" />
+    <Resource Include="education.png" />
+    <Resource Include="osnSvedenia.png" />
     <Content Include="Weather\dll\AutoRuner.dll" />
     <Content Include="Weather\dll\CallOpenWeather.dll" />
     <Resource Include="Weather\icons\01d.png" />

@@ -9,7 +9,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="956*"/>
-            <ColumnDefinition Width="954*"/>
+            <ColumnDefinition Width="450*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="1921" Grid.ColumnSpan="3" CornerRadius="0,0,20,20" Margin="-1,0,-7.5,0">
@@ -36,24 +36,35 @@
         <Label Content="«Волжский политехнический техникум»" HorizontalAlignment="Left" Margin="614,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,0.788" FontSize="36" Foreground="White" FontFamily="Arial" Grid.ColumnSpan="2" Height="50" Width="668"/>
         <Label Content="Государственное бюджетное профессиональное образовательное учреждение" HorizontalAlignment="Left" Margin="614,55,0,0" VerticalAlignment="Top" Height="36" Width="710" Foreground="White" FontSize="19" Grid.ColumnSpan="2" FontFamily="Arial"/>
         <Label x:Name="Time" Content="" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,7.5,0" VerticalAlignment="Top" RenderTransformOrigin="1.132,0.577" Height="73" Width="154" FontSize="56" Foreground="White" FontFamily="Arial"/>
-        <Label Content="Основные сведения" HorizontalAlignment="Left" Margin="50,348,0,0" VerticalAlignment="Top" Width="252" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="45,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" Click="MainInformation" >
+        <Label Content="Основные сведения" HorizontalAlignment="Left" Margin="59,348,0,0" VerticalAlignment="Top" Width="252" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="50,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" Click="MainInformation" >
             <Button.Background>
-                <ImageBrush ImageSource="logo2.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="osnSvedenia.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Margin="350,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Button_Click" >
             <Button.Background>
-                <ImageBrush ImageSource="museum.png" Stretch="None"/>
+                <ImageBrush ImageSource="museum.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
         <Label Content="Музей" HorizontalAlignment="Left" Margin="437,348,0,0" VerticalAlignment="Top" Width="80" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="650,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="SpecialtiesClick"  >
+            <Button.Background>
+                <ImageBrush ImageSource="education.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
         <Label Content="Специальности" HorizontalAlignment="Left" Margin="684,349,0,0" VerticalAlignment="Top" Width="180" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="950,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="SpecialtiesClick"  >
+            <Button.Background>
+                <ImageBrush ImageSource="m-removebg-preview.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Мастерские" HorizontalAlignment="Left" Margin="1002,348,0,0" VerticalAlignment="Top" Width="141" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
 
 
 
         <!--Контейнер для погоды-->
-        <Grid x:Name="GridWeather" Grid.Column="1" Grid.ColumnSpan="2" Margin="250,0,2.5,0">
+        <Grid x:Name="GridWeather" Grid.Column="1" Grid.ColumnSpan="2" Margin="-105,0,2.5,0">
             <Label x:Name="LabelCity" Content="Волжский" HorizontalAlignment="Left" Margin="269,200,0,0" VerticalAlignment="Top" FontSize="36"/>
             <Label x:Name="LabelTemp" Content="?°" HorizontalAlignment="Left" Margin="420,315,0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="94"/>
             <Label x:Name="LabelMain" Content="Main" FontSize="36" Margin="100,440,84.5,574" Width="520" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="58"/>
@@ -69,12 +80,8 @@
             <Label x:Name="Text_Wind" Content="Ветер" Grid.Column="1" HorizontalAlignment="Left" Margin="450,560,0,0" VerticalAlignment="Top" FontSize="32"/>
             <Label x:Name="Text_Humidity" Content="Влажность" Grid.Column="1" HorizontalAlignment="Left" Margin="200,670,0,0" VerticalAlignment="Top" FontSize="32"/>
 
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="544" Margin="100,200,0,0" VerticalAlignment="Top" Width="520"/>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="544" Margin="100,210,0,0" VerticalAlignment="Top" Width="520" CornerRadius="3,3,3,3"/>
         </Grid>
-        <Button Content="" HorizontalAlignment="Left" Margin="650,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="SpecialtiesClick"  >
-            <Button.Background>
-                <ImageBrush ImageSource="logo2.png" Stretch="UniformToFill"/>
-            </Button.Background>
-        </Button>
+        
     </Grid>
 </Window>
