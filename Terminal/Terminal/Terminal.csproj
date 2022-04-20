@@ -113,6 +113,13 @@
     <Compile Include="WindowInf.xaml.cs">
       <DependentUpon>WindowInf.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Workshops.xaml.cs">
+      <DependentUpon>Workshops.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkshopsInf.xaml.cs">
+      <DependentUpon>WorkshopsInf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkshopsXml.cs" />
     <Compile Include="XmlCollegeBuilding.cs" />
     <Compile Include="XmlMuseum.cs" />
     <Compile Include="XmlSpecialties.cs" />
@@ -149,6 +156,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowInf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workshops.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkshopsInf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,9 +248,11 @@
     <Resource Include="Resources\Image\Museum\2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="W_education.png" />
     <Resource Include="m-removebg-preview.png" />
     <Resource Include="education.png" />
     <Resource Include="osnSvedenia.png" />
+    <Resource Include="Resources\Frame\Workshops.xml" />
     <Content Include="Weather\dll\AutoRuner.dll" />
     <Content Include="Weather\dll\CallOpenWeather.dll" />
     <Resource Include="Weather\icons\01d.png" />

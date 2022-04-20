@@ -144,5 +144,11 @@ namespace Terminal
             Specialties specialties = new Specialties();
             specialties.ShowDialog();
         }
+
+        private void Workshops_Click(object sender, RoutedEventArgs e)
+        {
+            Workshops workshops = new Workshops();
+            workshops.ShowDialog();
+        }
     }
 }

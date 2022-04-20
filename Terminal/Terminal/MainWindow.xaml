@@ -54,7 +54,7 @@
             </Button.Background>
         </Button>
         <Label Content="Специальности" HorizontalAlignment="Left" Margin="684,349,0,0" VerticalAlignment="Top" Width="180" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="950,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="SpecialtiesClick"  >
+        <Button Content="" HorizontalAlignment="Left" Margin="950,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Workshops_Click"  >
             <Button.Background>
                 <ImageBrush ImageSource="m-removebg-preview.png" Stretch="Uniform"/>
             </Button.Background>
