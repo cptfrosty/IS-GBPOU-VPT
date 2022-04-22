@@ -150,5 +150,11 @@ namespace Terminal
             Workshops workshops = new Workshops();
             workshops.ShowDialog();
         }
+
+        private void Button_FAQ_Click(object sender, RoutedEventArgs e)
+        {
+            FAQWin fAQWin = new FAQWin();
+            fAQWin.ShowDialog();
+        }
     }
 }

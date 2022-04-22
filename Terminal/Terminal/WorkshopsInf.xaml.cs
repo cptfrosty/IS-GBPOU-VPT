@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,12 +26,20 @@ namespace Terminal
             choice = id;
             InitializeComponent();
 
-            Picture_1.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id}.png"));
-            
-            //Добавить картинки
+            string path1 = $"Image/Workshops/Room/{id}.png";
+            string path2 = $"Image/Workshops/Room/{id + 100}.png";
+            string path3 = $"Image/Workshops/Room/{id + 1000}.png";
 
-            //Picture_2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id+100}.png"));
-            //Picture_3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id+200}.png"));
+            FileInfo fileInfo1 = new FileInfo(path1);
+            FileInfo fileInfo2 = new FileInfo(path2);
+            FileInfo fileInfo3 = new FileInfo(path3);
+
+            if (fileInfo1.Exists)
+                Picture_1.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id}.png"));
+            if (fileInfo2.Exists)
+                Picture_2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id+100}.png"));
+            if (fileInfo3.Exists)
+                Picture_3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id+1000}.png"));
 
             InitButton(id);
         }
