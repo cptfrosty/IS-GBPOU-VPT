@@ -21,6 +21,8 @@ namespace Terminal
     public partial class WorkshopsInf : Window
     {
         public int choice;
+
+        public bool isCheck = false;
         public WorkshopsInf(int id)
         {
             choice = id;
@@ -59,6 +61,36 @@ namespace Terminal
         private void Exit(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+
+
+        //Расширить картинку
+        private void Button_Test(object sender, RoutedEventArgs e)
+        {
+            if (!isCheck)
+            {
+                Border_1.Visibility = Visibility.Hidden;
+
+                Picture_1.Margin = new Thickness(Top);
+                Button_1.Margin = new Thickness(Top);
+
+                Picture_1.Width = 910;
+                Picture_1.Height = 1000;
+                Button_1.Width = 910;
+                Button_1.Height = 1000;
+                isCheck = true;
+            }
+            else
+            {
+                Border_1.Visibility = Visibility.Visible;
+
+                Picture_1.Width = 310;
+                Picture_1.Height = 488;
+                Button_1.Width = 310;
+                Button_1.Height = 310;
+                isCheck = false;
+            }
         }
     }
 }

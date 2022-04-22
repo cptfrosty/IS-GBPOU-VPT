@@ -45,7 +45,7 @@ namespace Terminal
 
             //Обновление погоды
             var timerWeather = new System.Windows.Threading.DispatcherTimer();
-            timerWeather.Interval = new TimeSpan(0, 0, 5);
+            timerWeather.Interval = new TimeSpan(0, 5, 0);
             timerWeather.IsEnabled = true;
             timerWeather.Tick += (o, t) => { Weather(); };
             timerWeather.Start();

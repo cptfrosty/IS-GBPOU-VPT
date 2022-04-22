@@ -26,15 +26,26 @@
             </Button.Background>
         </Button>
         <Image x:Name="Picture_1" HorizontalAlignment="Left" Height="310" Margin="100,264,0,0" VerticalAlignment="Top" Width="488" OpacityMask="Black" Stretch="Fill"/>
-        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="310" Margin="100,264,0,0" VerticalAlignment="Top" Width="488"/>
-        
+        <Border x:Name="Border_1" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="310" Margin="100,264,0,0" VerticalAlignment="Top" Width="488"/>
+
         <Image x:Name="Picture_2" HorizontalAlignment="Left" Height="370" Margin="675,204,0,0" VerticalAlignment="Top" Width="560" OpacityMask="Black" Stretch="Fill"/>
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="675,204,0,0" VerticalAlignment="Top" Width="560"/>
-        
+
         <Image x:Name="Picture_3" HorizontalAlignment="Left" Height="310" Margin="1320,264,0,0" VerticalAlignment="Top" Width="488" OpacityMask="Black" Stretch="Fill"/>
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="310" Margin="1320,264,0,0" VerticalAlignment="Top" Width="488"/>
-        
+
         <Label x:Name="NameLabel" Content="1" HorizontalAlignment="Left" Margin="408,665,0,0" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="34"/>
         <TextBlock x:Name="Data" HorizontalAlignment="Left" Margin="360,700,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="34" Height="280" Width="1173"/>
+        <Button x:Name="Button_1" Height="310" Content="" Margin="0,0,1332,506" Click="Button_Test" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="488">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+            </Button.Background>
+            <Button.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
     </Grid>
 </Window>
