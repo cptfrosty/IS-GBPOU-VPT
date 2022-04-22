@@ -87,9 +87,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="FAQWin.xaml.cs">
-      <DependentUpon>FAQWin.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FrameForm.xaml.cs">
       <DependentUpon>FrameForm.xaml</DependentUpon>
     </Compile>
@@ -126,10 +123,6 @@
     <Compile Include="XmlCollegeBuilding.cs" />
     <Compile Include="XmlMuseum.cs" />
     <Compile Include="XmlSpecialties.cs" />
-    <Page Include="FAQWin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="FrameForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -260,7 +253,6 @@
     <Resource Include="education.png" />
     <Resource Include="osnSvedenia.png" />
     <Resource Include="Resources\Frame\Workshops.xml" />
-    <Resource Include="faq.png" />
     <Content Include="Weather\dll\AutoRuner.dll" />
     <Content Include="Weather\dll\CallOpenWeather.dll" />
     <Resource Include="Weather\icons\01d.png" />

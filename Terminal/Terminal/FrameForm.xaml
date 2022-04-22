@@ -5,19 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Terminal"
         mc:Ignorable="d"
-        Title="WindowInf" Height="450" Width="800" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#273340">
+        Title="WindowInf" Height="1080" Width="1920" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#ECF0F5">
     <Grid>
-        <Image x:Name="Picture" HorizontalAlignment="Left" Height="268" Margin="48,79,0,0" VerticalAlignment="Top" Width="264" OpacityMask="Black"/>
-        
-        <Label Content="Корпус:" Margin="356,96,394,0" VerticalAlignment="Top"  RenderTransformOrigin="0.513,0.634"/>
-        <Label Content="Режим и график работы:" Margin="356,0,300,152" VerticalAlignment="Bottom"  RenderTransformOrigin="0.513,0.634" d:LayoutOverrides="Width"/>
-        <Label Content="Телефон:" Margin="356,179,386,0"  RenderTransformOrigin="0.513,0.634" d:LayoutOverrides="Width" VerticalAlignment="Top"/>
-        <Label Content="Email:" HorizontalAlignment="Left" Margin="356,224,0,202"  RenderTransformOrigin="0.513,0.634" d:LayoutOverrides="Height"/>
-        <Label Content="Адрес:" HorizontalAlignment="Left" Margin="356,140,0,0" VerticalAlignment="Top"  RenderTransformOrigin="0.513,0.634"/>
-        <Label x:Name="CorpLabel" Content=" " HorizontalAlignment="Right" Margin="0,96,378,0" VerticalAlignment="Top"  RenderTransformOrigin="0.513,0.634"/>
-        <Label x:Name="GraphicLabel" Content=" " HorizontalAlignment="Right" Margin="0,0,284,152" VerticalAlignment="Bottom"  RenderTransformOrigin="0.513,0.634"/>
-        <Label x:Name="TelephoneLabel" Content=" " HorizontalAlignment="Right" Margin="0,179,370,0"  RenderTransformOrigin="0.513,0.634" VerticalAlignment="Top"/>
-        <Label x:Name="EmailLabel" Content=" " Margin="395,224,394,202"  RenderTransformOrigin="0.513,0.634" d:LayoutOverrides="Width, Height"/>
-        <Label x:Name="AdressLabel" Content=" " HorizontalAlignment="Right" Margin="0,140,386,0" VerticalAlignment="Top"  RenderTransformOrigin="0.513,0.634"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="1921" Grid.ColumnSpan="3" CornerRadius="0,0,20,20" Margin="-1,0,-7.5,0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#273340" Offset="0"/>
+                    <GradientStop Color="#1b252f" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="logo.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="logo.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <Button Content="" BorderBrush="#273340" Height="74" HorizontalAlignment="Right" Width="86" VerticalAlignment="Top" Click="Exit">
+            <Button.Background>
+                <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Image x:Name="Picture" HorizontalAlignment="Left" Height="370" Margin="100,180,0,0" VerticalAlignment="Top" Width="500" OpacityMask="Black" Stretch="Fill"/>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="100,180,0,0" VerticalAlignment="Top" Width="500"/>
+        <Image x:Name="PictureMapping" HorizontalAlignment="Left" Height="370" Margin="100,625,0,0" VerticalAlignment="Top" Width="500" OpacityMask="Black" Stretch="Fill"/>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="100,625,0,0" VerticalAlignment="Top" Width="500"/>
+        <ScrollViewer x:Name="scrollViewer" Margin="0, 150, 0, 0" PanningMode="Both">
+            <StackPanel>
+                <Label x:Name="CorpLabel" Content="1" HorizontalAlignment="Left" Margin="650,40,0,0" Foreground="#1C2631" FontFamily="Arial" FontSize="20" VerticalAlignment="Top"/>
+                <Label x:Name="TelephoneLabel" Content="1" HorizontalAlignment="Left" Margin="650,10,0,0" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20"/>
+                <Label x:Name="EmailLabel" Content="1" HorizontalAlignment="Left" Margin="650,10,0,0" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20"/>
+                <Label x:Name="GraphicLabel" Content="1" HorizontalAlignment="Left" Margin="650,10,0,0" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20"/>
+                <TextBlock x:Name="AdressLabel" HorizontalAlignment="Left" Margin="655,10,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20"/>
+                <TextBlock x:Name="HistoryLabel" HorizontalAlignment="Left" Margin="655,10,0,0"  TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

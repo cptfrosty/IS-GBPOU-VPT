@@ -5,20 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Terminal"
         mc:Ignorable="d"
-        Title="WindowInf" Height="450" Width="800" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#273340">
-    <Grid>
-        <Button Content="" BorderBrush="#273340" Height="74" HorizontalAlignment="Right" Width="86" VerticalAlignment="Top" Click="Button_Click">
+        Title="WindowInf" Height="1080" Width="1920" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#ECF0F5">
+    <Grid x:Name="MainGrid">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="1921" Grid.ColumnSpan="3" CornerRadius="0,0,20,20" Margin="-1,0,-7.5,0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#273340" Offset="0"/>
+                    <GradientStop Color="#1b252f" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Button Content="" BorderBrush="#273340" Height="74" HorizontalAlignment="Right" Width="86" VerticalAlignment="Top" Click="Exit">
             <Button.Background>
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="104" Source="logo.png">
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="logo.png">
             <Image.OpacityMask>
                 <ImageBrush ImageSource="logo.png"/>
             </Image.OpacityMask>
         </Image>
-        <Button Content="" HorizontalAlignment="Left" Margin="65,95,0,0" VerticalAlignment="Top" Width="103" Background="#FFF7F7F7" BorderBrush="#FFFBFBFB" Height="111" Click="Button_Click_1"/>
-        <Label Content="Первый Корпус" HorizontalAlignment="Left" Margin="65,182,0,0" VerticalAlignment="Top" Width="103"/>
-
+        <StackPanel x:Name="panelKorpus" Margin="0,80, 0, 0" Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
     </Grid>
 </Window>
