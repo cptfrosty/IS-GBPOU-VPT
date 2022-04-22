@@ -129,14 +129,22 @@ namespace Terminal
             {
                 return false;
             }
-
-            bool isConnected = false;
-            using (var tcpClient = new TcpClient())
-            {
-                tcpClient.Connect("209.85.148.138", 443); // google
-                isConnected = tcpClient.Connected;
+            else
                 return true;
-            }
+
+            //bool isConnected = false;
+            //using (var tcpClient = new TcpClient())
+            //{
+            //    try{
+            //        tcpClient.Connect("209.85.148.138", 443); // google
+            //        isConnected = tcpClient.Connected;
+            //        return true;
+            //    }
+            //    catch (System.Net.Sockets.SocketException)
+            //    {
+            //        return false;
+            //    }
+            //}
         }
 
         private void SpecialtiesClick(object sender, RoutedEventArgs e)
