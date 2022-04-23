@@ -99,6 +99,9 @@
     <Compile Include="MuseumWin.xaml.cs">
       <DependentUpon>MuseumWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OpenPictureWin.xaml.cs">
+      <DependentUpon>OpenPictureWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Specialties.xaml.cs">
       <DependentUpon>Specialties.xaml</DependentUpon>
     </Compile>
@@ -151,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MuseumWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OpenPictureWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
