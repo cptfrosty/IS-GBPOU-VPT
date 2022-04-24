@@ -19,10 +19,10 @@ namespace Terminal
     /// </summary>
     public partial class SpecialtiesInf : Window
     {
-        public int choice;
+        public int id;
         public SpecialtiesInf(int id)
         {
-            choice = id;
+            this.id = id;
             InitializeComponent();
 
             Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{id}.jpg"));
@@ -42,6 +42,27 @@ namespace Terminal
         private void Exit(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Button_OpenPicture(object sender, RoutedEventArgs e)
+        {
+            Image image = new Image();
+
+            string nameButton = ((Button)sender).Name;
+
+            if (nameButton == "Button_1")
+            {
+                try
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{id}.jpg"));
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
+                }
+            }
+            OpenPictureWin openPictureWin = new OpenPictureWin(image);
+            openPictureWin.Show();
         }
     }
 }

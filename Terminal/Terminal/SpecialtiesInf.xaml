@@ -33,5 +33,16 @@
                 <TextBlock x:Name="Data" HorizontalAlignment="Left" Margin="655,10,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20"/>
             </StackPanel>
         </ScrollViewer>
+        <Button x:Name="Button_1" HorizontalAlignment="Left" Margin="100,180,0,0" VerticalAlignment="Top" Width="500" Height="370" Click="Button_OpenPicture">
+            <Button.Foreground>
+                <SolidColorBrush Color="#DDFFFFFF" Opacity="0"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
