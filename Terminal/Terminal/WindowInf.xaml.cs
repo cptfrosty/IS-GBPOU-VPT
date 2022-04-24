@@ -8,9 +8,11 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Terminal
 {
@@ -20,11 +22,29 @@ namespace Terminal
     public partial class WindowInf : Window
     {
         public int countCorp;
-        
+        private DispatcherTimer timer;
+
         public WindowInf()
         {
             InitializeComponent();
             Init();
+
+            //Закрытие окна из-за бездейстивия
+            ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(180);
+            timer.Tick += new EventHandler(timer_Tick);
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            this.Close();
+            timer.Stop();
+        }
+
+        void ComponentDispatcher_ThreadIdle(object sender, EventArgs e)
+        {
+            timer.Start();
         }
         // Кнопка выхода
         private void Exit(object sender, RoutedEventArgs e)

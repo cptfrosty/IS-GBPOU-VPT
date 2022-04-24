@@ -8,9 +8,11 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Terminal
 {
@@ -28,6 +30,23 @@ namespace Terminal
             Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Museum/{id}.jpg"));
 
             InitButton(id);
+
+            //Закрытие окна из-за бездейстивия
+            ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(180);
+            timer.Tick += new EventHandler(timer_Tick);
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            this.Close();
+            timer.Stop();
+        }
+
+        void ComponentDispatcher_ThreadIdle(object sender, EventArgs e)
+        {
+            timer.Start();
         }
         public void InitButton(int id)
         {
@@ -46,6 +65,8 @@ namespace Terminal
         private System.Windows.Point scrollTarget;
         private System.Windows.Point scrollStartPoint;
         private System.Windows.Point scrollStartOffset;
+        private DispatcherTimer timer;
+
         protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
         {
             if (scrollViewer.IsMouseOver)
