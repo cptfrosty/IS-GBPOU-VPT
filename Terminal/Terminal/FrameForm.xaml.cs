@@ -1,21 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Security.Policy;
-using Microsoft.Win32;
-using System.Xml.Linq;
-using System.IO;
+
 
 namespace Terminal
 {
@@ -126,6 +114,39 @@ namespace Terminal
             }
 
             base.OnPreviewMouseUp(e);
+        }
+
+        private void Button_OpenPicture(object sender, RoutedEventArgs e)
+        {
+            Image image = new Image();
+
+            string nameButton = ((Button)sender).Name;
+
+            if (nameButton == "Button_1")
+            {
+                try
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{Choice}.jpg"));
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
+                }
+            }
+            if (nameButton == "Button_2")
+            {
+                try
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{Choice + 100}.jpg"));
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
+                }
+            }
+
+            OpenPictureWin openPictureWin = new OpenPictureWin(image);
+            openPictureWin.Show();
         }
     }
 }

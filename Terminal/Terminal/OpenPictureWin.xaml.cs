@@ -19,43 +19,11 @@ namespace Terminal
     /// </summary>
     public partial class OpenPictureWin : Window
     {
-        public OpenPictureWin(string name, int id)
+        public OpenPictureWin(Image image)
         {
             InitializeComponent();
 
-            if (name == "Button_1")
-            {
-                try
-                {
-                    FullPicture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id}.png"));
-                }
-                catch (System.IO.FileNotFoundException)
-                {
-                    FullPicture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
-                }
-            }               
-            if (name == "Button_2")
-            {
-                try
-                {
-                    FullPicture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id+100}.png"));
-                }
-                catch (System.IO.FileNotFoundException)
-                {
-                    FullPicture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
-                }
-            }
-            if (name == "Button_3")
-            {
-                try
-                {
-                    FullPicture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id+1000}.png"));
-                }
-                catch (System.IO.FileNotFoundException)
-                {
-                    FullPicture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
-                }
-            }
+            FullPicture.Source = image.Source;
         }
 
         private void Exit(object sender, RoutedEventArgs e)

@@ -70,9 +70,45 @@ namespace Terminal
         //Расширить картинку
         private void Button_OpenPicture(object sender, RoutedEventArgs e)
         {
+            Image image = new Image();
+
             string nameButton = ((Button)sender).Name;
 
-            OpenPictureWin openPictureWin = new OpenPictureWin(nameButton, id);
+            if (nameButton == "Button_1")
+            {
+                try
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id}.png"));
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
+                }
+            }
+            if (nameButton == "Button_2")
+            {
+                try
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id + 100}.png"));
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
+                }
+            }
+            if (nameButton == "Button_3")
+            {
+                try
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id + 1000}.png"));
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
+                }
+            }
+
+            OpenPictureWin openPictureWin = new OpenPictureWin(image);
             openPictureWin.Show();
         }
     }

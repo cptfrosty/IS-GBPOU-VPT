@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="OpenPictureWin" Height="1080" Width="1920" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#ECF0F5">
     <Grid>
-        <Image x:Name="FullPicture" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920"/>
+        <Image x:Name="FullPicture" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920" Stretch="Fill"/>
         <Button Content="" Height="1080" HorizontalAlignment="Right" Width="1920" VerticalAlignment="Top" Click="Exit" Margin="0,0,0,0" >
             <Button.BorderBrush>
                 <SolidColorBrush Color="#FF808081" Opacity="0"/>
