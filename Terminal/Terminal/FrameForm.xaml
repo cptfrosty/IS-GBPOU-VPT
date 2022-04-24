@@ -20,7 +20,7 @@
                 <ImageBrush ImageSource="logo.png"/>
             </Image.OpacityMask>
         </Image>
-        <Button Content="" BorderBrush="#273340" Height="74" HorizontalAlignment="Right" Width="86" VerticalAlignment="Top" Click="Exit">
+        <Button Content="" BorderBrush="#273340" Height="135" HorizontalAlignment="Right" Width="135" VerticalAlignment="Top" Click="Exit">
             <Button.Background>
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
