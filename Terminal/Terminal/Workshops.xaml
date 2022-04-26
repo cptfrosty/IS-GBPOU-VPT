@@ -20,13 +20,19 @@
                 <ImageBrush ImageSource="logo.png"/>
             </Image.OpacityMask>
         </Image>
-        <Button Content="" BorderBrush="#273340" Height="74" HorizontalAlignment="Left" Width="86" VerticalAlignment="Top" Margin="1834,0,0,0" Click="Exit">
+        <Button Content="" Height="74" HorizontalAlignment="Left" Width="86" VerticalAlignment="Top" Margin="1834,0,0,0" Click="Exit">
+            <Button.Foreground>
+                <SolidColorBrush Color="#DDFFFFFF" Opacity="0"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF273340" Opacity="0"/>
+            </Button.BorderBrush>
             <Button.Background>
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
         <StackPanel x:Name="panelWorkshop" Margin="0,80, 0, 0" Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
-        
+
         <TextBlock HorizontalAlignment="Left" Margin="368,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="324" Width="1421" FontSize="34" FontWeight="Bold" FontFamily="Arial"><Run Text="Волжский политехнический техникум вошел в число образовательных организаций – получателей в 2019 году грантов из федерального бюджета в рамках реализации мероприятия «Государственная поддержка профессиональных образовательных организаций в целях обеспечения соответствия их материально-технической базы современным требованиям» федерального проекта «Молодые профессионалы» (Повышение конкурентоспособности профессионального образования)» национального проекта «Образование»."/><LineBreak/><Run/><LineBreak/></TextBlock>
         <Image HorizontalAlignment="Left" Height="324" Margin="50,200,0,0" VerticalAlignment="Top" Width="260"  Source="W_education.png"/>
     </Grid>

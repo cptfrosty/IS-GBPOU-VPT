@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Terminal"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920" WindowStyle="None" Visibility="Visible" WindowStartupLocation="CenterOwner" WindowState="Maximized" Background="#ECF0F5">
-    <Grid>
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="956*"/>
             <ColumnDefinition Width="450*"/>
@@ -42,24 +42,24 @@
                 <ImageBrush ImageSource="osnSvedenia.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <Label Content="Музей" HorizontalAlignment="Left" Margin="437,348,0,0" VerticalAlignment="Top" Width="80" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
         <Button Content="" HorizontalAlignment="Left" Margin="350,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Button_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="museum.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
-        <Label Content="Музей" HorizontalAlignment="Left" Margin="437,348,0,0" VerticalAlignment="Top" Width="80" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+        <Label Content="Специальности" HorizontalAlignment="Left" Margin="684,349,0,0" VerticalAlignment="Top" Width="180" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
         <Button Content="" HorizontalAlignment="Left" Margin="650,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="SpecialtiesClick"  >
             <Button.Background>
                 <ImageBrush ImageSource="education.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Label Content="Специальности" HorizontalAlignment="Left" Margin="684,349,0,0" VerticalAlignment="Top" Width="180" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+        <Label Content="Мастерские" HorizontalAlignment="Left" Margin="1002,348,0,0" VerticalAlignment="Top" Width="141" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
         <Button Content="" HorizontalAlignment="Left" Margin="950,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Workshops_Click"  >
             <Button.Background>
                 <ImageBrush ImageSource="mMasterkaya.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Label Content="Мастерские" HorizontalAlignment="Left" Margin="1002,348,0,0" VerticalAlignment="Top" Width="141" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
 
 
 
