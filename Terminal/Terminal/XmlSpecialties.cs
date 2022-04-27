@@ -43,11 +43,9 @@ namespace Terminal
                  foreach (var special in dir.Elements("special"))
                  {
                     InformationSpecialties informationSpecialties = new InformationSpecialties();
-                    //TODO РЕШИТЬ ПРОБЛЕМУ ...
-                    var a = special.Attributes().ToList().Where(p => (p.Name == "nameForBtn"));
+                    string nameForBtn = special.Attributes().ToList().Where(p=> (p.Name == "nameForBtn")).FirstOrDefault().Value;
                     
-                    informationSpecialties.nameAttribute = a.ElementAt(0).Value;
-                    //... TODO РЕШИТЬ ПРОБЛЕМУ
+                    informationSpecialties.nameAttribute = nameForBtn;
                     informationSpecialties.infoElement = special.Element("info").Value;
 
                     specialtiesList.Add(informationSpecialties);

@@ -57,7 +57,7 @@ namespace Terminal
             xmlSpecialties.FindDirection();
             int count = xmlSpecialties.GetCountSpecialties;
 
-            for (int i = 0; i <= count; i++)
+            for (int i = 0; i < count; i++)
             {
                 Button btn = new Button();
                 btn.Width = 300;
