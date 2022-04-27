@@ -54,16 +54,17 @@ namespace Terminal
         private void Init()
         {
             XmlSpecialties xmlSpecialties = new XmlSpecialties();
-            int count = XmlSpecialties.Instance().GetCountSpecialties;
+            xmlSpecialties.FindDirection();
+            int count = xmlSpecialties.GetCountSpecialties;
 
-            for (int i = 1; i <= count; i++)
+            for (int i = 0; i <= count; i++)
             {
                 Button btn = new Button();
                 btn.Width = 300;
                 btn.Height = 250;
                 btn.Margin = new Thickness(15, 100, 15, 15);
 
-                btn.Name = "id" + i;
+                btn.Name = xmlSpecialties.specialtiesList[i].nameAttribute.ToString();
 
                 btn.Click += SpecialtiesInformation;
 

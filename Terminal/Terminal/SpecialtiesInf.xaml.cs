@@ -52,13 +52,15 @@ namespace Terminal
         }
         public void InitButton(int id)
         {
-            InformationSpecialties informationSpecialties = XmlSpecialties.Instance().GetSpecialtiesInfo[id - 1];
+            XmlSpecialties xmlSpecialties = new XmlSpecialties();
+
+            InformationSpecialties informationSpecialties = xmlSpecialties.Instance().GetSpecialtiesInfo[id - 1];
             PlaceInfo(informationSpecialties);
         }
         public void PlaceInfo(InformationSpecialties spec)
         {
             NameLabel.Content = spec.nameAttribute;
-            Data.Text = spec.dataElement;
+            Data.Text = spec.infoElement;
         }
         private void Exit(object sender, RoutedEventArgs e)
         {

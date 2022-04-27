@@ -15,8 +15,8 @@ namespace Terminal
     }
     class XmlSpecialties
     {
-        private static XmlSpecialties _instance;
-        public static List<InformationSpecialties> specialtiesList = new List<InformationSpecialties>();
+        private XmlSpecialties _instance;
+        public List<InformationSpecialties> specialtiesList = new List<InformationSpecialties>();
         public List<InformationSpecialties> GetSpecialtiesInfo
         {
             get => specialtiesList;
@@ -26,7 +26,7 @@ namespace Terminal
             get => specialtiesList.Count;
         }
 
-        public static XmlSpecialties Instance()
+        public XmlSpecialties Instance()
         {
             if (_instance == null)
             {
@@ -35,23 +35,36 @@ namespace Terminal
             }
             return _instance;
         }
-        public static void FindDirection()
+        public void FindDirection()
         {
             XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Specialties.xml");
             foreach (XElement dir in xdoc.Element("informations").Elements("dir"))
             {
-                if(dir.Attribute("name").Value == "08.00.00 Техника и технологии строительства")
-                {
-                    foreach (var a  in dir.Elements("special"))
-                    {
-                        InformationSpecialties informationSpecialties = new InformationSpecialties();
-                        informationSpecialties.nameAttribute = a.Attribute("name").Value;
-                        informationSpecialties.infoElement = a.Element("name").Value;
+                 foreach (var special in dir.Elements("special"))
+                 {
+                    InformationSpecialties informationSpecialties = new InformationSpecialties();
+                    //TODO РЕШИТЬ ПРОБЛЕМУ ...
+                    var a = special.Attributes().ToList().Where(p => (p.Name == "nameForBtn"));
+                    
+                    informationSpecialties.nameAttribute = a.ElementAt(0).Value;
+                    //... TODO РЕШИТЬ ПРОБЛЕМУ
+                    informationSpecialties.infoElement = special.Element("info").Value;
 
-                        specialtiesList.Add(informationSpecialties);
-                    }
-                }
+                    specialtiesList.Add(informationSpecialties);
+                 }
+                
             }
+        }
+
+        public int GetCountDir()
+        {
+            int i = 0;
+            XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Specialties.xml");
+            foreach (XElement dir in xdoc.Element("informations").Elements("dir"))
+            {
+                i = +1;
+            }
+            return i;
         }
     }
 }
