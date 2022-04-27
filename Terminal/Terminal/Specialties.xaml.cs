@@ -59,8 +59,8 @@ namespace Terminal
             for (int i = 1; i <= count; i++)
             {
                 Button btn = new Button();
-                btn.Width = 211;
-                btn.Height = 160;
+                btn.Width = 300;
+                btn.Height = 250;
                 btn.Margin = new Thickness(15, 100, 15, 15);
 
                 btn.Name = "id" + i;
@@ -79,7 +79,7 @@ namespace Terminal
 
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
-                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{i}.jpg", UriKind.Relative);
+                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{i}.png", UriKind.Relative);
                 bm.EndInit();
 
 
@@ -109,8 +109,8 @@ namespace Terminal
             btnName = btnName.Replace("id", "");
             int choice = int.Parse(btnName);
 
-            SpecialtiesInf specialtiesInf = new SpecialtiesInf(choice);
-            specialtiesInf.ShowDialog();
+            SpecialtiesChoice specialtiesChoice = new SpecialtiesChoice();
+            specialtiesChoice.Show();
         }
     }
 }

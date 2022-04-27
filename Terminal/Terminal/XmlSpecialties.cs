@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml.Linq;
 
 namespace Terminal
@@ -10,7 +11,7 @@ namespace Terminal
     public class InformationSpecialties
     {
         public string nameAttribute;
-        public string dataElement;
+        public string infoElement;
     }
     class XmlSpecialties
     {
@@ -30,20 +31,26 @@ namespace Terminal
             if (_instance == null)
             {
                 _instance = new XmlSpecialties();
-                Read();
+                FindDirection();
             }
             return _instance;
         }
-        private static void Read()
+        public static void FindDirection()
         {
             XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Specialties.xml");
-            foreach (XElement informations in xdoc.Element("informations").Elements("info"))
+            foreach (XElement dir in xdoc.Element("informations").Elements("dir"))
             {
-                InformationSpecialties informationSpecialties = new InformationSpecialties();
-                informationSpecialties.nameAttribute = informations.Attribute("name").Value;
-                informationSpecialties.dataElement = informations.Element("data").Value;
+                if(dir.Attribute("name").Value == "08.00.00 Техника и технологии строительства")
+                {
+                    foreach (var a  in dir.Elements("special"))
+                    {
+                        InformationSpecialties informationSpecialties = new InformationSpecialties();
+                        informationSpecialties.nameAttribute = a.Attribute("name").Value;
+                        informationSpecialties.infoElement = a.Element("name").Value;
 
-                specialtiesList.Add(informationSpecialties);
+                        specialtiesList.Add(informationSpecialties);
+                    }
+                }
             }
         }
     }

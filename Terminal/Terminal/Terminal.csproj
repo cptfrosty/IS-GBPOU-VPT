@@ -108,6 +108,9 @@
     <Compile Include="Specialties.xaml.cs">
       <DependentUpon>Specialties.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SpecialtiesChoice.xaml.cs">
+      <DependentUpon>SpecialtiesChoice.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SpecialtiesInf.xaml.cs">
       <DependentUpon>SpecialtiesInf.xaml</DependentUpon>
     </Compile>
@@ -165,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Specialties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecialtiesChoice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
