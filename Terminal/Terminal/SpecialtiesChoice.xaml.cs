@@ -54,12 +54,12 @@ namespace Terminal
                 Label label = new Label();
                 label.Height = 40;
                 label.Margin = new Thickness(0, 130, 0, 0);
+                //По желанию можно добавить надписть, в бордере снизу
                 label.Content = "";
                 DockPanel dp = new DockPanel();
                 dp.LastChildFill = true;
                 DockPanel.SetDock(label, Dock.Bottom);
                 dp.Children.Add(label);
-
 
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
@@ -88,10 +88,10 @@ namespace Terminal
         {
             await Task.Delay(milliseconds);
 
-            btnName = btnName.Replace("id", "");
-            int choice = int.Parse(btnName);
+            //btnName = btnName.Replace("id", "");
+            //int choice = int.Parse(btnName);
 
-            SpecialtiesInf specialtiesInf = new SpecialtiesInf("");
+            SpecialtiesInf specialtiesInf = new SpecialtiesInf(btnName);
             specialtiesInf.Show();
         }
     }

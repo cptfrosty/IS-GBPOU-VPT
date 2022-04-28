@@ -57,7 +57,6 @@ namespace Terminal
                 {
                     foreach (var special in dir.Elements("special"))
                     {
-
                         //TODO...
                         InformationSpecialtiesDir informationSpecialtiesDir = new InformationSpecialtiesDir();
                         informationSpecialtiesDir.nameDir = nameDir;
