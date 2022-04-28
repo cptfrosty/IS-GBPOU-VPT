@@ -42,6 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -135,6 +136,7 @@
     <Compile Include="XmlCollegeBuilding.cs" />
     <Compile Include="XmlMuseum.cs" />
     <Compile Include="XmlSpecialties.cs" />
+    <Compile Include="XmlSpecialtiesChoice.cs" />
     <Page Include="FAQWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

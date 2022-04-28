@@ -21,17 +21,15 @@ namespace Terminal
     /// </summary>
     public partial class SpecialtiesInf : Window
     {
-        public int id;
+        private string nameBtn;
         private DispatcherTimer timer;
 
-        public SpecialtiesInf(int id)
+        public SpecialtiesInf(string nameBtn)
         {
-            this.id = id;
+            this.nameBtn = nameBtn;
             InitializeComponent();
 
-            Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{id}.jpg"));
-
-            InitButton(id);
+            //Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{id}.jpg"));
 
             //Закрытие окна из-за бездейстивия
             ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
@@ -50,18 +48,13 @@ namespace Terminal
         {
             timer.Start();
         }
-        public void InitButton(int id)
-        {
-            XmlSpecialties xmlSpecialties = new XmlSpecialties();
 
-            InformationSpecialties informationSpecialties = xmlSpecialties.Instance().GetSpecialtiesInfo[id - 1];
-            PlaceInfo(informationSpecialties);
-        }
-        public void PlaceInfo(InformationSpecialties spec)
+        private void PlaceInfo()
         {
-            NameLabel.Content = spec.nameAttribute;
-            Data.Text = spec.infoElement;
+
         }
+       
+        
         private void Exit(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -77,7 +70,7 @@ namespace Terminal
             {
                 try
                 {
-                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{id}.jpg"));
+                    //image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{id}.jpg"));
                 }
                 catch (System.IO.FileNotFoundException)
                 {

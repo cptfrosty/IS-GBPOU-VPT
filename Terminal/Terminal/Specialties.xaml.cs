@@ -107,10 +107,10 @@ namespace Terminal
         {
             await Task.Delay(milliseconds);
 
-            btnName = btnName.Replace("id", "");
-            int choice = int.Parse(btnName);
+            btnName = btnName.Replace("id","");
+            //int choice = int.Parse(btnName);
 
-            SpecialtiesChoice specialtiesChoice = new SpecialtiesChoice();
+            SpecialtiesChoice specialtiesChoice = new SpecialtiesChoice(btnName);
             specialtiesChoice.Show();
         }
     }
