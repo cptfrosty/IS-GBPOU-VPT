@@ -55,16 +55,16 @@ namespace Terminal
         {
             XmlSpecialties xmlSpecialties = new XmlSpecialties();
             xmlSpecialties.FindDirection();
-            int count = xmlSpecialties.GetCountSpecialties;
+            int count = xmlSpecialties.GetCountDirButton;
 
             for (int i = 0; i < count; i++)
             {
                 Button btn = new Button();
                 btn.Width = 300;
                 btn.Height = 250;
-                btn.Margin = new Thickness(15, 100, 15, 15);
+                btn.Margin = new Thickness(70, 40, 0, 0);
 
-                btn.Name = xmlSpecialties.specialtiesList[i].nameAttribute.ToString();
+                btn.Name = xmlSpecialties.dirButtonList[i].nameAttribute.ToString();
 
                 btn.Click += SpecialtiesInformation;
 
@@ -80,7 +80,7 @@ namespace Terminal
 
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
-                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{i}.png", UriKind.Relative);
+                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{i+1}.png", UriKind.Relative);
                 bm.EndInit();
 
 
