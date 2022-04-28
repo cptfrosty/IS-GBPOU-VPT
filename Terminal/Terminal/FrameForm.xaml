@@ -20,7 +20,10 @@
                 <ImageBrush ImageSource="logo.png"/>
             </Image.OpacityMask>
         </Image>
-        <Button Content="" BorderBrush="#273340" Height="135" HorizontalAlignment="Right" Width="135" VerticalAlignment="Top" Click="Exit">
+        <Button Content="" Height="74" HorizontalAlignment="Right" Width="86" VerticalAlignment="Top" Click="Exit">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF273340" Opacity="0"/>
+            </Button.BorderBrush>
             <Button.Background>
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
@@ -39,7 +42,7 @@
                 <TextBlock x:Name="HistoryLabel" HorizontalAlignment="Left" Margin="655,10,0,0"  TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
             </StackPanel>
         </ScrollViewer>
-        
+
         <Button x:Name="Button_1" Content="" HorizontalAlignment="Left" Margin="100,180,0,0" VerticalAlignment="Top" Width="500" Height="370" Click="Button_OpenPicture">
             <Button.Foreground>
                 <SolidColorBrush Color="#DDFFFFFF" Opacity="0"/>
@@ -63,6 +66,6 @@
                 <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
             </Button.Background>
         </Button>
-        
+
     </Grid>
 </Window>

@@ -16,6 +16,9 @@
             </Border.Background>
         </Border>
         <Button Content="" BorderBrush="#273340" Height="74" HorizontalAlignment="Right" Width="86" VerticalAlignment="Top" Click="Exit">
+            <Button.Foreground>
+                <SolidColorBrush Color="#DDFFFFFF" Opacity="0.005"/>
+            </Button.Foreground>
             <Button.Background>
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
