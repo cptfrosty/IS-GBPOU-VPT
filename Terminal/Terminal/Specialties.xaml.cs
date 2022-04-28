@@ -80,7 +80,7 @@ namespace Terminal
 
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
-                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{i+1}.png", UriKind.Relative);
+                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{btn.Name}.png", UriKind.Relative);
                 bm.EndInit();
 
 
@@ -107,7 +107,7 @@ namespace Terminal
         {
             await Task.Delay(milliseconds);
 
-            btnName = btnName.Replace("id","");
+            //btnName = btnName.Replace("id","");
             //int choice = int.Parse(btnName);
 
             SpecialtiesChoice specialtiesChoice = new SpecialtiesChoice(btnName);

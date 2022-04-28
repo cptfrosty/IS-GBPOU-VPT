@@ -63,7 +63,7 @@ namespace Terminal
 
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
-                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{i + 1}.png", UriKind.Relative);
+                bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{btn.Name}.png", UriKind.Relative);
                 bm.EndInit();
 
                 btn.BorderBrush = Brushes.Black;

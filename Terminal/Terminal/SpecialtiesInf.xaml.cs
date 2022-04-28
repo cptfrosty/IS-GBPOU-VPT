@@ -31,7 +31,7 @@ namespace Terminal
             InitializeComponent();
 
             PlaceInfo();
-            //Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{id}.jpg"));
+            Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{nameBtn}.jpg"));
 
             //Закрытие окна из-за бездейстивия
             ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
@@ -66,7 +66,7 @@ namespace Terminal
             {
                 try
                 {
-                    //image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{id}.jpg"));
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{nameBtn}.png"));
                 }
                 catch (System.IO.FileNotFoundException)
                 {
