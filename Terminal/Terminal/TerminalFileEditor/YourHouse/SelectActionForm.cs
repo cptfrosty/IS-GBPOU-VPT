@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using YourHouse.Corps;
 
 namespace YourHouse
 {
@@ -36,17 +37,29 @@ namespace YourHouse
 
         private void Button_Remove_Click(object sender, EventArgs e)
         {
-
+            if (nameBtn == "Corps")
+            {
+                RemoveCorpsForm removeCorpsForm = new RemoveCorpsForm(nameBtn);
+                removeCorpsForm.ShowDialog();
+            }
         }
 
         private void Button_Change_Click(object sender, EventArgs e)
         {
-
+            if (nameBtn == "Corps")
+            {
+                ChangeCorpsForm changeCorpsForm = new ChangeCorpsForm(nameBtn);
+                changeCorpsForm.ShowDialog();
+            }
         }
 
         private void Button_Open_Click(object sender, EventArgs e)
         {
-
+            if (nameBtn == "Corps")
+            {
+                ShowCorpsForm showCorpsForm = new ShowCorpsForm(nameBtn);
+                showCorpsForm.ShowDialog();
+            }
         }
     }
 }

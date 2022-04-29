@@ -80,7 +80,7 @@ namespace YourHouse
                 xDoc.Save($"..\\..\\..\\..\\bin/Debug/Frame/{nameBtn}.xml");
 
                 KryptonMessageBox.Show("Сохранено!");
-                this.Close();
+                Close();
             }
             else
                 KryptonMessageBox.Show("Заполните все поля!");

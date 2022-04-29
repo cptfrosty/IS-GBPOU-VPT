@@ -75,11 +75,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCorpsForm.cs">
+    <Compile Include="Corps\AddCorpsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCorpsForm.Designer.cs">
+    <Compile Include="Corps\AddCorpsForm.Designer.cs">
       <DependentUpon>AddCorpsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Corps\ChangeCorpsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Corps\ChangeCorpsForm.Designer.cs">
+      <DependentUpon>ChangeCorpsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Corps\RemoveCorpsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Corps\RemoveCorpsForm.Designer.cs">
+      <DependentUpon>RemoveCorpsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Corps\ShowCorpsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Corps\ShowCorpsForm.Designer.cs">
+      <DependentUpon>ShowCorpsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -95,8 +113,17 @@
     <Compile Include="SelectActionForm.Designer.cs">
       <DependentUpon>SelectActionForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddCorpsForm.resx">
+    <EmbeddedResource Include="Corps\AddCorpsForm.resx">
       <DependentUpon>AddCorpsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Corps\ChangeCorpsForm.resx">
+      <DependentUpon>ChangeCorpsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Corps\RemoveCorpsForm.resx">
+      <DependentUpon>RemoveCorpsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Corps\ShowCorpsForm.resx">
+      <DependentUpon>ShowCorpsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
