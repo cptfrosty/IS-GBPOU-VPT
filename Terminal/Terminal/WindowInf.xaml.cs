@@ -60,8 +60,8 @@ namespace Terminal
             for (int i = 1; i <= count; i++)
             {
                 Button btn = new Button();               
-                btn.Width = 211;
-                btn.Height = 160;
+                btn.Width = 261;
+                btn.Height = 210;
                 btn.Margin = new Thickness(15, 100, 15, 15);
                 
                 btn.Name = "id" + i;
@@ -69,8 +69,9 @@ namespace Terminal
                 btn.Click += CollegeBuildingInformation;
 
                 Label label = new Label();
+                label.FontSize = 22;
                 label.Height = 40;
-                label.Margin = new Thickness(0, 130, 0, 0);
+                label.Margin = new Thickness(0, 160, 0, 0);
                 label.Content = $"Корпус {i}";  
                 DockPanel dp = new DockPanel();
                 dp.LastChildFill = true;
