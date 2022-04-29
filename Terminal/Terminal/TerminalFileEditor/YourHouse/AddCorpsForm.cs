@@ -28,58 +28,62 @@ namespace YourHouse
 
         private void Button_AddCorp_Click(object sender, EventArgs e)
         {
-            if  (NameTextBox.Text != "" && 
-                AdressTextBox.Text != "" && 
-                NubmerTextBox.Text != "" && 
-                EmailTextBox.Text != "" && 
-                GraphicTextBox.Text != "" && 
+            if (NameTextBox.Text != "" &&
+                AdressTextBox.Text != "" &&
+                NubmerTextBox.Text != "" &&
+                EmailTextBox.Text != "" &&
+                GraphicTextBox.Text != "" &&
                 HistoryRichTextBox.Text != "")
             {
                 XmlDocument xDoc = new XmlDocument();
 
-                xDoc.Load($"C:/");
+                xDoc.Load($"..\\..\\..\\..\\bin/Debug/Frame/{nameBtn}.xml");
                 XmlElement xRoot = xDoc.DocumentElement;
 
                 // создаем новый элемент employee
-                XmlElement userElem = xDoc.CreateElement("employee");
+                XmlElement infoElem = xDoc.CreateElement("info");
 
                 // создаем атрибут name
                 XmlAttribute nameAttr = xDoc.CreateAttribute("name");
 
-                // создаем элементы company и birthday
-                XmlElement birthdayElem = xDoc.CreateElement("birthday");
-                XmlElement numberPhoneElem = xDoc.CreateElement("numberphone");
-                XmlElement cityElem = xDoc.CreateElement("city");
-                XmlElement pasportElem = xDoc.CreateElement("pasport");
-                XmlElement positionElem = xDoc.CreateElement("position");
+                // создаем элементы 
+                XmlElement adressElem = xDoc.CreateElement("adress");
+                XmlElement numberPhoneElem = xDoc.CreateElement("telephone");
+                XmlElement emailElem = xDoc.CreateElement("email");
+                XmlElement graphicElem = xDoc.CreateElement("graphic");
+                XmlElement historyElem = xDoc.CreateElement("history");
 
-                // создаем текстовые значения для элементов и атрибута
-                XmlText nameText = xDoc.CreateTextNode($"{fullname}");
-                XmlText birthdayText = xDoc.CreateTextNode($"{birthday}");
-                XmlText numberPhoneText = xDoc.CreateTextNode($"{numberPhone}");
-                XmlText cityText = xDoc.CreateTextNode($"{city}");
-                XmlText pasportText = xDoc.CreateTextNode($"{pasport}");
-                XmlText positionText = xDoc.CreateTextNode($"{position}");
+                //создаем текстовые значения для элементов и атрибута
+                XmlText nameText = xDoc.CreateTextNode($"{NameTextBox.Text}");
+                XmlText adressText = xDoc.CreateTextNode($"{AdressTextBox.Text}");
+                XmlText telephoneText = xDoc.CreateTextNode($"{NubmerTextBox.Text}");
+                XmlText emailText = xDoc.CreateTextNode($"{EmailTextBox.Text}");
+                XmlText graphicText = xDoc.CreateTextNode($"{GraphicTextBox.Text}");
+                XmlText historyText = xDoc.CreateTextNode($"{HistoryRichTextBox.Text}");
 
                 //добавляем узлы
                 nameAttr.AppendChild(nameText);
-                birthdayElem.AppendChild(birthdayText);
-                numberPhoneElem.AppendChild(numberPhoneText);
-                cityElem.AppendChild(cityText);
-                pasportElem.AppendChild(pasportText);
-                positionElem.AppendChild(positionText);
+                adressElem.AppendChild(adressText);
+                numberPhoneElem.AppendChild(telephoneText);
+                emailElem.AppendChild(emailText);
+                graphicElem.AppendChild(graphicText);
+                historyElem.AppendChild(historyText);
 
-                userElem.Attributes.Append(nameAttr);
-                userElem.AppendChild(birthdayElem);
-                userElem.AppendChild(numberPhoneElem);
-                userElem.AppendChild(cityElem);
-                userElem.AppendChild(pasportElem);
-                userElem.AppendChild(positionElem);
+                infoElem.Attributes.Append(nameAttr);
+                infoElem.AppendChild(adressElem);
+                infoElem.AppendChild(numberPhoneElem);
+                infoElem.AppendChild(emailElem);
+                infoElem.AppendChild(graphicElem);
+                infoElem.AppendChild(historyElem);
 
-                xRoot.AppendChild(userElem);
-                xDoc.Save(@"C:\employees.xml");
+                xRoot.AppendChild(infoElem);
+                xDoc.Save($"..\\..\\..\\..\\bin/Debug/Frame/{nameBtn}.xml");
 
+                KryptonMessageBox.Show("Сохранено!");
+                this.Close();
             }
+            else
+                KryptonMessageBox.Show("Заполните все поля!");
         }
     }
 }
