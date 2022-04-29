@@ -28,15 +28,16 @@
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Image x:Name="Picture" HorizontalAlignment="Left" Height="370" Margin="100,180,0,0" VerticalAlignment="Top" Width="500" OpacityMask="Black" Stretch="Fill"/>
-        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="100,180,0,0" VerticalAlignment="Top" Width="500"/>
-        <ScrollViewer x:Name="scrollViewer" Margin="0, 150, 0, 0" PanningMode="Both">
+        <Image x:Name="Picture" HorizontalAlignment="Left" Height="370" Margin="70,180,0,0" VerticalAlignment="Top" Width="500" OpacityMask="Black" Stretch="Fill"/>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="370" Margin="70,180,0,0" VerticalAlignment="Top" Width="500"/>
+        <ScrollViewer x:Name="scrollViewer" Margin="0,180,0,0" PanningMode="Both">
             <StackPanel>
-                <Label x:Name="NameLabel" Content="1" HorizontalAlignment="Left" Margin="650,40,0,0" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20"/>
-                <TextBlock x:Name="InfoLabel" HorizontalAlignment="Left" Margin="655,10,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="20"/>
+                <TextBlock x:Name="NameTextBlock" Text="1" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="720,40,0,0" VerticalAlignment="Center" Foreground="#1C2631" FontFamily="Arial" FontSize="24" FontWeight="Bold" Width="1101" Height="56"/>
+                <TextBlock x:Name="InfoLabel" HorizontalAlignment="Left" Margin="700,10,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Foreground="#1C2631" FontFamily="Arial" FontSize="22" Height="713" Width="1122"/>
             </StackPanel>
         </ScrollViewer>
-        <Button x:Name="Button_1" HorizontalAlignment="Left" Margin="100,180,0,0" VerticalAlignment="Top" Width="500" Height="370" Click="Button_OpenPicture" IsEnabled="False">
+
+        <Button x:Name="Button_1" HorizontalAlignment="Left" Margin="70,180,0,0" VerticalAlignment="Top" Width="500" Height="370" Click="Button_OpenPicture" IsEnabled="False">
             <Button.Foreground>
                 <SolidColorBrush Color="#DDFFFFFF" Opacity="0"/>
             </Button.Foreground>

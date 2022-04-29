@@ -89,7 +89,7 @@ namespace Terminal
                     {
                         InformationSpecialtiesDir informationSpecialtiesDir = new InformationSpecialtiesDir();
 
-                        NameLabel.Content = special.Attributes().ToList().FirstOrDefault(p => p.Name == "name").Value;
+                        NameTextBlock.Text = special.Attributes().ToList().FirstOrDefault(p => p.Name == "name").Value;
                         InfoLabel.Text = special.Element("info").Value;
                     }
                 }              
