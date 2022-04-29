@@ -92,7 +92,7 @@ namespace Terminal
             //int choice = int.Parse(btnName);
 
             SpecialtiesInf specialtiesInf = new SpecialtiesInf(btnName);
-            specialtiesInf.Show();
+            specialtiesInf.ShowDialog();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Terminal
             InitializeComponent();
 
             PlaceInfo();
-            Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{nameBtn}.jpg"));
+            Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{nameBtn}.png"));
 
             //Закрытие окна из-за бездейстивия
             ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
@@ -66,7 +66,7 @@ namespace Terminal
             {
                 try
                 {
-                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/{nameBtn}.png"));
+                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{nameBtn}.png"));
                 }
                 catch (System.IO.FileNotFoundException)
                 {
@@ -89,7 +89,7 @@ namespace Terminal
                     {
                         InformationSpecialtiesDir informationSpecialtiesDir = new InformationSpecialtiesDir();
 
-                        NameLabel.Content = special.Attributes().ToList().Where(p => (p.Name == "nameForBtn")).FirstOrDefault().Value;
+                        NameLabel.Content = special.Attributes().ToList().FirstOrDefault(p => p.Name == "name").Value;
                         InfoLabel.Text = special.Element("info").Value;
                     }
                 }              
