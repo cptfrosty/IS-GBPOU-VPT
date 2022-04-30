@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using YourHouse.Corps;
+using YourHouse.Museum;
 
 namespace YourHouse
 {
@@ -32,6 +33,11 @@ namespace YourHouse
             {
                 AddCorpsForm addCorpsForm = new AddCorpsForm(nameBtn);
                 addCorpsForm.ShowDialog();
+            }
+            if (nameBtn == "Museum")
+            {
+                AddInMuseumForm addInMuseumForm = new AddInMuseumForm(nameBtn);
+                addInMuseumForm.ShowDialog();
             }
         }
 
