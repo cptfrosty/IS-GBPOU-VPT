@@ -19,6 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Sockets;
+using Microsoft.Maps.MapControl.WPF;
 
 namespace Terminal
 {
@@ -163,6 +164,12 @@ namespace Terminal
         {
             FAQWin fAQWin = new FAQWin();
             fAQWin.ShowDialog();
+        }
+
+        void Button_MapWin_Click(object sender, RoutedEventArgs e)
+        {
+            MapWin mapWin = new MapWin(new Location(48.807824, 44.729445));
+            mapWin.ShowDialog();
         }
     }
 }

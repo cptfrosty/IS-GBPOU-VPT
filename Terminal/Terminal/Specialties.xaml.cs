@@ -77,16 +77,13 @@ namespace Terminal
                 DockPanel.SetDock(label, Dock.Bottom);
                 dp.Children.Add(label);
 
-
                 BitmapImage bm = new BitmapImage();
                 bm.BeginInit();
                 bm.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Specialties/SpecialtyDirection/{btn.Name}.png", UriKind.Relative);
                 bm.EndInit();
 
-
                 btn.BorderBrush = Brushes.Black;
                 btn.BorderThickness = new Thickness(2);
-
 
                 ImageBrush imageBrush = new ImageBrush(bm);
                 imageBrush.Stretch = Stretch.UniformToFill;

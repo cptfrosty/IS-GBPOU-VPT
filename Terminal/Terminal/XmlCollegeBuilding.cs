@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Microsoft.Maps.MapControl.WPF;
 
 namespace Terminal
 { 
@@ -17,6 +18,7 @@ namespace Terminal
         public string emailElement;
         public string workSchedule;
         public string history;
+        public Location location;
     }
     
     /*
@@ -64,6 +66,8 @@ namespace Terminal
                 infoCorp.emailElement = informations.Element("email").Value;
                 infoCorp.workSchedule = informations.Element("graphic").Value;
                 infoCorp.history = informations.Element("history").Value;
+                //infoCorp.location = new Location(Convert.ToInt32(informations.Element("longitude").Value), Convert.ToInt32(informations.Element("width").Value));
+                infoCorp.location = new Location(1, 1);
 
                 collegeBuilding.Add(infoCorp);
             }

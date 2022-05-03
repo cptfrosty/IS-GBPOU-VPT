@@ -55,7 +55,7 @@
             </Button.Background>
         </Button>
 
-        <Button x:Name="Button_2" Content="" HorizontalAlignment="Left" Margin="100,625,0,0" VerticalAlignment="Top" Width="500" Height="370" Click="Button_OpenPicture">
+        <Button x:Name="Button_2" Content="" HorizontalAlignment="Left" Margin="100,625,0,0" VerticalAlignment="Top" Width="500" Height="370" Click="Button_OpenMap">
             <Button.Foreground>
                 <SolidColorBrush Color="#DDFFFFFF" Opacity="0"/>
             </Button.Foreground>

@@ -5,6 +5,7 @@ using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using Microsoft.Maps.MapControl.WPF;
 
 namespace Terminal
 {
@@ -14,6 +15,7 @@ namespace Terminal
     public partial class FrameForm : Window
     {
         public int Choice;
+        public Location curentLocation;
         /// <summary>
         /// Конструктор формы
         /// </summary>
@@ -70,6 +72,7 @@ namespace Terminal
             EmailLabel.Content = corp.emailElement;
             GraphicLabel.Content = corp.workSchedule;
             HistoryLabel.Text = corp.history;
+            curentLocation = corp.location;
         }
 
         private void Exit(object sender, RoutedEventArgs e)
@@ -166,6 +169,12 @@ namespace Terminal
 
             OpenPictureWin openPictureWin = new OpenPictureWin(image);
             openPictureWin.Show();
+        }
+
+        private void Button_OpenMap(object sender, RoutedEventArgs e)
+        {
+            MapWin mapWin = new MapWin(curentLocation);
+            mapWin.ShowDialog();
         }
     }
 }

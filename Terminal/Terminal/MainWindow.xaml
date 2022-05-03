@@ -61,6 +61,13 @@
             </Button.Background>
         </Button>
 
+        <Button Content="" HorizontalAlignment="Left" Margin="50,480,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" Click="Button_MapWin_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="MapWin.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Карта" HorizontalAlignment="Left" Margin="138,618,0,0" VerticalAlignment="Top" Width="76" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+
 
 
         <!--Контейнер для погоды-->
@@ -90,5 +97,6 @@
                 </Button.Background>
             </Button>
         </Grid>
+
     </Grid>
 </Window>

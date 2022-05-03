@@ -1,0 +1,57 @@
+﻿<Window x:Class="Terminal.MapWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Terminal"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MapWin" Height="1080" Width="1920" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#ECF0F5">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="1921" Grid.ColumnSpan="3" CornerRadius="0,0,20,20" Margin="-1,0,-7.5,0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#273340" Offset="0"/>
+                    <GradientStop Color="#1b252f" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="logo.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="logo.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <Button Content="" Height="74" HorizontalAlignment="Right" Width="86" VerticalAlignment="Top" Click="Exit">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF273340" Opacity="0"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+
+        <m:Map x:Name="Map" Mode="road" ZoomLevel="18" Center="48.807824, 44.729445" Margin="0,140,0,0">
+            <Canvas x:Name="mapCanvas"
+        m:MapLayer.Position="48.807824, 44.729445"
+        m:MapLayer.PositionOrigin="BottomCenter" Width="30" Height="30">
+                <materialDesign:PackIcon Kind="MapMarker" Width="30" Height="30" Foreground="#FF3C3C3C"/>
+            </Canvas>
+            <Button x:Name="ZoomLeles_plus" Content="" HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="114" Margin="1766,616,0,0" RenderTransformOrigin="0.632,0.281" Click="ZoomPlus">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <ImageBrush ImageSource="plus.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="ZoomLeles_minus" Content="" HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="114" Margin="1766,754,0,0" RenderTransformOrigin="0.632,0.281" Click="ZoomMinus">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <ImageBrush ImageSource="minus.png"/>
+                </Button.Background>
+            </Button>
+        </m:Map>
+    </Grid>
+</Window>
