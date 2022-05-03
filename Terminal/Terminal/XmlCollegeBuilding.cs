@@ -66,8 +66,11 @@ namespace Terminal
                 infoCorp.emailElement = informations.Element("email").Value;
                 infoCorp.workSchedule = informations.Element("graphic").Value;
                 infoCorp.history = informations.Element("history").Value;
-                //infoCorp.location = new Location(Convert.ToInt32(informations.Element("longitude").Value), Convert.ToInt32(informations.Element("width").Value));
-                infoCorp.location = new Location(1, 1);
+                infoCorp.location = new Location((float)informations.Element("longitude"), (float)informations.Element("width"));
+
+                //int l = Convert.ToInt32(informations.Element("longitude").Value);
+                //int d = informations.Element("width").Value;
+
 
                 collegeBuilding.Add(infoCorp);
             }
