@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ThinkGeo.MapSuite.Layers.BingMaps</name>
+    </assembly>
+    <members>
+        <member name="T:ThinkGeo.MapSuite.Layers.BingMapsResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ThinkGeo.MapSuite.Layers.BingMapsResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ThinkGeo.MapSuite.Layers.BingMapsResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ThinkGeo.MapSuite.Layers.BingMapsResources.BingMapsLogo">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ThinkGeo.MapSuite.Layers.BingMapsLayer.TileWidth">
+            <summary>
+            get or set tile's width
+            </summary>
+            <remarks>get or set tile's width</remarks>
+        </member>
+        <member name="P:ThinkGeo.MapSuite.Layers.BingMapsLayer.TileHeight">
+            <summary>
+            get or set tile's height
+            </summary>
+            <remarks>get or set tile's height</remarks>
+        </member>
+        <member name="M:ThinkGeo.MapSuite.Layers.BingMapsTileSystem.Clip(System.Double,System.Double,System.Double)">
+            <summary>
+            Clips a number to the specified minimum and maximum values.
+            </summary>
+            <param name="n">The number to clip.</param>
+            <param name="minValue">Minimum allowable value.</param>
+            <param name="maxValue">Maximum allowable value.</param>
+            <returns>The clipped value.</returns>
+        </member>
+        <member name="M:ThinkGeo.MapSuite.Layers.BingMapsTileSystem.MapSize(System.Int32)">
+            <summary>
+            Determines the map width and height (in pixels) at a specified level
+            of detail.
+            </summary>
+            <param name="levelOfDetail">Level of detail, from 1 (lowest detail)
+            to 23 (highest detail).</param>
+            <returns>The map width and height in pixels.</returns>
+        </member>
+        <member name="M:ThinkGeo.MapSuite.Layers.BingMapsTileSystem.PixelXYToLatLong(System.Int32,System.Int32,System.Int32,System.Double@,System.Double@)">
+            <summary>
+            Converts a pixel from pixel XY coordinates at a specified level of detail
+            into latitude/longitude WGS-84 coordinates (in degrees).
+            </summary>
+            <param name="pixelX">X coordinate of the point, in pixels.</param>
+            <param name="pixelY">Y coordinates of the point, in pixels.</param>
+            <param name="levelOfDetail">Level of detail, from 1 (lowest detail)
+            to 23 (highest detail).</param>
+            <param name="latitude">Output parameter receiving the latitude in degrees.</param>
+            <param name="longitude">Output parameter receiving the longitude in degrees.</param>
+        </member>
+        <member name="T:ThinkGeo.MapSuite.Layers.BingMapsZoomLevelSet">
+            <summary>This class represents the zoom levels used by Bing Maps.</summary>
+            <returns>None</returns>
+            <remarks>
+            If you want to create some layers that match up with Bing Maps layers, you
+            should use this ZoomSet.
+            </remarks>
+        </member>
+        <member name="M:ThinkGeo.MapSuite.Layers.BingMapsZoomLevelSet.#ctor">
+            <summary>This class represents the zoom levels used by Bing Maps.</summary>
+            <returns>None</returns>
+            <remarks>
+            If you want to create some layers that match up with Bing Maps layers, you
+            should use this ZoomSet.
+            </remarks>
+        </member>
+    </members>
+</doc>
