@@ -110,9 +110,9 @@ namespace Terminal
 
                 Text_Humidity.Content = oW.main.humidity.ToString() + "%";
 
-                Text_Wind.Content = oW.wind.deg.ToString() + "°";
+                Text_Wind.Content = oW.wind.speed.ToString() + "м/с";
 
-                Text_Direction.Content = oW.wind.speed.ToString() + "м/с";
+                Text_Direction.Content = oW.wind.deg.ToString() + "°";
 
                 IconWeather.Source = oW.weather[0].Icon;
 
@@ -171,5 +171,6 @@ namespace Terminal
             MapWin mapWin = new MapWin(new Location(48.807824, 44.729445));
             mapWin.ShowDialog();
         }
+        
     }
 }

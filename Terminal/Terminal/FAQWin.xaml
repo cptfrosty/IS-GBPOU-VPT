@@ -15,12 +15,15 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Button Content="" BorderBrush="#273340" Height="74" HorizontalAlignment="Right" Width="86" VerticalAlignment="Top" Click="Exit">
+        <Button Height="100" HorizontalAlignment="Right" Width="90" VerticalAlignment="Top" Click="Exit" Margin="0,21,26,0">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF273340" Opacity="0"/>
+            </Button.BorderBrush>
             <Button.Foreground>
                 <SolidColorBrush Color="#DDFFFFFF" Opacity="0.005"/>
             </Button.Foreground>
             <Button.Background>
-                <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="back.png"/>
             </Button.Background>
         </Button>
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="logo.png">

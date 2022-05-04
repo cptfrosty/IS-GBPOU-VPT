@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         xmlns:local="clr-namespace:Terminal"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920" WindowStyle="None" Visibility="Visible" WindowStartupLocation="CenterOwner" WindowState="Maximized" Background="#ECF0F5">
@@ -68,13 +69,11 @@
         </Button>
         <Label Content="Карта" HorizontalAlignment="Left" Margin="138,618,0,0" VerticalAlignment="Top" Width="76" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
 
-
-
         <!--Контейнер для погоды-->
-        <Grid x:Name="GridWeather" Grid.Column="1" Grid.ColumnSpan="2" Margin="-105,0,2.5,0">
+        <Grid x:Name="GridWeather" Grid.Column="1" Grid.ColumnSpan="2" Margin="-105,0,2.5,200">
             <Label x:Name="LabelCity" Content="Волжский" HorizontalAlignment="Left" Margin="269,200,0,0" VerticalAlignment="Top" FontSize="36"/>
             <Label x:Name="LabelTemp" Content="?°" HorizontalAlignment="Left" Margin="420,315,0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="94"/>
-            <Label x:Name="LabelMain" Content="Main" FontSize="36" Margin="100,440,84.5,574" Width="520" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="58"/>
+            <Label x:Name="LabelMain" Content="Main" FontSize="36" Margin="100,470,97.5,344" Width="520" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="58"/>
             <Image x:Name="IconWeather" HorizontalAlignment="Left" Height="120" Margin="250,315,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1" />
 
             <Image x:Name="Image_Pressure" HorizontalAlignment="Left" Height="60" Margin="130,560,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/davleniye.png" />
@@ -88,15 +87,15 @@
             <Label x:Name="Text_Humidity" Content="Влажность" Grid.Column="1" HorizontalAlignment="Left" Margin="200,670,0,0" VerticalAlignment="Top" FontSize="32"/>
 
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="544" Margin="100,210,0,0" VerticalAlignment="Top" Width="520" CornerRadius="3,3,3,3"/>
-            <Button Content="" Margin="607,962,10.5,10" Height="Auto" Foreground="White" Click="Button_FAQ_Click">
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="White" Opacity="0"/>
-                </Button.BorderBrush>
-                <Button.Background>
-                    <ImageBrush ImageSource="faq.png" Stretch="Uniform"/>
-                </Button.Background>
-            </Button>
         </Grid>
+        <Button Content="" Margin="419,912,6,6" Height="150" Foreground="White" Click="Button_FAQ_Click" Grid.Column="1">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="faq.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

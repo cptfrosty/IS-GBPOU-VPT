@@ -30,6 +30,9 @@ namespace Terminal.Weather
                 case "Snow":
                     word = "Снег";
                     break;
+                case "Sunny":
+                    word = "Солнечно";
+                    break;
             }
           
             return word;

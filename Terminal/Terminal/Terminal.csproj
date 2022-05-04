@@ -101,6 +101,15 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\MapSuiteDependency-MicrosoftSqlServerTypes.10.6.0\lib\net45\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1210.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1210.30\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1210.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1210.30\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1210.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1210.30\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="NetTopologySuite, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
       <HintPath>..\packages\MapSuiteDependency-NetTopologySuite.10.6.0\lib\net45\NetTopologySuite.dll</HintPath>
     </Reference>
@@ -303,9 +312,6 @@
     <Resource Include="logo2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="back.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -359,6 +365,7 @@
     <Resource Include="MapWin.png" />
     <Resource Include="minus.png" />
     <Resource Include="plus.png" />
+    <Resource Include="back.png" />
     <Content Include="Weather\dll\AutoRuner.dll" />
     <Content Include="Weather\dll\CallOpenWeather.dll" />
     <Resource Include="Weather\icons\01d.png" />
@@ -400,10 +407,12 @@
     <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets'))" />
     <Error Condition="!Exists('..\packages\MapSuiteDependency-SkiaSharp.10.6.0\build\net45\MapSuiteDependency-SkiaSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MapSuiteDependency-SkiaSharp.10.6.0\build\net45\MapSuiteDependency-SkiaSharp.targets'))" />
     <Error Condition="!Exists('..\packages\ThinkGeo.MapSuite.10.6.20\build\net45\ThinkGeo.MapSuite.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ThinkGeo.MapSuite.10.6.20\build\net45\ThinkGeo.MapSuite.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1210.30\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1210.30\build\Microsoft.Web.WebView2.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
   <Import Project="..\packages\MapSuiteDependency-SkiaSharp.10.6.0\build\net45\MapSuiteDependency-SkiaSharp.targets" Condition="Exists('..\packages\MapSuiteDependency-SkiaSharp.10.6.0\build\net45\MapSuiteDependency-SkiaSharp.targets')" />
   <Import Project="..\packages\ThinkGeo.MapSuite.10.6.20\build\net45\ThinkGeo.MapSuite.targets" Condition="Exists('..\packages\ThinkGeo.MapSuite.10.6.20\build\net45\ThinkGeo.MapSuite.targets')" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1210.30\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1210.30\build\Microsoft.Web.WebView2.targets')" />
 </Project>
