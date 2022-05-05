@@ -186,6 +186,12 @@
     <Compile Include="OpenPictureWin.xaml.cs">
       <DependentUpon>OpenPictureWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OpenQRWin.xaml.cs">
+      <DependentUpon>OpenQRWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QvantoriumWin.xaml.cs">
+      <DependentUpon>QvantoriumWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Specialties.xaml.cs">
       <DependentUpon>Specialties.xaml</DependentUpon>
     </Compile>
@@ -250,6 +256,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="OpenPictureWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OpenQRWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QvantoriumWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -366,6 +380,14 @@
     <Resource Include="minus.png" />
     <Resource Include="plus.png" />
     <Resource Include="back.png" />
+    <Resource Include="Rutube.png" />
+    <Resource Include="infoQR.png" />
+    <Resource Include="QRRutube.png" />
+    <Resource Include="telegram.png" />
+    <Resource Include="vk.png" />
+    <Resource Include="Schedule.png" />
+    <Resource Include="Qvantorium.png" />
+    <Resource Include="background.jpg" />
     <Content Include="Weather\dll\AutoRuner.dll" />
     <Content Include="Weather\dll\CallOpenWeather.dll" />
     <Resource Include="Weather\icons\01d.png" />

@@ -49,7 +49,7 @@ namespace Terminal
         }
         public void FindDirection()
         {
-            XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Specialties.xml");
+            XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Qvantorium.xml");
             foreach (XElement dir in xdoc.Element("informations").Elements("dir"))
             {
                 string nameDir = dir.Attributes().ToList().Where(p => (p.Name == "nameForBtn")).FirstOrDefault().Value;

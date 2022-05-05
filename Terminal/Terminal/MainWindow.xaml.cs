@@ -171,6 +171,47 @@ namespace Terminal
             MapWin mapWin = new MapWin(new Location(48.807824, 44.729445));
             mapWin.ShowDialog();
         }
-        
+
+        private void Rutube_Click(object sender, RoutedEventArgs e)
+        {
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/QR/QRRutube.png"));
+
+            OpenQRWin openQRWin = new OpenQRWin(image);
+            openQRWin.ShowDialog();
+        }
+
+        private void Telegram_Click(object sender, RoutedEventArgs e)
+        {
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/QR/QRTelegram.png"));
+
+            OpenQRWin openQRWin = new OpenQRWin(image);
+            openQRWin.ShowDialog();
+        }
+
+        private void Vk_Click(object sender, RoutedEventArgs e)
+        {
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/QR/QRVk.png"));
+
+            OpenQRWin openQRWin = new OpenQRWin(image);
+            openQRWin.ShowDialog();
+        }
+
+        private void Schedule_Click(object sender, RoutedEventArgs e)
+        {
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/QR/QRSchedule.png"));
+
+            OpenQRWin openQRWin = new OpenQRWin(image);
+            openQRWin.ShowDialog();
+        }
+
+        private void Qvantorium_Click(object sender, RoutedEventArgs e)
+        {
+            QvantoriumWin qvantoriumWin = new QvantoriumWin();
+            qvantoriumWin.ShowDialog();
+        }
     }
 }
