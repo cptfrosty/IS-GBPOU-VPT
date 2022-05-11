@@ -124,7 +124,13 @@
                 <ImageBrush ImageSource="Qvantorium.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Label Content="Расписание
-               " HorizontalAlignment="Left" Margin="1008,574,0,0" VerticalAlignment="Top" Width="146" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+        <Label Content="Кванториум" HorizontalAlignment="Left" Margin="1008,574,0,0" VerticalAlignment="Top" Width="146" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+
+        <Button Content="" HorizontalAlignment="Left" Margin="650,438,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Qvantorium_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Qvantorium.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Кружки" HorizontalAlignment="Left" Margin="735,576,0,0" VerticalAlignment="Top" Width="89" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
     </Grid>
 </Window>

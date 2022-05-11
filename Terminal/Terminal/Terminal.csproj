@@ -388,6 +388,9 @@
     <Resource Include="Schedule.png" />
     <Resource Include="Qvantorium.png" />
     <Resource Include="background.jpg" />
+    <Resource Include="ed_russia.png" />
+    <Resource Include="QRQvantorium.png" />
+    <Resource Include="QRQvantorium_vk.png" />
     <Content Include="Weather\dll\AutoRuner.dll" />
     <Content Include="Weather\dll\CallOpenWeather.dll" />
     <Resource Include="Weather\icons\01d.png" />
