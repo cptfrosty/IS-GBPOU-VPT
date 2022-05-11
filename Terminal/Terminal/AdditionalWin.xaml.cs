@@ -18,18 +18,16 @@ using System.Xml.Linq;
 namespace Terminal
 {
     /// <summary>
-    /// Логика взаимодействия для QvantoriumWin.xaml
+    /// Логика взаимодействия для AdditionalWin.xaml
     /// </summary>
-    public partial class QvantoriumWin : Window
+    public partial class AdditionalWin : Window
     {
-
         private DispatcherTimer timer;
-
-        public QvantoriumWin()
+        public AdditionalWin()
         {
             InitializeComponent();
-            PlaceInfo();
 
+            Init();
 
             //Закрытие окна из-за бездейстивия
             ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
@@ -50,28 +48,10 @@ namespace Terminal
         }
 
 
-
-        private void Exit(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void PlaceInfo()
-        {
-            XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Qvantorium.xml");
-            foreach (XElement info in xdoc.Element("informations").Elements("info"))
-            {                                                                    
-                atrText.Content = info.Attribute("name").Value;
-                adressText.Text = info.Element("adress").Value;
-                desText.Text = info.Element("des").Value;
-            }
-        }
-
-        //TEST
         private System.Windows.Point scrollTarget;
         private System.Windows.Point scrollStartPoint;
         private System.Windows.Point scrollStartOffset;
-      
+
 
         protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
         {
@@ -124,6 +104,72 @@ namespace Terminal
             }
 
             base.OnPreviewMouseUp(e);
+        }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Init()
+        {
+            XmlAdditional xmlAdditional = new XmlAdditional();
+            xmlAdditional.FindAdditional();
+            int count = xmlAdditional.GetCountinformationAdditionalList;
+
+            for (int i = 0; i < count; i++)
+            {
+                Grid grid = new Grid();
+
+                Border border = new Border();
+                border.Width = 700;
+                border.Height = 250;
+                border.Margin = new Thickness(170, 100, 0, 0);
+                border.CornerRadius = new CornerRadius(5, 5, 5, 5);
+
+                border.BorderBrush = Brushes.Black;
+                border.BorderThickness = new Thickness(3);
+
+                TextBlock atrText = new TextBlock();
+                atrText.FontFamily = new FontFamily("Arial");
+                atrText.FontWeight = FontWeights.Bold;
+                atrText.Foreground = Brushes.Black;
+                atrText.FontSize = 28;
+
+                TextBlock graphicText = new TextBlock();
+                graphicText.Foreground = Brushes.Black;
+                graphicText.FontSize = 20;
+
+                TextBlock fullnameText = new TextBlock();
+                fullnameText.Foreground = Brushes.Black;
+                fullnameText.FontSize = 18;
+
+                atrText.Text = xmlAdditional.informationAdditionalList[i].nameAttribute.ToString();
+                atrText.Margin = new Thickness(20, 10, 0, 0);
+                atrText.Width = 680;
+                atrText.TextWrapping = TextWrapping.Wrap;
+
+                graphicText.Text = xmlAdditional.informationAdditionalList[i].graphicElement.ToString();
+                graphicText.Margin = new Thickness(0, 60, 340, 0);
+                graphicText.Height = 115;
+                graphicText.Width = 300;
+                graphicText.TextWrapping = TextWrapping.Wrap;
+
+                fullnameText.Text = xmlAdditional.informationAdditionalList[i].fullNameElement.ToString();
+                fullnameText.Margin = new Thickness(500, 180, 0, 0);
+                fullnameText.Height = 50;
+                fullnameText.Width = 150;
+                fullnameText.TextWrapping = TextWrapping.Wrap;
+
+                grid.Children.Add(atrText);
+                grid.Children.Add(graphicText);
+                grid.Children.Add(fullnameText);
+
+                border.Child = grid;
+
+                panelAdd.Children.Add(border);
+
+            }
         }
     }
 }

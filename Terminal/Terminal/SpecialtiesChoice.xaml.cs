@@ -27,7 +27,7 @@ namespace Terminal
             this.nameBtn = nameBtn;
 
             Init();
-        }
+        }        
 
         private void Exit(object sender, RoutedEventArgs e)
         {
@@ -94,5 +94,7 @@ namespace Terminal
             SpecialtiesInf specialtiesInf = new SpecialtiesInf(btnName);
             specialtiesInf.ShowDialog();
         }
+
+       
     }
 }

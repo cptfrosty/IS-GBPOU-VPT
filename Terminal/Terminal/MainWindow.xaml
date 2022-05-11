@@ -56,7 +56,7 @@
                 <ImageBrush ImageSource="education.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Label Content="Мастерские" HorizontalAlignment="Left" Margin="1008,348,0,0" VerticalAlignment="Top" Width="147" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
+        <Label Content="Мастерские" HorizontalAlignment="Left" Margin="1008,348,0,0" VerticalAlignment="Top" Width="147" Foreground="#1C2631" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
         <Button Content="" HorizontalAlignment="Left" Margin="954,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Workshops_Click"  >
             <Button.Background>
                 <ImageBrush ImageSource="mMasterkaya.png" Stretch="Uniform"/>
@@ -71,11 +71,11 @@
         <Label Content="Карта" HorizontalAlignment="Left" Margin="735,348,0,0" VerticalAlignment="Top" Width="76" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
 
         <!--Контейнер для погоды-->
-        <Grid x:Name="GridWeather" Grid.Column="1" Grid.ColumnSpan="2" Margin="-105,0,2.5,200">
+        <Grid x:Name="GridWeather" Grid.ColumnSpan="3" Margin="1211,0,2,200">
             <Label x:Name="LabelCity" Content="Волжский" HorizontalAlignment="Left" Margin="269,200,0,0" VerticalAlignment="Top" FontSize="36"/>
             <Label x:Name="LabelTemp" Content="?°" HorizontalAlignment="Left" Margin="420,315,0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="94"/>
             <Label x:Name="LabelMain" Content="Main" FontSize="36" Margin="100,470,97.5,344" Width="520" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="58"/>
-            <Image x:Name="IconWeather" HorizontalAlignment="Left" Height="120" Margin="250,315,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+            <Image x:Name="IconWeather" HorizontalAlignment="Left" Height="120" Margin="231,315,0,0" VerticalAlignment="Top" Width="120" />
 
             <Image x:Name="Image_Pressure" HorizontalAlignment="Left" Height="60" Margin="130,560,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/davleniye.png" />
             <Image x:Name="Image_Humidity" HorizontalAlignment="Left" Height="60" Margin="130,665,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/Kaplya.png" />
@@ -89,7 +89,7 @@
 
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="544" Margin="100,210,0,0" VerticalAlignment="Top" Width="520" CornerRadius="3,3,3,3"/>
         </Grid>
-        <Button Content="" Margin="419,912,6,6" Height="150" Foreground="White" Click="Button_FAQ_Click" Grid.Column="1">
+        <Button Content="" Margin="381,922,44,0" Height="150" Foreground="White" Click="Button_FAQ_Click" Grid.Column="1">
             <Button.BorderBrush>
                 <SolidColorBrush Color="White" Opacity="0"/>
             </Button.BorderBrush>
@@ -126,7 +126,7 @@
         </Button>
         <Label Content="Кванториум" HorizontalAlignment="Left" Margin="1008,574,0,0" VerticalAlignment="Top" Width="146" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
 
-        <Button Content="" HorizontalAlignment="Left" Margin="650,438,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Qvantorium_Click">
+        <Button Content="" HorizontalAlignment="Left" Margin="650,438,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Additional_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Qvantorium.png" Stretch="Uniform"/>
             </Button.Background>

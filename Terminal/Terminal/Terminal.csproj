@@ -168,6 +168,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdditionalWin.xaml.cs">
+      <DependentUpon>AdditionalWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FAQWin.xaml.cs">
       <DependentUpon>FAQWin.xaml</DependentUpon>
     </Compile>
@@ -219,10 +222,15 @@
       <DependentUpon>WorkshopsInf.xaml</DependentUpon>
     </Compile>
     <Compile Include="WorkshopsXml.cs" />
+    <Compile Include="XmlAdditional.cs" />
     <Compile Include="XmlCollegeBuilding.cs" />
     <Compile Include="XmlMuseum.cs" />
     <Compile Include="XmlSpecialties.cs" />
     <Compile Include="XmlSpecialtiesChoice.cs" />
+    <Page Include="AdditionalWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FAQWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

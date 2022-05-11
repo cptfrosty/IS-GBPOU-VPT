@@ -213,5 +213,11 @@ namespace Terminal
             QvantoriumWin qvantoriumWin = new QvantoriumWin();
             qvantoriumWin.ShowDialog();
         }
+
+        private void Additional_Click(object sender, RoutedEventArgs e)
+        {
+            AdditionalWin additionalWin = new AdditionalWin();
+            additionalWin.ShowDialog();
+        }
     }
 }
