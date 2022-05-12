@@ -28,6 +28,9 @@
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <WrapPanel x:Name="panelSpecialties" Margin="-1,155,0,0" Orientation="Horizontal" DockPanel.Dock="Top"/>
+
+        <ScrollViewer x:Name="scrollViewer" Margin="0, 150, 0, 0" PanningMode="Both">
+            <WrapPanel x:Name="panelSpecialties" Orientation="Horizontal" DockPanel.Dock="Top" Height="1604"/>
+        </ScrollViewer>
     </Grid>
 </Window>

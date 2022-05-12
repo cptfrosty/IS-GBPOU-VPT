@@ -62,7 +62,7 @@ namespace Terminal
                 Button btn = new Button();
                 btn.Width = 300;
                 btn.Height = 250;
-                btn.Margin = new Thickness(70, 40, 0, 0);
+                btn.Margin = new Thickness(140, 80, 0, 0);
 
                 btn.Name = xmlSpecialties.dirButtonList[i].nameAttribute.ToString();
 
@@ -104,11 +104,66 @@ namespace Terminal
         {
             await Task.Delay(milliseconds);
 
-            //btnName = btnName.Replace("id","");
-            //int choice = int.Parse(btnName);
-
             SpecialtiesChoice specialtiesChoice = new SpecialtiesChoice(btnName);
             specialtiesChoice.Show();
+        }
+
+        private System.Windows.Point scrollTarget;
+        private System.Windows.Point scrollStartPoint;
+        private System.Windows.Point scrollStartOffset;
+
+
+        protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
+        {
+            if (scrollViewer.IsMouseOver)
+            {
+                // Save starting point, used later when determining how much to scroll.
+                scrollStartPoint = e.GetPosition(this);
+                scrollStartOffset.X = scrollViewer.HorizontalOffset;
+                scrollStartOffset.Y = scrollViewer.VerticalOffset;
+
+                // Update the cursor if can scroll or not.
+                this.Cursor = (scrollViewer.ExtentWidth > scrollViewer.ViewportWidth) ||
+                    (scrollViewer.ExtentHeight > scrollViewer.ViewportHeight) ?
+                    Cursors.ScrollAll : Cursors.Arrow;
+
+                this.CaptureMouse();
+            }
+
+            base.OnPreviewMouseDown(e);
+        }
+
+
+        protected override void OnPreviewMouseMove(MouseEventArgs e)
+        {
+            if (this.IsMouseCaptured)
+            {
+                System.Windows.Point currentPoint = e.GetPosition(this);
+
+                // Determine the new amount to scroll.
+                System.Windows.Point delta = new System.Windows.Point(scrollStartPoint.X -
+                    currentPoint.X, scrollStartPoint.Y - currentPoint.Y);
+
+                scrollTarget.X = scrollStartOffset.X + delta.X;
+                scrollTarget.Y = scrollStartOffset.Y + delta.Y;
+
+                // Scroll to the new position.
+                scrollViewer.ScrollToHorizontalOffset(scrollTarget.X);
+                scrollViewer.ScrollToVerticalOffset(scrollTarget.Y);
+            }
+
+            base.OnPreviewMouseMove(e);
+        }
+
+        protected override void OnPreviewMouseUp(MouseButtonEventArgs e)
+        {
+            if (this.IsMouseCaptured)
+            {
+                this.Cursor = Cursors.Arrow;
+                this.ReleaseMouseCapture();
+            }
+
+            base.OnPreviewMouseUp(e);
         }
     }
 }

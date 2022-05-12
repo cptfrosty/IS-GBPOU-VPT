@@ -3,189 +3,201 @@
 
 <Corp name= "Корпус 1">
 
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Театральный клуб «Литература и театр»">
+	<fullName>Андреева Л.Н.</fullName>
+	<graphic>Понедельник,среда: с 16:00 до 19:00 (корпус 1(ВЦ)</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Вокальный клуб «Экспромт»">
+	<fullName>Щекотур Г.А.</fullName>
+	<graphic>Понедельник,четверг,пятница с 16:00 до 19:00 (корпус 1 актовый зал (звуковая)</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Патриот»">
+	<fullName>Парецкова С.В.</fullName>
+	<graphic>1-ая,3-ая среда месяца</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Краеведы»">
+	<fullName>Парецкова С.В.</fullName>
+	<graphic>2-ая,4-ая среда месяца</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Русский фольклор»">
+	<fullName>Костина С.И.</fullName>
+	<graphic>Пятница (после 4-й пары)</graphic>
+  </nameClub>
+
+  <nameClub name="Клуб исторических миниатюр «Ника»">
+	<fullName>Силакова Н.П.</fullName>
+	<graphic>Понедельник,среда: с 16:00 до 19:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Экология родного края»">
+	<fullName>Мурадова А.П.</fullName>
+	<graphic>Пятница (после 4-й пары)</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Музей Великой Отечественной войны техникума">
+	<fullName>Ананьев С.А.</fullName>
+	<graphic>Каждый вторник в 15:30</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Занимательная химия»">
+	<fullName>Сарбинтович М.М.</fullName>
+	<graphic>Первый понедельник месяца 14:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Англиский язык в современном мире»">
+	<fullName>Дмитриева Е.Н.</fullName>
+	<graphic>2-й и 4-й понедельник в 14:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Сотвори себя сам»">
+	<fullName>Эскиева А.В.</fullName>
+	<graphic>Каждая пятница в 17:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Спортивная секция «Настольный теннис»">
+	<fullName>Нестеренко О.А.</fullName>
+	<graphic>Среда 16:00 до 18:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Спортивная секция «Волейбол»">
+	<fullName>Жракова Г.М.</fullName>
+	<graphic>Среда 16:00 до 18:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Спортивная секция «Баскетбол»">
+	<fullName>Владимирова Е.А.</fullName>
+	<graphic>Четверг 16:00 до 18:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Спортивная секция по атлетической гимнастике">
+	<fullName>Осетрова Л.И.</fullName>
+	<graphic>Четверг 16:00 до 17:00</graphic>
+  </nameClub>
+
+</Corp>
+
+<Corp name= "Корпус 2">
+  
+  <nameClub name="Математический клуб «Путь исследования (Пи)»">
+	<fullName>Курлович Е.П.</fullName>
+	<graphic>Вторник 14:10</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Подростковый клуб «Радуга»">
+	<fullName>Эскиева А.В.</fullName>
+	<graphic>Каждая среда в 17:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Юный правовед»">
+	<fullName>Эскиева А.В.</fullName>
+	<graphic>Каждая среда в 17:00</graphic>
+  </nameClub>
+
+</Corp>
+
+<Corp name= "Корпус 3">
+  
+  <nameClub name="Клуб «Отчество»">
+	<fullName>Грушевская С.Ю.</fullName>
+	<graphic>Пятница 15:20-16:45</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Добрострой»">
+	<fullName>Попова Е.А.</fullName>
+	<graphic>Четверг 15:30-17:50</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Волонтёрский клуб «Мы вместе»">
+	<fullName>Завьялова Р.Х.</fullName>
+	<graphic>Четверг 13:30-15:50</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Волонтёрский клуб «Добровольчество»">
+	<fullName>Завьялова Р.Х.</fullName>
+	<graphic>Четверг 15:20-16:45</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Фотоклуб «Сфера»">
+	<fullName>Гаврикова Г.А.</fullName>
+	<graphic>Четверг 13:30-15:50</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Моя карьера»">
+	<fullName>Ларина М.А.</fullName>
+	<graphic>Среда 15:20-16:45</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «По страницам истории»">
+	<fullName>Удалова Н.А.</fullName>
+	<graphic>Вторник,четверг 14:30-15:30</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Шаг навстречу»(Для обучающихся с ОВЗ)">
+	<fullName>Коновская А.С.</fullName>
+	<graphic>Пятница 15:20-16:45</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Волонтёрский клуб «Единство»">
+	<fullName>Ваганов Д.В.</fullName>
+	<graphic>-</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Автомобилист»">
+	<fullName>Денисов П.А.</fullName>
+	<graphic>Пятница (после 4-й пары)</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб «Безопасность и дорога»">
+	<fullName>Макаров А.В.</fullName>
+	<graphic>Каждый вторник в 15:30</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Спортивная секция «Стритбол»">
+	<fullName>Оболонская Л.Н.</fullName>
+	<graphic>Среда 16:00-18:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Спортивная секция «Парковый волейбол»">
+	<fullName>Суслова Л.А.</fullName>
+	<graphic>Среда 15:30-17:00</graphic>
+  </nameClub>
+
+</Corp>
+
+<Corp name= "Корпус 4">
+  
+  <nameClub name="Экологический клуб «ЭкоДобро»">
+	<fullName>Бочарова Ю.В.</fullName>
+	<graphic>Четверг с 16:00 до 18:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Мы - Артисты">
+	<fullName>Горбунова М.А.</fullName>
+	<graphic>Среда 15:30-17:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Клуб любителей истории Отечества «КЛИО»">
+	<fullName>Китаева О.Н.</fullName>
+	<graphic>Вторник с 16:00 до 18:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Спортивная секция по армрестлингу и гиревому спорту">
+	<fullName>Санатулаев Р.Х.</fullName>
+	<graphic>Понедельник,среда,пятница 18:00-20:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Спортивная секция «Мини-футбол»">
+	<fullName>Чукамбаева М.А.</fullName>
+	<graphic>Вторник 16:00-18:00</graphic>
   </nameClub>
   
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
-  </nameClub>
-  
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
-  </nameClub>
-  
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
-  </nameClub>
-  
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
-  </nameClub>
-  
-  <nameClub name="Театральный клуб <<Литература и театр>>">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="Спортивная секция «Пляжный волейбол»">
+	<fullName>Чукамбаева М.А.</fullName>
+	<graphic>Понедельник,пятница 18:00-20:00</graphic>
   </nameClub>
   
   
@@ -193,9 +205,9 @@
   
 		Шаблон для заполнения!
   
-  <nameClub name="">
-	<fullName> </fullName>
-	<graphic> </graphic>
+  <nameClub name="«»">
+	<fullName></fullName>
+	<graphic></graphic>
   </nameClub>
   
 	-->

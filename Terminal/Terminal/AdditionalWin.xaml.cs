@@ -121,14 +121,17 @@ namespace Terminal
             {
                 Grid grid = new Grid();
 
+                /* Контейнер */
                 Border border = new Border();
                 border.Width = 700;
-                border.Height = 250;
-                border.Margin = new Thickness(170, 100, 0, 0);
+                border.Height = 200;
+                border.Margin = new Thickness(170, 80, 0, 0);
                 border.CornerRadius = new CornerRadius(5, 5, 5, 5);
 
                 border.BorderBrush = Brushes.Black;
                 border.BorderThickness = new Thickness(3);
+
+                /* Размер шрифта и цвет */
 
                 TextBlock atrText = new TextBlock();
                 atrText.FontFamily = new FontFamily("Arial");
@@ -144,6 +147,8 @@ namespace Terminal
                 fullnameText.Foreground = Brushes.Black;
                 fullnameText.FontSize = 18;
 
+                /* Размер, растояние, путь */
+
                 atrText.Text = xmlAdditional.informationAdditionalList[i].nameAttribute.ToString();
                 atrText.Margin = new Thickness(20, 10, 0, 0);
                 atrText.Width = 680;
@@ -151,13 +156,13 @@ namespace Terminal
 
                 graphicText.Text = xmlAdditional.informationAdditionalList[i].graphicElement.ToString();
                 graphicText.Margin = new Thickness(0, 60, 340, 0);
-                graphicText.Height = 115;
+                graphicText.Height = 90;
                 graphicText.Width = 300;
                 graphicText.TextWrapping = TextWrapping.Wrap;
 
                 fullnameText.Text = xmlAdditional.informationAdditionalList[i].fullNameElement.ToString();
-                fullnameText.Margin = new Thickness(500, 180, 0, 0);
-                fullnameText.Height = 50;
+                fullnameText.Margin = new Thickness(500, 150, 0, 0);
+                fullnameText.Height = 30;
                 fullnameText.Width = 150;
                 fullnameText.TextWrapping = TextWrapping.Wrap;
 

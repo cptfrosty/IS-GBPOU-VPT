@@ -28,6 +28,11 @@
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <WrapPanel x:Name="panelSpecialties" HorizontalAlignment="Left" Height="925" Margin="0,155,0,0" VerticalAlignment="Top" Width="1920"/>
+
+
+        <WrapPanel x:Name="panelSpecialties" HorizontalAlignment="Left" Height="930" VerticalAlignment="Top" Width="1920" Margin="0,150,0,0"/>
+
+
+
     </Grid>
 </Window>
