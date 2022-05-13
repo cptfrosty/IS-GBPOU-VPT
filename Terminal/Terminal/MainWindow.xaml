@@ -56,7 +56,7 @@
                 <ImageBrush ImageSource="education.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Label Content="Мастерские" HorizontalAlignment="Left" Margin="1008,348,0,0" VerticalAlignment="Top" Width="147" Foreground="#1C2631" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
+        <Label Content="Мастерские" HorizontalAlignment="Left" Margin="1008,348,0,0" VerticalAlignment="Top" Width="147" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
         <Button Content="" HorizontalAlignment="Left" Margin="954,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Workshops_Click"  >
             <Button.Background>
                 <ImageBrush ImageSource="mMasterkaya.png" Stretch="Uniform"/>
@@ -128,7 +128,7 @@
 
         <Button Content="" HorizontalAlignment="Left" Margin="650,438,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Additional_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Qvantorium.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="Additional.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Label Content="Кружки" HorizontalAlignment="Left" Margin="735,576,0,0" VerticalAlignment="Top" Width="89" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>

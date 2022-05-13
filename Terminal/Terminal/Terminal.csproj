@@ -224,6 +224,7 @@
     <Compile Include="WorkshopsXml.cs" />
     <Compile Include="XmlAdditional.cs" />
     <Compile Include="XmlCollegeBuilding.cs" />
+    <Compile Include="XmlFaq.cs" />
     <Compile Include="XmlMuseum.cs" />
     <Compile Include="XmlSpecialties.cs" />
     <Compile Include="XmlSpecialtiesChoice.cs" />
@@ -399,6 +400,7 @@
     <Resource Include="ed_russia.png" />
     <Resource Include="QRQvantorium.png" />
     <Resource Include="QRQvantorium_vk.png" />
+    <Resource Include="Additional.png" />
     <Content Include="Weather\dll\AutoRuner.dll" />
     <Content Include="Weather\dll\CallOpenWeather.dll" />
     <Resource Include="Weather\icons\01d.png" />

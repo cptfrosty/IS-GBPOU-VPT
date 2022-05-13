@@ -122,6 +122,8 @@ namespace Terminal
                 Grid grid = new Grid();
 
                 /* Контейнер */
+
+                //Бордер
                 Border border = new Border();
                 border.Width = 700;
                 border.Height = 200;
@@ -133,16 +135,19 @@ namespace Terminal
 
                 /* Размер шрифта и цвет */
 
+                //Название кружка
                 TextBlock atrText = new TextBlock();
                 atrText.FontFamily = new FontFamily("Arial");
                 atrText.FontWeight = FontWeights.Bold;
                 atrText.Foreground = Brushes.Black;
                 atrText.FontSize = 28;
 
+                //График работы
                 TextBlock graphicText = new TextBlock();
                 graphicText.Foreground = Brushes.Black;
                 graphicText.FontSize = 20;
 
+                //ФИО преподавателя
                 TextBlock fullnameText = new TextBlock();
                 fullnameText.Foreground = Brushes.Black;
                 fullnameText.FontSize = 18;
@@ -151,7 +156,7 @@ namespace Terminal
 
                 atrText.Text = xmlAdditional.informationAdditionalList[i].nameAttribute.ToString();
                 atrText.Margin = new Thickness(20, 10, 0, 0);
-                atrText.Width = 680;
+                atrText.Width = 660;
                 atrText.TextWrapping = TextWrapping.Wrap;
 
                 graphicText.Text = xmlAdditional.informationAdditionalList[i].graphicElement.ToString();
@@ -163,7 +168,7 @@ namespace Terminal
                 fullnameText.Text = xmlAdditional.informationAdditionalList[i].fullNameElement.ToString();
                 fullnameText.Margin = new Thickness(500, 150, 0, 0);
                 fullnameText.Height = 30;
-                fullnameText.Width = 150;
+                fullnameText.Width = 160;
                 fullnameText.TextWrapping = TextWrapping.Wrap;
 
                 grid.Children.Add(atrText);
