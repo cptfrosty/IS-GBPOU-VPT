@@ -28,8 +28,8 @@
                 <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <ScrollViewer x:Name="scrollViewer" Margin="0, 150, 0, 0" PanningMode="Both">
-            <WrapPanel x:Name="panelMuseum" Orientation="Horizontal" VerticalAlignment="Top" Height="969"/>
-        </ScrollViewer>
+
+        <WrapPanel x:Name="panelMuseum" Orientation="Horizontal" VerticalAlignment="Top" Height="930" Margin="0,150,0,0"/>
+
     </Grid>
 </Window>

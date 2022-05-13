@@ -115,62 +115,62 @@ namespace Terminal
             this.Close();
         }
 
-        private System.Windows.Point scrollTarget;
-        private System.Windows.Point scrollStartPoint;
-        private System.Windows.Point scrollStartOffset;
+        //private System.Windows.Point scrollTarget;
+        //private System.Windows.Point scrollStartPoint;
+        //private System.Windows.Point scrollStartOffset;
 
 
-        protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
-        {
-            if (scrollViewer.IsMouseOver)
-            {
-                // Save starting point, used later when determining how much to scroll.
-                scrollStartPoint = e.GetPosition(this);
-                scrollStartOffset.X = scrollViewer.HorizontalOffset;
-                scrollStartOffset.Y = scrollViewer.VerticalOffset;
+        //protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
+        //{
+        //    if (scrollViewer.IsMouseOver)
+        //    {
+        //        // Save starting point, used later when determining how much to scroll.
+        //        scrollStartPoint = e.GetPosition(this);
+        //        scrollStartOffset.X = scrollViewer.HorizontalOffset;
+        //        scrollStartOffset.Y = scrollViewer.VerticalOffset;
 
-                // Update the cursor if can scroll or not.
-                this.Cursor = (scrollViewer.ExtentWidth > scrollViewer.ViewportWidth) ||
-                    (scrollViewer.ExtentHeight > scrollViewer.ViewportHeight) ?
-                    Cursors.ScrollAll : Cursors.Arrow;
+        //        // Update the cursor if can scroll or not.
+        //        this.Cursor = (scrollViewer.ExtentWidth > scrollViewer.ViewportWidth) ||
+        //            (scrollViewer.ExtentHeight > scrollViewer.ViewportHeight) ?
+        //            Cursors.ScrollAll : Cursors.Arrow;
 
-                this.CaptureMouse();
-            }
+        //        this.CaptureMouse();
+        //    }
 
-            base.OnPreviewMouseDown(e);
-        }
+        //    base.OnPreviewMouseDown(e);
+        //}
 
 
-        protected override void OnPreviewMouseMove(MouseEventArgs e)
-        {
-            if (this.IsMouseCaptured)
-            {
-                System.Windows.Point currentPoint = e.GetPosition(this);
+        //protected override void OnPreviewMouseMove(MouseEventArgs e)
+        //{
+        //    if (this.IsMouseCaptured)
+        //    {
+        //        System.Windows.Point currentPoint = e.GetPosition(this);
 
-                // Determine the new amount to scroll.
-                System.Windows.Point delta = new System.Windows.Point(scrollStartPoint.X -
-                    currentPoint.X, scrollStartPoint.Y - currentPoint.Y);
+        //        // Determine the new amount to scroll.
+        //        System.Windows.Point delta = new System.Windows.Point(scrollStartPoint.X -
+        //            currentPoint.X, scrollStartPoint.Y - currentPoint.Y);
 
-                scrollTarget.X = scrollStartOffset.X + delta.X;
-                scrollTarget.Y = scrollStartOffset.Y + delta.Y;
+        //        scrollTarget.X = scrollStartOffset.X + delta.X;
+        //        scrollTarget.Y = scrollStartOffset.Y + delta.Y;
 
-                // Scroll to the new position.
-                scrollViewer.ScrollToHorizontalOffset(scrollTarget.X);
-                scrollViewer.ScrollToVerticalOffset(scrollTarget.Y);
-            }
+        //        // Scroll to the new position.
+        //        scrollViewer.ScrollToHorizontalOffset(scrollTarget.X);
+        //        scrollViewer.ScrollToVerticalOffset(scrollTarget.Y);
+        //    }
 
-            base.OnPreviewMouseMove(e);
-        }
+        //    base.OnPreviewMouseMove(e);
+        //}
 
-        protected override void OnPreviewMouseUp(MouseButtonEventArgs e)
-        {
-            if (this.IsMouseCaptured)
-            {
-                this.Cursor = Cursors.Arrow;
-                this.ReleaseMouseCapture();
-            }
+        //protected override void OnPreviewMouseUp(MouseButtonEventArgs e)
+        //{
+        //    if (this.IsMouseCaptured)
+        //    {
+        //        this.Cursor = Cursors.Arrow;
+        //        this.ReleaseMouseCapture();
+        //    }
 
-            base.OnPreviewMouseUp(e);
-        }
+        //    base.OnPreviewMouseUp(e);
+        //}
     }
 }
