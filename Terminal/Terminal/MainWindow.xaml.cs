@@ -1,25 +1,14 @@
 ﻿using CallOpenWeather;
+using Microsoft.Maps.MapControl.WPF;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using Terminal.Weather;
-using Terminal.OpenWeather;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Net.Sockets;
-using Microsoft.Maps.MapControl.WPF;
+using Terminal.Weather;
 
 namespace Terminal
 {
@@ -34,8 +23,9 @@ namespace Terminal
 
             CheckNetwork();
 
-            Weather();
+            Weather("Волжский");
 
+            DisableGestures();
 
             //Время
             var timer = new System.Windows.Threading.DispatcherTimer();
@@ -48,8 +38,15 @@ namespace Terminal
             var timerWeather = new System.Windows.Threading.DispatcherTimer();
             timerWeather.Interval = new TimeSpan(0, 5, 0);
             timerWeather.IsEnabled = true;
-            timerWeather.Tick += (o, t) => { Weather(); };
+            timerWeather.Tick += (o, t) => { Weather("Волжский"); };
             timerWeather.Start();
+        }
+
+        //Отключение жестов WINDOWS 10(режим планшета)
+        public void DisableGestures()
+        {
+            IntPtr intPtr = System.Diagnostics.Process.GetProcessesByName("Terminal")[0].MainWindowHandle;
+            EdgeGestureUtil.DisableEdgeGestures(intPtr, true);
         }
 
         private void MainInformation(object sender, RoutedEventArgs e)
@@ -63,7 +60,7 @@ namespace Terminal
             WindowInf windowInf = new WindowInf();
             windowInf.ShowDialog();
         }
-        
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -72,13 +69,10 @@ namespace Terminal
         }
 
         //Погода
-        private async void Weather()
+        private async void Weather(string city)
         {
             if (CheckNetwork())
             {
-                
-
-                string city = "Волжский";
                 WebRequest request = null;
                 WebResponse response = await Call.CallWeather(city, request).GetResponseAsync();
 
@@ -132,20 +126,6 @@ namespace Terminal
             }
             else
                 return true;
-
-            //bool isConnected = false;
-            //using (var tcpClient = new TcpClient())
-            //{
-            //    try{
-            //        tcpClient.Connect("209.85.148.138", 443); // google
-            //        isConnected = tcpClient.Connected;
-            //        return true;
-            //    }
-            //    catch (System.Net.Sockets.SocketException)
-            //    {
-            //        return false;
-            //    }
-            //}
         }
 
         private void SpecialtiesClick(object sender, RoutedEventArgs e)
@@ -219,5 +199,7 @@ namespace Terminal
             AdditionalWin additionalWin = new AdditionalWin();
             additionalWin.ShowDialog();
         }
+
+
     }
 }
