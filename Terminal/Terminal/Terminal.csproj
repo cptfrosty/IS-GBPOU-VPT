@@ -171,6 +171,7 @@
     <Compile Include="AdditionalWin.xaml.cs">
       <DependentUpon>AdditionalWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CountOpenings.cs" />
     <Compile Include="EdgeGestureUtil.cs" />
     <Compile Include="FAQWin.xaml.cs">
       <DependentUpon>FAQWin.xaml</DependentUpon>
@@ -196,6 +197,7 @@
     <Compile Include="QvantoriumWin.xaml.cs">
       <DependentUpon>QvantoriumWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SmsRu.cs" />
     <Compile Include="Specialties.xaml.cs">
       <DependentUpon>Specialties.xaml</DependentUpon>
     </Compile>
