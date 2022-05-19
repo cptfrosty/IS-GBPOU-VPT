@@ -275,7 +275,22 @@ namespace Terminal
 
             smsRu2.Send(nmb2, "Терминал выключился "
                 + "Отчёт: "
-                + "Основные сведения:" + $"{countOpenings.osnSvedinia}"
+                + "Основные сведения: " + $"{countOpenings.osnSvedinia} "
+                + "Музей: " + $"{countOpenings.museum} "
+                + "Карты: " + $"{countOpenings.map} "
+                + "Мастерская: " + $"{countOpenings.masterskaya} "
+                + "Специальности: " + $"{countOpenings.specialities} "
+                + "Кружки: " + $"{countOpenings.rounded} "
+                + "Квантория: " + $"{countOpenings.qvantorium} "
+                + "Рутуб: " + $"{countOpenings.rutube} "
+                + "Вк: " + $"{countOpenings.vk} "
+                + "Телега: " + $"{countOpenings.telega} "
+                + "Расписание: " + $"{countOpenings.ruspisanie} "
+                + "FAQ: " + $"{countOpenings.faq} ");
+
+            MessageBox.Show("Терминал выключился "
+                + "Отчёт: "
+                + "Основные сведения:" + $"{countOpenings.osnSvedinia.ToString()}"
                 + "Музей:" + $"{countOpenings.museum}"
                 + "Карты:" + $"{countOpenings.map}"
                 + "Мастерская:" + $"{countOpenings.masterskaya}"
@@ -287,7 +302,9 @@ namespace Terminal
                 + "Телега:" + $"{countOpenings.telega}"
                 + "Расписание:" + $"{countOpenings.ruspisanie}"
                 + "FAQ:" + $"{countOpenings.faq}");
+
         }
+
 
         private void ExceptionTerminal()
         {
