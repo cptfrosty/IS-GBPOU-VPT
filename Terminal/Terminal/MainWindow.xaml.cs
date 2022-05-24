@@ -78,8 +78,8 @@ namespace Terminal
         {
             countOpenings.museum += 1;
 
-            MuseumWin museumWin = new MuseumWin();
-            museumWin.ShowDialog();
+            Museum2 museum2 = new Museum2();
+            museum2.ShowDialog();
         }
 
         //Погода

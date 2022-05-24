@@ -7,10 +7,14 @@ using System.Xml.Linq;
 
 namespace Terminal
 {
-    
-    class XmlMuseum
+    public class MuseumInformation
     {
-        private static XmlMuseum _instance;
+        public string nameAttribute;
+        public string dataElement;
+    }
+    class XmlMuseum2
+    {
+        private static XmlMuseum2 _instance;
         private static List<MuseumInformation> museumList = new List<MuseumInformation>();
         public List<MuseumInformation> GetMuseumInfo
         {
@@ -20,11 +24,11 @@ namespace Terminal
         {
             get => museumList.Count;
         }
-        public static XmlMuseum Instance()
+        public static XmlMuseum2 Instance()
         {
             if (_instance == null)
             {
-                _instance = new XmlMuseum();
+                _instance = new XmlMuseum2();
                 Read();
             }
             return _instance;
@@ -34,12 +38,11 @@ namespace Terminal
         /// </summary>
         private static void Read()
         {
-            XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Museum.xml");
+            XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Museum2.xml");
             foreach (XElement informations in xdoc.Element("informations").Elements("info"))
             {
                 MuseumInformation museumInformation = new MuseumInformation();
-                museumInformation.nameAttribute = informations.Attribute("name").Value;
-                museumInformation.dataElement = informations.Element("data").Value;
+                museumInformation.dataElement = informations.Value;
 
                 museumList.Add(museumInformation);
             }

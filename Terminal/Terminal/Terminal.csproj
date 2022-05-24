@@ -182,6 +182,9 @@
     <Compile Include="MapWin.xaml.cs">
       <DependentUpon>MapWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Museum2.0.xaml.cs">
+      <DependentUpon>Museum2.0.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MuseumInf.xaml.cs">
       <DependentUpon>MuseumInf.xaml</DependentUpon>
     </Compile>
@@ -229,6 +232,7 @@
     <Compile Include="XmlCollegeBuilding.cs" />
     <Compile Include="XmlFaq.cs" />
     <Compile Include="XmlMuseum.cs" />
+    <Compile Include="XmlMuseum2.cs" />
     <Compile Include="XmlSpecialties.cs" />
     <Compile Include="XmlSpecialtiesChoice.cs" />
     <Page Include="AdditionalWin.xaml">
@@ -256,6 +260,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MapWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Museum2.0.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -404,6 +412,7 @@
     <Resource Include="QRQvantorium.png" />
     <Resource Include="QRQvantorium_vk.png" />
     <Resource Include="Additional.png" />
+    <Resource Include="bust.png" />
     <Content Include="Weather\dll\AutoRuner.dll" />
     <Content Include="Weather\dll\CallOpenWeather.dll" />
     <Resource Include="Weather\icons\01d.png" />
