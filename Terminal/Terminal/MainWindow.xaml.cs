@@ -17,7 +17,7 @@ namespace Terminal
     /// </summary>
     public partial class MainWindow : Window
     {
-        private CountOpenings countOpenings = new CountOpenings();
+        private CountOpenings countOpenings = new CountOpenings(); 
 
         public MainWindow()
         {           
@@ -45,6 +45,13 @@ namespace Terminal
                 timerWeather.IsEnabled = true;
                 timerWeather.Tick += (o, t) => { Weather("Волжский"); };
                 timerWeather.Start();
+
+                //Сохранение логов один раз в день 
+                var timerLogs = new System.Windows.Threading.DispatcherTimer();
+                timerLogs.Interval = new TimeSpan(24, 0, 0);
+                timerLogs.IsEnabled = true;
+                timerLogs.Tick += (o, t) => { SaveLog(); };
+                timerLogs.Start();
             }
             catch (Exception ex)
             {
@@ -67,6 +74,7 @@ namespace Terminal
         }
         public async Task MethodWithDelayAsync(int milliseconds)
         {
+            countOpenings.osnSvedinia += 1;
             await Task.Delay(milliseconds);
 
             WindowInf windowInf = new WindowInf();
@@ -245,66 +253,7 @@ namespace Terminal
 
             smsRu.Send(nmb, "Терминал включился");
             smsRu2.Send(nmb2, "Терминал включился");
-        }
-
-        private void EndTerminal(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            string myApiKey = "AE6DB76C-7A11-1E06-E462-D35991791012";
-            string myApiKey2 = "AE6DB76C-7A11-1E06-E462-D35991791012";
-
-            string nmb = "79696533799";
-            string nmb2 = "79026560519";
-
-            SmsRu smsRu = new SmsRu(myApiKey);
-            SmsRu smsRu2 = new SmsRu(myApiKey2);
-
-            smsRu.Send(nmb, "Терминал выключился "
-                + "Отчёт: "
-                + "Основные сведения:" + $"{countOpenings.osnSvedinia.ToString()}"
-                + "Музей:" + $"{countOpenings.museum}"
-                + "Карты:" + $"{countOpenings.map}"
-                + "Мастерская:" + $"{countOpenings.masterskaya}"
-                + "Специальности:" + $"{countOpenings.specialities}"
-                + "Кружки:" + $"{countOpenings.rounded}"
-                + "Квантория:" + $"{countOpenings.qvantorium}"
-                + "Рутуб:" + $"{countOpenings.rutube}"
-                + "Вк:" + $"{countOpenings.vk}"
-                + "Телега:" + $"{countOpenings.telega}"
-                + "Расписание:" + $"{countOpenings.ruspisanie}"
-                + "FAQ:" + $"{countOpenings.faq}");
-
-            smsRu2.Send(nmb2, "Терминал выключился "
-                + "Отчёт: "
-                + "Основные сведения: " + $"{countOpenings.osnSvedinia} "
-                + "Музей: " + $"{countOpenings.museum} "
-                + "Карты: " + $"{countOpenings.map} "
-                + "Мастерская: " + $"{countOpenings.masterskaya} "
-                + "Специальности: " + $"{countOpenings.specialities} "
-                + "Кружки: " + $"{countOpenings.rounded} "
-                + "Квантория: " + $"{countOpenings.qvantorium} "
-                + "Рутуб: " + $"{countOpenings.rutube} "
-                + "Вк: " + $"{countOpenings.vk} "
-                + "Телега: " + $"{countOpenings.telega} "
-                + "Расписание: " + $"{countOpenings.ruspisanie} "
-                + "FAQ: " + $"{countOpenings.faq} ");
-
-            MessageBox.Show("Терминал выключился "
-                + "Отчёт: "
-                + "Основные сведения:" + $"{countOpenings.osnSvedinia.ToString()}"
-                + "Музей:" + $"{countOpenings.museum}"
-                + "Карты:" + $"{countOpenings.map}"
-                + "Мастерская:" + $"{countOpenings.masterskaya}"
-                + "Специальности:" + $"{countOpenings.specialities}"
-                + "Кружки:" + $"{countOpenings.rounded}"
-                + "Квантория:" + $"{countOpenings.qvantorium}"
-                + "Рутуб:" + $"{countOpenings.rutube}"
-                + "Вк:" + $"{countOpenings.vk}"
-                + "Телега:" + $"{countOpenings.telega}"
-                + "Расписание:" + $"{countOpenings.ruspisanie}"
-                + "FAQ:" + $"{countOpenings.faq}");
-
-        }
-
+        }       
 
         private void ExceptionTerminal()
         {
@@ -321,6 +270,41 @@ namespace Terminal
 
             MessageBox.Show("ТЕРМИНАЛ СЛОМАЛСЯ))) \n" +
                 "Подойтите в кабинет 216 и сообщите об этом", null);
+        }
+
+        private async void SaveLog()
+        {
+            string s = DateTime.Now.ToString("dd MMMM yyyy");
+
+            string textLog = $"\t Дата: {s}\n" +
+                $" Осн.сведения: {countOpenings.osnSvedinia} \n" +
+                $" Музей: {countOpenings.museum}\n" +
+                $" Карты: {countOpenings.map}\n" +
+                $" Мастерские: {countOpenings.masterskaya}\n" +
+                $" Специальности: {countOpenings.specialities}\n" +
+                $" Кружки: {countOpenings.rounded}\n" +
+                $" Кванториум: {countOpenings.qvantorium}\n" +
+                $" Рутуб: {countOpenings.rutube}\n" +
+                $" Вк: {countOpenings.vk}\n" +
+                $" Расписание: {countOpenings.ruspisanie}\n" +
+                $" Факью: {countOpenings.faq}\n\n\n";
+
+            if (System.IO.File.Exists("D:\\Logs.txt"))
+            {
+                using (StreamWriter writer = new StreamWriter("D:\\Logs.txt", true))
+                {
+                    await writer.WriteLineAsync(textLog);
+                }
+            }
+            else
+            {
+                File.Create("D:\\Logs.txt");
+
+                using (StreamWriter writer = new StreamWriter("D:\\Logs.txt", true))
+                {
+                    await writer.WriteLineAsync(textLog);
+                }
+            }                
         }
     }
 }

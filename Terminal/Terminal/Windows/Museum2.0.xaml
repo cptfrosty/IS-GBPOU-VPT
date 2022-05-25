@@ -13,8 +13,8 @@
             <Border.Background>
                 <SolidColorBrush Color="Black" Opacity="0.5"/>
             </Border.Background>
-
         </Border>
+
 
         <Grid Margin="34,656,26,50">
             <ScrollViewer x:Name="scrollViewer">
@@ -47,7 +47,7 @@
                 <ImageBrush ImageSource="..\back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Button Height="100" HorizontalAlignment="Right" Width="90" VerticalAlignment="Top" Click="Button_Click" Margin="0,185,26,0">
+        <Button Height="150" HorizontalAlignment="Right" Width="140" VerticalAlignment="Top" Click="Button_Click" Margin="0,155,26,0">
             <Button.Foreground>
                 <SolidColorBrush Color="#DDFFFFFF" Opacity="0"/>
             </Button.Foreground>
@@ -58,6 +58,8 @@
                 <ImageBrush ImageSource="/Terminal;component/bust.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
+        <Label Content="Музей истории Великой Отечественной войны." Margin="570,55,570,0" VerticalAlignment="Top" Height="50" FontSize="35" FontFamily="Arial" Foreground="White"/>
+        <Label Content="Экспонаты" Margin="1734,295,0,0" VerticalAlignment="Top" Height="50" FontSize="35" FontFamily="Arial" Foreground="White"/>
 
     </Grid>
 </Window>
