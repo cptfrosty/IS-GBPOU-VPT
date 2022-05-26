@@ -2,6 +2,7 @@
 using Microsoft.Maps.MapControl.WPF;
 using Newtonsoft.Json;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
@@ -17,47 +18,46 @@ namespace Terminal
     /// </summary>
     public partial class MainWindow : Window
     {
-        private CountOpenings countOpenings = new CountOpenings(); 
+        private CountOpenings countOpenings = new CountOpenings();
 
         public MainWindow()
-        {           
+        {
             InitializeComponent();
             try
             {
                 StartTerminal();
 
-                CheckNetwork();
-
-                Weather("Волжский");
-
-                DisableGestures();
-
-                //Время
-                var timer = new System.Windows.Threading.DispatcherTimer();
-                timer.Interval = new TimeSpan(0, 0, 1);
-                timer.IsEnabled = true;
-                timer.Tick += (o, t) => { Time.Content = DateTime.Now.ToShortTimeString(); };
-                timer.Start();
-
-                //Обновление погоды
-                var timerWeather = new System.Windows.Threading.DispatcherTimer();
-                timerWeather.Interval = new TimeSpan(0, 5, 0);
-                timerWeather.IsEnabled = true;
-                timerWeather.Tick += (o, t) => { Weather("Волжский"); };
-                timerWeather.Start();
-
-                //Сохранение логов один раз в день 
-                var timerLogs = new System.Windows.Threading.DispatcherTimer();
-                timerLogs.Interval = new TimeSpan(24, 0, 0);
-                timerLogs.IsEnabled = true;
-                timerLogs.Tick += (o, t) => { SaveLog(); };
-                timerLogs.Start();
+                //Все таймеры
+                Times();
             }
             catch (Exception ex)
             {
-                ExceptionTerminal();
+                MessageBox.Show("ТЕРМИНАЛ ВРЕМЕННО НЕ РАБОТАЕТ!", null);
             }
+        }
 
+        private void Times()
+        {
+            //Время
+            var timer = new System.Windows.Threading.DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.IsEnabled = true;
+            timer.Tick += (o, t) => { Time.Content = DateTime.Now.ToShortTimeString(); };
+            timer.Start();
+
+            //Обновление погоды
+            var timerWeather = new System.Windows.Threading.DispatcherTimer();
+            timerWeather.Interval = new TimeSpan(0, 5, 0);
+            timerWeather.IsEnabled = true;
+            timerWeather.Tick += (o, t) => { Weather("Волжский"); };
+            timerWeather.Start();
+
+            //Сохранение логов один раз в день 
+            var timerLogs = new System.Windows.Threading.DispatcherTimer();
+            timerLogs.Interval = new TimeSpan(24, 0, 0);
+            timerLogs.IsEnabled = true;
+            timerLogs.Tick += (o, t) => { SaveLog(); };
+            timerLogs.Start();
         }
 
         //Отключение жестов WINDOWS 10(режим планшета)
@@ -242,35 +242,13 @@ namespace Terminal
 
         private void StartTerminal()
         {
-            string myApiKey = "AE6DB76C-7A11-1E06-E462-D35991791012";
-            string myApiKey2 = "AE6DB76C-7A11-1E06-E462-D35991791012";
+            CheckNetwork();
 
-            string nmb = "79696533799";
-            string nmb2 = "79026560519";
+            Weather("Волжский");
 
-            SmsRu smsRu = new SmsRu(myApiKey);
-            SmsRu smsRu2 = new SmsRu(myApiKey2);
-
-            smsRu.Send(nmb, "Терминал включился");
-            smsRu2.Send(nmb2, "Терминал включился");
-        }       
-
-        private void ExceptionTerminal()
-        {
-            string myApiKey = "AE6DB76C-7A11-1E06-E462-D35991791012";
-            string myApiKey2 = "AE6DB76C-7A11-1E06-E462-D35991791012";
-
-            string nmb = "79696533799";
-            string nmb2 = "79026560519";
-
-            SmsRu smsRu = new SmsRu(myApiKey);
-            SmsRu smsRu2 = new SmsRu(myApiKey2);
-            smsRu.Send(nmb, "ГГ ТЕРМИНАЛУ");
-            smsRu2.Send(nmb2, "ГГ ТЕРМИНАЛУ");
-
-            MessageBox.Show("ТЕРМИНАЛ СЛОМАЛСЯ))) \n" +
-                "Подойтите в кабинет 216 и сообщите об этом", null);
+            DisableGestures();
         }
+
 
         private async void SaveLog()
         {
@@ -298,14 +276,24 @@ namespace Terminal
             }
             else
             {
-                var f =  File.Create("Log.txt");
+                var f = File.Create("Log.txt");
                 f.Close();
 
                 using (StreamWriter writer = new StreamWriter("Log.txt", true))
                 {
                     await writer.WriteLineAsync(textLog);
                 }
-            }                
+            }
+        }
+
+        private void OpenExploer()
+        {
+            Process.Start("OpenShow.bat");
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            OpenExploer();
         }
     }
 }
