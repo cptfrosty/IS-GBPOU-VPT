@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Image HorizontalAlignment="Left" Width="274" Height="148" VerticalAlignment="Top" Margin="305,20,0,0" RenderTransformOrigin="0.5,0.5" Source="logo.png">
+        <Image HorizontalAlignment="Left" Width="274" Height="148" VerticalAlignment="Top" Margin="305,20,0,0" RenderTransformOrigin="0.5,0.5" Source="pack://application:,,,/AllPicture/logo.png">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -32,7 +32,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
             <Image.OpacityMask>
-                <ImageBrush ImageSource="logo.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/logo.png"/>
             </Image.OpacityMask>
         </Image>
         <Label Content="«Волжский политехнический техникум»" HorizontalAlignment="Left" Margin="614,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,0.788" FontSize="36" Foreground="White" FontFamily="Arial" Grid.ColumnSpan="2" Height="50" Width="668"/>
@@ -42,31 +42,31 @@
         <Button Content="" HorizontalAlignment="Left" Margin="50,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" Click="MainInformation" >
 
             <Button.Background>
-                <ImageBrush ImageSource="osnSvedenia.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/osnSvedenia.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Label Content="Музей" HorizontalAlignment="Left" Margin="437,348,0,0" VerticalAlignment="Top" Width="80" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
         <Button Content="" HorizontalAlignment="Left" Margin="350,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Button_Click" >
             <Button.Background>
-                <ImageBrush ImageSource="museum.png" Stretch="Uniform" />
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/museum.png" Stretch="Uniform" />
             </Button.Background>
         </Button>
         <Label Content="Специальности" HorizontalAlignment="Left" Margin="228,576,0,0" VerticalAlignment="Top" Width="180" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
         <Button Content="" HorizontalAlignment="Left" Margin="50,436,0,0" VerticalAlignment="Top" Width="552" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="SpecialtiesClick"  >
             <Button.Background>
-                <ImageBrush ImageSource="education.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/education.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Label Content="Мастерские" HorizontalAlignment="Left" Margin="92.5,348,0,0" VerticalAlignment="Top" Width="147" Foreground="#1C2631" FontSize="24" FontFamily="Arial" Grid.Column="1"/>
         <Button Content="" HorizontalAlignment="Left" Margin="38.5,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Workshops_Click" Grid.Column="1"  >
             <Button.Background>
-                <ImageBrush ImageSource="mMasterkaya.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/mMasterkaya.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 
         <Button Content="" HorizontalAlignment="Left" Margin="650,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" Click="Button_MapWin_Click" >
             <Button.Background>
-                <ImageBrush ImageSource="MapWin.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/MapWin.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Label Content="Карта" HorizontalAlignment="Left" Margin="735,348,0,0" VerticalAlignment="Top" Width="76" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
@@ -78,10 +78,10 @@
             <Label x:Name="LabelMain" Content="Main" FontSize="36" Margin="100,470,97.5,344" Width="520" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="58"/>
             <Image x:Name="IconWeather" HorizontalAlignment="Left" Height="120" Margin="231,315,0,0" VerticalAlignment="Top" Width="120" />
 
-            <Image x:Name="Image_Pressure" HorizontalAlignment="Left" Height="60" Margin="130,560,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/davleniye.png" />
-            <Image x:Name="Image_Humidity" HorizontalAlignment="Left" Height="60" Margin="130,665,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/Kaplya.png" />
-            <Image x:Name="Image_Wind" HorizontalAlignment="Left" Height="60" Margin="380,560,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/veter.png" />
-            <Image x:Name="Image_Direction" HorizontalAlignment="Left" Height="60" Margin="380,665,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="Weather/icons/strelka.png" />
+            <Image x:Name="Image_Pressure" HorizontalAlignment="Left" Height="60" Margin="130,560,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="pack://application:,,,/Weather/icons/davleniye.png" />
+            <Image x:Name="Image_Humidity" HorizontalAlignment="Left" Height="60" Margin="130,665,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="pack://application:,,,/Weather/icons/Kaplya.png" />
+            <Image x:Name="Image_Wind" HorizontalAlignment="Left" Height="60" Margin="380,560,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="pack://application:,,,/Weather/icons/Veter.png"/>
+            <Image x:Name="Image_Direction" HorizontalAlignment="Left" Height="60" Margin="380,665,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Source="pack://application:,,,/Weather/icons/strelka.png" />
 
             <Label x:Name="Text_Pressure" Content="Давление" Grid.Column="1" HorizontalAlignment="Left" Margin="200,560,0,0" VerticalAlignment="Top" FontSize="32"/>
             <Label x:Name="Text_Direction" Content="Направление" Grid.Column="1" HorizontalAlignment="Left" Margin="450,670,0,0" VerticalAlignment="Top" FontSize="32"/>
@@ -95,41 +95,41 @@
                 <SolidColorBrush Color="White" Opacity="0"/>
             </Button.BorderBrush>
             <Button.Background>
-                <ImageBrush ImageSource="faq.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/faq.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Margin="50,668,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Rutube_Click"   >
             <Button.Background>
-                <ImageBrush ImageSource="Rutube.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/Rutube.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Margin="350,668,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Vk_Click"   >
             <Button.Background>
-                <ImageBrush ImageSource="Vk.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/Vk.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Margin="650,668,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Telegram_Click">
             <Button.Background>
-                <ImageBrush ImageSource="telegram.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/telegram.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Margin="38.5,668,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Schedule_Click" Grid.Column="1">
             <Button.Background>
-                <ImageBrush ImageSource="Schedule.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/Schedule.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Label Content="Расписание
                " HorizontalAlignment="Left" Margin="92.5,806,0,0" VerticalAlignment="Top" Width="146" Foreground="#1C2631" FontSize="24" FontFamily="Arial" Grid.Column="1"/>
         <Button Content="" HorizontalAlignment="Left" Margin="38.5,438,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Qvantorium_Click" Grid.Column="1">
             <Button.Background>
-                <ImageBrush ImageSource="Qvantorium.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/Qvantorium.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Label Content="Кванториум" HorizontalAlignment="Left" Margin="92.5,574,0,0" VerticalAlignment="Top" Width="146" Foreground="#1C2631" FontSize="24" FontFamily="Arial" Grid.Column="1"/>
 
         <Button Content="" HorizontalAlignment="Left" Margin="650,438,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" RenderTransformOrigin="1.267,0.521" Click="Additional_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Additional.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/Additional.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Label Content="Кружки" HorizontalAlignment="Left" Margin="735,576,0,0" VerticalAlignment="Top" Width="89" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>

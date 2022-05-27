@@ -13,12 +13,12 @@
                 <SolidColorBrush Color="#FF808081" Opacity="0"/>
             </Button.BorderBrush>
             <Button.Background>
-                <ImageBrush ImageSource="back.png" Stretch="UniformToFill" Opacity="0"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/back.png" Stretch="UniformToFill" Opacity="0"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="logo.png">
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="pack://application:,,,/AllPicture/logo.png">
             <Image.OpacityMask>
-                <ImageBrush ImageSource="logo.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/logo.png"/>
             </Image.OpacityMask>
         </Image>
     </Grid>

@@ -34,9 +34,9 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="..\logo.png">
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="pack://application:,,,/AllPicture/logo.png">
             <Image.OpacityMask>
-                <ImageBrush ImageSource="..\logo.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/logo.png"/>
             </Image.OpacityMask>
         </Image>
         <Button Height="100" HorizontalAlignment="Right" Width="90" VerticalAlignment="Top" Click="Exit" Margin="0,21,26,0">
@@ -44,7 +44,7 @@
                 <SolidColorBrush Color="#FF273340" Opacity="0"/>
             </Button.BorderBrush>
             <Button.Background>
-                <ImageBrush ImageSource="..\back.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
         <Button Height="150" HorizontalAlignment="Right" Width="140" VerticalAlignment="Top" Click="Button_Click" Margin="0,155,26,0">
@@ -55,7 +55,7 @@
                 <SolidColorBrush Color="#FF273340" Opacity="0"/>
             </Button.BorderBrush>
             <Button.Background>
-                <ImageBrush ImageSource="/Terminal;component/bust.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/bust.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
         <Label Content="Музей истории Великой Отечественной войны." Margin="570,55,570,0" VerticalAlignment="Top" Height="50" FontSize="35" FontFamily="Arial" Foreground="White"/>

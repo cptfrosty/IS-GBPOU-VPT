@@ -23,12 +23,12 @@
                 <SolidColorBrush Color="#DDFFFFFF" Opacity="0.005"/>
             </Button.Foreground>
             <Button.Background>
-                <ImageBrush ImageSource="back.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/back.png"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="logo.png">
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="pack://application:,,,/AllPicture/logo.png">
             <Image.OpacityMask>
-                <ImageBrush ImageSource="logo.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/logo.png"/>
             </Image.OpacityMask>
         </Image>
 

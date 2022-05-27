@@ -57,6 +57,12 @@
   <PropertyGroup>
     <ApplicationIcon>self-service.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'New|AnyCPU'">
+    <OutputPath>bin\New\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'New|Win32'">
+    <OutputPath>bin\Win32\New\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CallOpenWeather, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -168,46 +174,46 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdditionalWin.xaml.cs">
+    <Compile Include="Windows\AdditionalWin.xaml.cs">
       <DependentUpon>AdditionalWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CountOpenings.cs" />
-    <Compile Include="EdgeGestureUtil.cs" />
-    <Compile Include="FAQWin.xaml.cs">
+    <Compile Include="XmlWindow\CountOpenings.cs" />
+    <Compile Include="XmlWindow\EdgeGestureUtil.cs" />
+    <Compile Include="Windows\FAQWin.xaml.cs">
       <DependentUpon>FAQWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FrameForm.xaml.cs">
+    <Compile Include="Windows\FrameForm.xaml.cs">
       <DependentUpon>FrameForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MapWin.xaml.cs">
+    <Compile Include="Windows\MapWin.xaml.cs">
       <DependentUpon>MapWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Museum2.0.xaml.cs">
       <DependentUpon>Museum2.0.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MuseumInf.xaml.cs">
+    <Compile Include="Windows\MuseumInf.xaml.cs">
       <DependentUpon>MuseumInf.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MuseumWin.xaml.cs">
+    <Compile Include="Windows\MuseumWin.xaml.cs">
       <DependentUpon>MuseumWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OpenPictureWin.xaml.cs">
+    <Compile Include="Windows\OpenPictureWin.xaml.cs">
       <DependentUpon>OpenPictureWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OpenQRWin.xaml.cs">
+    <Compile Include="Windows\OpenQRWin.xaml.cs">
       <DependentUpon>OpenQRWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QvantoriumWin.xaml.cs">
+    <Compile Include="Windows\QvantoriumWin.xaml.cs">
       <DependentUpon>QvantoriumWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SmsRu.cs" />
-    <Compile Include="Specialties.xaml.cs">
+    <Compile Include="XmlWindow\SmsRu.cs" />
+    <Compile Include="Windows\Specialties.xaml.cs">
       <DependentUpon>Specialties.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SpecialtiesChoice.xaml.cs">
+    <Compile Include="Windows\SpecialtiesChoice.xaml.cs">
       <DependentUpon>SpecialtiesChoice.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SpecialtiesInf.xaml.cs">
+    <Compile Include="Windows\SpecialtiesInf.xaml.cs">
       <DependentUpon>SpecialtiesInf.xaml</DependentUpon>
     </Compile>
     <Compile Include="Weather\OpenWeather\clouds.cs" />
@@ -218,36 +224,36 @@
     <Compile Include="Weather\OpenWeather\weather.cs" />
     <Compile Include="Weather\OpenWeather\wind.cs" />
     <Compile Include="Weather\Translate.cs" />
-    <Compile Include="WindowInf.xaml.cs">
+    <Compile Include="Windows\WindowInf.xaml.cs">
       <DependentUpon>WindowInf.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Workshops.xaml.cs">
+    <Compile Include="Windows\Workshops.xaml.cs">
       <DependentUpon>Workshops.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WorkshopsInf.xaml.cs">
+    <Compile Include="Windows\WorkshopsInf.xaml.cs">
       <DependentUpon>WorkshopsInf.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WorkshopsXml.cs" />
-    <Compile Include="XmlAdditional.cs" />
-    <Compile Include="XmlCollegeBuilding.cs" />
-    <Compile Include="XmlFaq.cs" />
-    <Compile Include="XmlMuseum.cs" />
-    <Compile Include="XmlMuseum2.cs" />
-    <Compile Include="XmlSpecialties.cs" />
-    <Compile Include="XmlSpecialtiesChoice.cs" />
-    <Page Include="AdditionalWin.xaml">
+    <Compile Include="XmlWindow\WorkshopsXml.cs" />
+    <Compile Include="XmlWindow\XmlAdditional.cs" />
+    <Compile Include="XmlWindow\XmlCollegeBuilding.cs" />
+    <Compile Include="XmlWindow\XmlFaq.cs" />
+    <Compile Include="XmlWindow\XmlMuseum.cs" />
+    <Compile Include="XmlWindow\XmlMuseum2.cs" />
+    <Compile Include="XmlWindow\XmlSpecialties.cs" />
+    <Compile Include="XmlWindow\XmlSpecialtiesChoice.cs" />
+    <Page Include="Windows\AdditionalWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FAQWin.xaml">
+    <Page Include="Windows\FAQWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FrameForm.xaml">
+    <Page Include="Windows\FrameForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -255,11 +261,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MapWin.xaml">
+    <Page Include="Windows\MapWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -267,47 +273,47 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MuseumInf.xaml">
+    <Page Include="Windows\MuseumInf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MuseumWin.xaml">
+    <Page Include="Windows\MuseumWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OpenPictureWin.xaml">
+    <Page Include="Windows\OpenPictureWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OpenQRWin.xaml">
+    <Page Include="Windows\OpenQRWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="QvantoriumWin.xaml">
+    <Page Include="Windows\QvantoriumWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Specialties.xaml">
+    <Page Include="Windows\Specialties.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SpecialtiesChoice.xaml">
+    <Page Include="Windows\SpecialtiesChoice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SpecialtiesInf.xaml">
+    <Page Include="Windows\SpecialtiesInf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowInf.xaml">
+    <Page Include="Windows\WindowInf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Workshops.xaml">
+    <Page Include="Windows\Workshops.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WorkshopsInf.xaml">
+    <Page Include="Windows\WorkshopsInf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -340,31 +346,43 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo.png" />
+    <Content Include="AllPicture\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo2.png" />
+    <Content Include="AllPicture\logo2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="1.jpg" />
+    <Content Include="AllPicture\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FrameTest\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Icon\logo2.png" />
+    <Content Include="Resources\Icon\logo2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Icon\logo2copy.png" />
+    <Content Include="Resources\Icon\logo2copy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Corps.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="museum.png" />
+    <Content Include="AllPicture\museum.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Museum.xml" />
+    <Resource Include="Windows\Museum.xml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -379,66 +397,180 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Frame\Corps.xml" />
-    <Resource Include="Resources\Frame\Museum.xml" />
-    <Resource Include="Resources\Image\Corp\1.jpg" />
-    <Resource Include="Resources\Image\Corp\2.jpg" />
-    <Resource Include="Resources\Image\Corp\3.jpg" />
-    <Resource Include="Resources\Image\Corp\4.jpg" />
-    <Resource Include="Resources\Image\Museum\1.jpg" />
-    <Resource Include="Resources\Image\Museum\2.jpg" />
+    <Content Include="Resources\Frame\Corps.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Frame\Museum.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Image\Corp\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Image\Corp\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Image\Corp\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Image\Corp\4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Image\Museum\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Image\Museum\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="W_education.png" />
-    <Resource Include="education.png" />
-    <Resource Include="osnSvedenia.png" />
-    <Resource Include="Resources\Frame\Workshops.xml" />
-    <Resource Include="faq.png" />
-    <Resource Include="mMasterkaya.png" />
+    <Content Include="AllPicture\W_education.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\education.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\osnSvedenia.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Frame\Workshops.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\faq.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\mMasterkaya.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="self-service.ico" />
-    <Resource Include="MapWin.png" />
-    <Resource Include="minus.png" />
-    <Resource Include="plus.png" />
-    <Resource Include="back.png" />
-    <Resource Include="Rutube.png" />
-    <Resource Include="infoQR.png" />
-    <Resource Include="QRRutube.png" />
-    <Resource Include="telegram.png" />
-    <Resource Include="vk.png" />
-    <Resource Include="Schedule.png" />
-    <Resource Include="Qvantorium.png" />
-    <Resource Include="background.jpg" />
-    <Resource Include="ed_russia.png" />
-    <Resource Include="QRQvantorium.png" />
-    <Resource Include="QRQvantorium_vk.png" />
-    <Resource Include="Additional.png" />
-    <Resource Include="bust.png" />
-    <Content Include="Weather\dll\AutoRuner.dll" />
-    <Content Include="Weather\dll\CallOpenWeather.dll" />
-    <Resource Include="Weather\icons\01d.png" />
-    <Resource Include="Weather\icons\01n.png" />
-    <Resource Include="Weather\icons\02d.png" />
-    <Resource Include="Weather\icons\02n.png" />
-    <Resource Include="Weather\icons\03d.png" />
-    <Resource Include="Weather\icons\03n.png" />
-    <Resource Include="Weather\icons\04d.png" />
-    <Resource Include="Weather\icons\04n.png" />
-    <Resource Include="Weather\icons\09d.png" />
-    <Resource Include="Weather\icons\09n.png" />
-    <Resource Include="Weather\icons\10d.png" />
-    <Resource Include="Weather\icons\10n.png" />
-    <Resource Include="Weather\icons\11d.png" />
-    <Resource Include="Weather\icons\11n.png" />
-    <Resource Include="Weather\icons\13d.png" />
-    <Resource Include="Weather\icons\13n.png" />
-    <Resource Include="Weather\icons\50d.png" />
-    <Resource Include="Weather\icons\50n.png" />
-    <Resource Include="Weather\icons\davleniye.png" />
-    <Resource Include="Weather\icons\icon_settings.png" />
-    <Resource Include="Weather\icons\Kaplya.png" />
-    <Resource Include="Weather\icons\pixlr-bg-result.icon.ico" />
-    <Resource Include="Weather\icons\strelka.png" />
-    <Resource Include="Weather\icons\veter.png" />
+    <Content Include="AllPicture\MapWin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\minus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\plus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\Rutube.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\infoQR.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\QRRutube.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\telegram.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\vk.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\Schedule.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\Qvantorium.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\ed_russia.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\QRQvantorium.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\QRQvantorium_vk.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\Additional.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AllPicture\bust.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\dll\AutoRuner.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\dll\CallOpenWeather.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\01d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\01n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\02d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\02n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\03d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\03n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\04d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\04n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\09d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\09n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\10d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\10n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\11d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\11n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\13d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\13n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\50d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\50n.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\davleniye.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\icon_settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\Kaplya.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\pixlr-bg-result.icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\strelka.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Weather\icons\veter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

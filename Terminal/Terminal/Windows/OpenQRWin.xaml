@@ -1,11 +1,11 @@
-﻿<Window x:Class="Terminal.SpecialtiesChoice"
+﻿<Window x:Class="Terminal.OpenQRWin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Terminal"
         mc:Ignorable="d"
-        Title="SpecialtiesChoice" Height="1080" Width="1920" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#ECF0F5">
+        Title="OpenQRWin" Height="1080" Width="1920" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#ECF0F5">
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="1921" Grid.ColumnSpan="3" CornerRadius="0,0,20,20" Margin="-1,0,-7.5,0">
             <Border.Background>
@@ -15,9 +15,9 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="logo.png">
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="pack://application:,,,/AllPicture/logo.png">
             <Image.OpacityMask>
-                <ImageBrush ImageSource="logo.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/logo.png"/>
             </Image.OpacityMask>
         </Image>
         <Button Height="100" HorizontalAlignment="Right" Width="90" VerticalAlignment="Top" Click="Exit" Margin="0,21,26,0">
@@ -25,14 +25,13 @@
                 <SolidColorBrush Color="#FF273340" Opacity="0"/>
             </Button.BorderBrush>
             <Button.Background>
-                <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-
-
-        <WrapPanel x:Name="panelSpecialties" HorizontalAlignment="Left" Height="930" VerticalAlignment="Top" Width="1920" Margin="0,150,0,0"/>
-
-
-
+        <Image x:Name="imageQR" HorizontalAlignment="Left" Height="450" Margin="492,378,0,0" VerticalAlignment="Top" Width="450">
+        </Image>
+        <Image HorizontalAlignment="Left" Height="450" Margin="1010,480,0,0" VerticalAlignment="Top" Width="450" Source="pack://application:,,,/AllPicture/infoQR.png" >
+        </Image>
+        <Image x:Name="imageQR_Copy" HorizontalAlignment="Left" Height="450" Margin="492,378,0,0" VerticalAlignment="Top" Width="450"/>
     </Grid>
 </Window>

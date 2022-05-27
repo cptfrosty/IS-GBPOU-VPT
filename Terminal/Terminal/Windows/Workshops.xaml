@@ -15,9 +15,9 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="logo.png">
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="pack://application:,,,/AllPicture/logo.png">
             <Image.OpacityMask>
-                <ImageBrush ImageSource="logo.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/logo.png"/>
             </Image.OpacityMask>
         </Image>
         <Button Height="100" HorizontalAlignment="Right" Width="90" VerticalAlignment="Top" Click="Exit" Margin="0,21,26,0">
@@ -28,12 +28,12 @@
                 <SolidColorBrush Color="#FF273340" Opacity="0"/>
             </Button.BorderBrush>
             <Button.Background>
-                <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
         <StackPanel x:Name="panelWorkshop" Margin="0,80, 0, 0" Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
 
         <TextBlock HorizontalAlignment="Left" Margin="368,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="324" Width="1421" FontSize="34" FontWeight="Bold" FontFamily="Arial"><Run Text="Волжский политехнический техникум вошел в число образовательных организаций – получателей в 2019 году грантов из федерального бюджета в рамках реализации мероприятия «Государственная поддержка профессиональных образовательных организаций в целях обеспечения соответствия их материально-технической базы современным требованиям» федерального проекта «Молодые профессионалы» (Повышение конкурентоспособности профессионального образования)» национального проекта «Образование»."/><LineBreak/><Run/><LineBreak/></TextBlock>
-        <Image HorizontalAlignment="Left" Height="324" Margin="50,200,0,0" VerticalAlignment="Top" Width="260"  Source="W_education.png"/>
+        <Image HorizontalAlignment="Left" Height="324" Margin="50,200,0,0" VerticalAlignment="Top" Width="260"  Source="pack://application:,,,/AllPicture/W_education.png"/>
     </Grid>
 </Window>

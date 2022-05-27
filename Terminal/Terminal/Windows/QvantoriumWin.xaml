@@ -15,9 +15,9 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="logo.png">
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="pack://application:,,,/AllPicture/logo.png">
             <Image.OpacityMask>
-                <ImageBrush ImageSource="logo.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/logo.png"/>
             </Image.OpacityMask>
         </Image>
         <Button Height="100" HorizontalAlignment="Right" Width="90" VerticalAlignment="Top" Click="Exit" Margin="0,21,26,0">
@@ -25,7 +25,7 @@
                 <SolidColorBrush Color="#FF273340" Opacity="0"/>
             </Button.BorderBrush>
             <Button.Background>
-                <ImageBrush ImageSource="back.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/back.png" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
 
@@ -40,15 +40,15 @@
         </ScrollViewer>
 
 
-        <Image HorizontalAlignment="Left" Height="288" Margin="50,758,0,0" VerticalAlignment="Top" Stretch="Uniform" Width="354" Source="ed_russia.png"  ></Image>
+        <Image HorizontalAlignment="Left" Height="288" Margin="50,758,0,0" VerticalAlignment="Top" Stretch="Uniform" Width="354" Source="pack://application:,,,/AllPicture/ed_russia.png"  ></Image>
 
-        <Image HorizontalAlignment="Left" Height="288" Margin="94,155,0,0" VerticalAlignment="Top" Stretch="Uniform" Width="288" Source="QRQvantorium.png"  ></Image>
-        <Image HorizontalAlignment="Left" Height="288" Margin="94,448,0,0" VerticalAlignment="Top" Stretch="Uniform"  Width="288" Source="QRQvantorium_vk.png"  ></Image>
+        <Image HorizontalAlignment="Left" Height="288" Margin="94,155,0,0" VerticalAlignment="Top" Stretch="Uniform" Width="288" Source="pack://application:,,,/AllPicture/QRQvantorium.png"  ></Image>
+        <Image HorizontalAlignment="Left" Height="288" Margin="94,448,0,0" VerticalAlignment="Top" Stretch="Uniform"  Width="288" Source="pack://application:,,,/AllPicture/QRQvantorium_vk.png"  ></Image>
 
         
 
         <Grid.Background>
-            <ImageBrush ImageSource="background.jpg"/>
+            <ImageBrush ImageSource="pack://application:,,,/AllPicture/background.jpg"/>
         </Grid.Background>
 
     </Grid>
