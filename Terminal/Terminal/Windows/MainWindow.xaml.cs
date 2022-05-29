@@ -32,7 +32,7 @@ namespace Terminal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ТЕРМИНАЛ ВРЕМЕННО НЕ РАБОТАЕТ!", null);
+                MessageBox.Show("ТЕРМИНАЛ ВРЕМЕННО НЕ РАБОТАЕТ!");
             }
         }
 
