@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Terminal"
+      
         xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MapWin" Height="1080" Width="1920" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" Background="#ECF0F5">
@@ -30,23 +31,47 @@
             </Button.Background>
         </Button>
 
-        <m:Map x:Name="Map" Mode ="Aerial"  ZoomLevel="17" Center="48.807824, 44.729445" Margin="0,140,0,0" CredentialsProvider="KxmFnnOSvEsOXVHuYy97~Vm5RmMbBY29fVsNvorqqtQ~AhwZT1d-6hBSW5bsneacpJUr-60jz4le0dMhdD7FnzK3yfUZ-W-Fxzackg56qZR-" >
+        <m:Map x:Name="Map" Mode="AerialWithLabels" ZoomLevel="17" Center="48.807824, 44.729445" Margin="0,140,0,0" CredentialsProvider="KxmFnnOSvEsOXVHuYy97~Vm5RmMbBY29fVsNvorqqtQ~AhwZT1d-6hBSW5bsneacpJUr-60jz4le0dMhdD7FnzK3yfUZ-W-Fxzackg56qZR-" >
             <Button x:Name="ZoomLeles_plus" Content="" HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="114" Margin="1766,616,0,0" RenderTransformOrigin="0.632,0.281" Click="ZoomPlus">
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
-                </Button.BorderBrush>
-                <Button.Background>
-                    <ImageBrush ImageSource="pack://application:,,,/AllPicture/plus.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="ZoomLeles_minus" Content="" HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="114" Margin="1766,754,0,0" RenderTransformOrigin="0.632,0.281" Click="ZoomMinus">
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
-                </Button.BorderBrush>
-                <Button.Background>
-                    <ImageBrush ImageSource="pack://application:,,,/AllPicture/minus.png"/>
-                </Button.Background>
-            </Button>
-        </m:Map>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://application:,,,/AllPicture/plus.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="ZoomLeles_minus" Content="" HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="114" Margin="1766,754,0,0" RenderTransformOrigin="0.632,0.281" Click="ZoomMinus">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://application:,,,/AllPicture/minus.png"/>
+                    </Button.Background>
+                </Button>
+                <Button BorderThickness ="3"  HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="70" Margin="10,10,0,0" BorderBrush="White" Click="Road_Button_Click">
+
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Terminal;component/AllPicture/road.png"/>
+                    </Button.Background>
+                </Button>
+                <Button BorderThickness ="3" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="70" Margin="100,10,0,0" Click="AerialWithLabels_Button_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Terminal;component/AllPicture/air.png"/>
+                    </Button.Background>
+                    <Button.Foreground>
+                        <SolidColorBrush Color="#DDFFFFFF" Opacity="0"/>
+                    </Button.Foreground>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="White"/>
+                    </Button.BorderBrush>
+                </Button>
+            </m:Map>
+
+
+
     </Grid>
+
+
 </Window>
+
+

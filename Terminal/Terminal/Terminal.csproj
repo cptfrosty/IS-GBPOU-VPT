@@ -174,8 +174,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Style\ViewModel\MainViewModel.cs" />
-    <Compile Include="Style\View\SliderButton.cs" />
     <Compile Include="Windows\AdditionalWin.xaml.cs">
       <DependentUpon>AdditionalWin.xaml</DependentUpon>
     </Compile>
@@ -243,10 +241,6 @@
     <Compile Include="XmlWindow\XmlMuseum2.cs" />
     <Compile Include="XmlWindow\XmlSpecialties.cs" />
     <Compile Include="XmlWindow\XmlSpecialtiesChoice.cs" />
-    <Page Include="Style\View\ResourceDictionary.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Windows\AdditionalWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
