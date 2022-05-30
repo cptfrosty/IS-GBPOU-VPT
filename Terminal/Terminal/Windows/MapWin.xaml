@@ -30,7 +30,7 @@
             </Button.Background>
         </Button>
 
-        <m:Map x:Name="Map" Mode="road" ZoomLevel="17" Center="48.807824, 44.729445" Margin="0,140,0,0" CredentialsProvider="KxmFnnOSvEsOXVHuYy97~Vm5RmMbBY29fVsNvorqqtQ~AhwZT1d-6hBSW5bsneacpJUr-60jz4le0dMhdD7FnzK3yfUZ-W-Fxzackg56qZR-" >
+        <m:Map x:Name="Map" Mode ="Aerial"  ZoomLevel="17" Center="48.807824, 44.729445" Margin="0,140,0,0" CredentialsProvider="KxmFnnOSvEsOXVHuYy97~Vm5RmMbBY29fVsNvorqqtQ~AhwZT1d-6hBSW5bsneacpJUr-60jz4le0dMhdD7FnzK3yfUZ-W-Fxzackg56qZR-" >
             <Button x:Name="ZoomLeles_plus" Content="" HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="114" Margin="1766,616,0,0" RenderTransformOrigin="0.632,0.281" Click="ZoomPlus">
                 <Button.BorderBrush>
                     <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
