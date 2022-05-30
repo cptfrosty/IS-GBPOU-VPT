@@ -92,5 +92,15 @@ namespace Terminal
                 this.Map.Children.Add(pushpin);
             }
         }
+
+        private void Road_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Map.Mode = new RoadMode();
+        }
+
+        private void AerialWithLabels_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Map.Mode = new AerialMode(true);
+        }
     }
 }
