@@ -267,19 +267,19 @@ namespace Terminal
                 $" Расписание: {countOpenings.ruspisanie}\n" +
                 $" Факью: {countOpenings.faq}\n\n\n";
 
-            if (System.IO.File.Exists("Log.txt"))
+            if (System.IO.File.Exists("Logs.txt"))
             {
-                using (StreamWriter writer = new StreamWriter("Log.txt", true))
+                using (StreamWriter writer = new StreamWriter("Logs.txt", true))
                 {
                     await writer.WriteLineAsync(textLog);
                 }
             }
             else
             {
-                var f = File.Create("Log.txt");
+                var f = File.Create("Logs.txt");
                 f.Close();
 
-                using (StreamWriter writer = new StreamWriter("Log.txt", true))
+                using (StreamWriter writer = new StreamWriter("Logs.txt", true))
                 {
                     await writer.WriteLineAsync(textLog);
                 }
