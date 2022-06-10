@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.Xml.Linq;
 
 namespace Terminal
 {
@@ -22,6 +13,10 @@ namespace Terminal
     /// </summary>
     public partial class AdditionalWin : Window
     {
+        private Point scrollTarget;
+        private Point scrollStartPoint;
+        private Point scrollStartOffset;
+
         private DispatcherTimer timer;
         public AdditionalWin()
         {
@@ -31,8 +26,10 @@ namespace Terminal
 
             //Закрытие окна из-за бездейстивия
             ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(180);
+            timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(180)
+            };
             timer.Tick += new EventHandler(timer_Tick);
         }
 
@@ -46,12 +43,6 @@ namespace Terminal
         {
             timer.Start();
         }
-
-
-        private System.Windows.Point scrollTarget;
-        private System.Windows.Point scrollStartPoint;
-        private System.Windows.Point scrollStartOffset;
-
 
         protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
         {
@@ -69,7 +60,6 @@ namespace Terminal
 
                 this.CaptureMouse();
             }
-
             base.OnPreviewMouseDown(e);
         }
 
@@ -78,10 +68,10 @@ namespace Terminal
         {
             if (this.IsMouseCaptured)
             {
-                System.Windows.Point currentPoint = e.GetPosition(this);
+                Point currentPoint = e.GetPosition(this);
 
                 // Determine the new amount to scroll.
-                System.Windows.Point delta = new System.Windows.Point(scrollStartPoint.X -
+                Point delta = new System.Windows.Point(scrollStartPoint.X -
                     currentPoint.X, scrollStartPoint.Y - currentPoint.Y);
 
                 scrollTarget.X = scrollStartOffset.X + delta.X;
@@ -91,7 +81,6 @@ namespace Terminal
                 scrollViewer.ScrollToHorizontalOffset(scrollTarget.X);
                 scrollViewer.ScrollToVerticalOffset(scrollTarget.Y);
             }
-
             base.OnPreviewMouseMove(e);
         }
 
@@ -102,7 +91,6 @@ namespace Terminal
                 this.Cursor = Cursors.Arrow;
                 this.ReleaseMouseCapture();
             }
-
             base.OnPreviewMouseUp(e);
         }
 
@@ -115,45 +103,53 @@ namespace Terminal
         {
             XmlAdditional xmlAdditional = new XmlAdditional();
             xmlAdditional.FindAdditional();
+
             int count = xmlAdditional.GetCountinformationAdditionalList;
 
             for (int i = 0; i < count; i++)
             {
+                /* Контейнер */
                 Grid grid = new Grid();
 
-                /* Контейнер */
-
                 //Бордер
-                Border border = new Border();
-                border.Width = 700;
-                border.Height = 200;
-                border.Margin = new Thickness(170, 80, 0, 0);
-                border.CornerRadius = new CornerRadius(5, 5, 5, 5);
+                Border border = new Border
+                {
+                    Width = 700,
+                    Height = 200,
+                    Margin = new Thickness(170, 80, 0, 0),
+                    CornerRadius = new CornerRadius(5, 5, 5, 5),
 
-                border.BorderBrush = Brushes.Black;
-                border.BorderThickness = new Thickness(3);
+                    BorderBrush = Brushes.Black,
+                    BorderThickness = new Thickness(3)
+                };
+
 
                 /* Размер шрифта и цвет */
 
                 //Название кружка
-                TextBlock atrText = new TextBlock();
-                atrText.FontFamily = new FontFamily("Arial");
-                atrText.FontWeight = FontWeights.Bold;
-                atrText.Foreground = Brushes.Black;
-                atrText.FontSize = 28;
+                TextBlock atrText = new TextBlock
+                {
+                    FontFamily = new FontFamily("Arial"),
+                    FontWeight = FontWeights.Bold,
+                    Foreground = Brushes.Black,
+                    FontSize = 28
+                };
 
                 //График работы
-                TextBlock graphicText = new TextBlock();
-                graphicText.Foreground = Brushes.Black;
-                graphicText.FontSize = 20;
+                TextBlock graphicText = new TextBlock
+                {
+                    Foreground = Brushes.Black,
+                    FontSize = 20
+                };
 
                 //ФИО преподавателя
-                TextBlock fullnameText = new TextBlock();
-                fullnameText.Foreground = Brushes.Black;
-                fullnameText.FontSize = 18;
+                TextBlock fullnameText = new TextBlock
+                {
+                    Foreground = Brushes.Black,
+                    FontSize = 18
+                };
 
                 /* Размер, растояние, путь */
-
                 atrText.Text = xmlAdditional.informationAdditionalList[i].nameAttribute.ToString();
                 atrText.Margin = new Thickness(20, 10, 0, 0);
                 atrText.Width = 660;
@@ -178,7 +174,6 @@ namespace Terminal
                 border.Child = grid;
 
                 panelAdd.Children.Add(border);
-
             }
         }
     }

@@ -1,42 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Terminal
 {
-      public class InformationSpecialtiesDir
-      {
-          public string nameDir;
-          public string nameAttribute;
-          public string infoElement;
-      }
+    public class InformationSpecialtiesDir
+    {
+        public string nameDir;
+        public string nameAttribute;
+        public string infoElement;
+    }
 
     class XmlSpecialtiesChoice
     {
-
         private string nameBtn;
+
+        private XmlSpecialtiesChoice _instance;
+
+        public List<InformationSpecialtiesDir> specialtiesList = new List<InformationSpecialtiesDir>();
+
         public XmlSpecialtiesChoice(string nameBtn)
         {
             this.nameBtn = nameBtn;
-        }
-
-
-
-        private XmlSpecialtiesChoice _instance;
-        public List<InformationSpecialtiesDir> specialtiesList = new List<InformationSpecialtiesDir>();
+        }      
 
         public List<InformationSpecialtiesDir> GetSpecialtiesInfo
         {
             get => specialtiesList;
         }
+
         public int GetCountSpecialties
         {
             get => specialtiesList.Count;
         }
-
 
         public XmlSpecialtiesChoice Instance()
         {
@@ -47,6 +44,7 @@ namespace Terminal
             }
             return _instance;
         }
+
         public void FindDirection()
         {
             XDocument xdoc = XDocument.Load(AppDomain.CurrentDomain.BaseDirectory + "Frame/Specialties.xml");
@@ -57,7 +55,6 @@ namespace Terminal
                 {
                     foreach (var special in dir.Elements("special"))
                     {
-                        //TODO...
                         InformationSpecialtiesDir informationSpecialtiesDir = new InformationSpecialtiesDir();
                         informationSpecialtiesDir.nameDir = nameDir;
 
@@ -65,10 +62,8 @@ namespace Terminal
                         informationSpecialtiesDir.infoElement = special.Element("info").Value;
 
                         specialtiesList.Add(informationSpecialtiesDir);
-                        //...TODO
                     }
                 }
-       
             }
         }
     }

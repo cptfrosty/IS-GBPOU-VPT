@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interop;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Terminal
@@ -22,25 +13,31 @@ namespace Terminal
     public partial class Museum2 : Window
     {
         private DispatcherTimer timer;
+
+        private Point scrollTarget;
+        private Point scrollStartPoint;
+        private Point scrollStartOffset;
         public Museum2()
         {
             InitializeComponent();
 
             Init();
 
-
-             
+            //Запуск видео с 3 секунды
             VideoBlock.Source = new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Video/BackgroundVideo.mp4");
             VideoBlock.Position = new TimeSpan(0, 0, 3);
             VideoBlock.Play();
             VideoBlock.MediaEnded += VideoBlock_MediaEnded;
 
+            //Закрытие окна из-за бездействия 
             ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(360);
-            timer.Tick += new EventHandler(timer_Tick);
+            timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(360)
+            };
+            timer.Tick += new EventHandler(Timer_Tick);
         }
-        void timer_Tick(object sender, EventArgs e)
+        void Timer_Tick(object sender, EventArgs e)
         {
             this.Close();
             timer.Stop();
@@ -67,9 +64,6 @@ namespace Terminal
             TextBlock.Text = XmlMuseum2.Instance().GetMuseumInfo[0].dataElement;
         }
 
-        private System.Windows.Point scrollTarget;
-        private System.Windows.Point scrollStartPoint;
-        private System.Windows.Point scrollStartOffset;
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (scrollViewer.IsMouseOver)
@@ -94,10 +88,10 @@ namespace Terminal
         {
             if (this.IsMouseCaptured)
             {
-                System.Windows.Point currentPoint = e.GetPosition(this);
+                Point currentPoint = e.GetPosition(this);
 
                 // Determine the new amount to scroll.
-                System.Windows.Point delta = new System.Windows.Point(scrollStartPoint.X -
+                Point delta = new System.Windows.Point(scrollStartPoint.X -
                     currentPoint.X, scrollStartPoint.Y - currentPoint.Y);
 
                 scrollTarget.X = scrollStartOffset.X + delta.X;
@@ -107,7 +101,6 @@ namespace Terminal
                 scrollViewer.ScrollToHorizontalOffset(scrollTarget.X);
                 scrollViewer.ScrollToVerticalOffset(scrollTarget.Y);
             }
-
             base.OnPreviewMouseMove(e);
         }
 
@@ -118,7 +111,6 @@ namespace Terminal
                 this.Cursor = Cursors.Arrow;
                 this.ReleaseMouseCapture();
             }
-
             base.OnPreviewMouseUp(e);
         }
 
@@ -126,7 +118,6 @@ namespace Terminal
         {
             MuseumWin museumWin = new MuseumWin();
             museumWin.ShowDialog();
-
         }
     }
 }

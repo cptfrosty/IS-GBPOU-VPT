@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Microsoft.Maps.MapControl.WPF;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using Microsoft.Maps.MapControl.WPF;
 
 namespace Terminal
 {
@@ -15,7 +15,15 @@ namespace Terminal
     public partial class FrameForm : Window
     {
         public int Choice;
+
         public Location curentLocation;
+
+        private Point scrollTarget;
+        private Point scrollStartPoint;
+        private Point scrollStartOffset;
+
+        private DispatcherTimer timer;
+
         /// <summary>
         /// Конструктор формы
         /// </summary>
@@ -23,9 +31,10 @@ namespace Terminal
         public FrameForm(int id)
         {
             InitializeComponent();
+
             this.Choice = id;
 
-            //PS ссылка на картинку в XML файле должна быть
+            //PS ссылка на картинку в XML файле должна быть(TODO)
             Picture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{id}.jpg"));
 
             PictureMapping.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{id + 100}.jpg"));
@@ -34,12 +43,14 @@ namespace Terminal
 
             //Закрытие окна из-за бездейстивия
             ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(180);
-            timer.Tick += new EventHandler(timer_Tick);
+            timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(180)
+            };
+            timer.Tick += new EventHandler(Timer_Tick);
         }
 
-        void timer_Tick(object sender, EventArgs e)
+        void Timer_Tick(object sender, EventArgs e)
         {
             this.Close();
             timer.Stop();
@@ -52,7 +63,7 @@ namespace Terminal
 
         public void InitButton(int id)
         {
-            CollegeBuilding currentCorp = XmlCollegeBuilding.Instance().GetCollegeBuilding[id-1];
+            CollegeBuilding currentCorp = XmlCollegeBuilding.Instance().GetCollegeBuilding[id - 1];
             PlaceInfo(currentCorp);
         }
 
@@ -79,11 +90,6 @@ namespace Terminal
         {
             this.Close();
         }
-        //TEST
-        private System.Windows.Point scrollTarget;
-        private System.Windows.Point scrollStartPoint;
-        private System.Windows.Point scrollStartOffset;
-        private DispatcherTimer timer;
 
         protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
         {
@@ -101,19 +107,17 @@ namespace Terminal
 
                 this.CaptureMouse();
             }
-
             base.OnPreviewMouseDown(e);
         }
-
 
         protected override void OnPreviewMouseMove(MouseEventArgs e)
         {
             if (this.IsMouseCaptured)
             {
-                System.Windows.Point currentPoint = e.GetPosition(this);
+                Point currentPoint = e.GetPosition(this);
 
                 // Determine the new amount to scroll.
-                System.Windows.Point delta = new System.Windows.Point(scrollStartPoint.X -
+                Point delta = new Point(scrollStartPoint.X -
                     currentPoint.X, scrollStartPoint.Y - currentPoint.Y);
 
                 scrollTarget.X = scrollStartOffset.X + delta.X;
@@ -123,7 +127,6 @@ namespace Terminal
                 scrollViewer.ScrollToHorizontalOffset(scrollTarget.X);
                 scrollViewer.ScrollToVerticalOffset(scrollTarget.Y);
             }
-
             base.OnPreviewMouseMove(e);
         }
 
@@ -134,7 +137,6 @@ namespace Terminal
                 this.Cursor = Cursors.Arrow;
                 this.ReleaseMouseCapture();
             }
-
             base.OnPreviewMouseUp(e);
         }
 
@@ -146,27 +148,16 @@ namespace Terminal
 
             if (nameButton == "Button_1")
             {
-                try
-                {
-                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{Choice}.jpg"));
-                }
-                catch (System.IO.FileNotFoundException)
-                {
-                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
-                }
+                try { image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{Choice}.jpg")); }
+
+                catch (System.IO.FileNotFoundException) { image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg")); }
             }
             if (nameButton == "Button_2")
             {
-                try
-                {
-                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{Choice + 100}.jpg"));
-                }
-                catch (System.IO.FileNotFoundException)
-                {
-                    image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
-                }
-            }
+                try { image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Corp/{Choice + 100}.jpg")); }
 
+                catch (System.IO.FileNotFoundException) { image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg")); }
+            }
             OpenPictureWin openPictureWin = new OpenPictureWin(image);
             openPictureWin.Show();
         }

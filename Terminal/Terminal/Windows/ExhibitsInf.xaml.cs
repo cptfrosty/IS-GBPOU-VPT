@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interop;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Terminal
@@ -22,6 +14,13 @@ namespace Terminal
     public partial class MuseumInf : Window
     {
         public int id;
+
+        private Point scrollTarget;
+        private Point scrollStartPoint;
+        private Point scrollStartOffset;
+
+        private DispatcherTimer timer;
+
         public MuseumInf(int id)
         {
             this.id = id;
@@ -33,8 +32,10 @@ namespace Terminal
 
             //Закрытие окна из-за бездейстивия
             ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(180);
+            timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(180)
+            };
             timer.Tick += new EventHandler(timer_Tick);
         }
 
@@ -48,6 +49,7 @@ namespace Terminal
         {
             timer.Start();
         }
+
         public void InitButton(int id)
         {
             MuseumInformation museumInformation = XmlMuseum.Instance().GetMuseumInfo[id - 1];
@@ -61,11 +63,6 @@ namespace Terminal
             NameLabel.Content = mus.nameAttribute;
             Data.Text = mus.dataElement;   
         }
-        //TEST
-        private System.Windows.Point scrollTarget;
-        private System.Windows.Point scrollStartPoint;
-        private System.Windows.Point scrollStartOffset;
-        private DispatcherTimer timer;
 
         protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
         {
@@ -87,15 +84,14 @@ namespace Terminal
             base.OnPreviewMouseDown(e);
         }
 
-
         protected override void OnPreviewMouseMove(MouseEventArgs e)
         {
             if (this.IsMouseCaptured)
             {
-                System.Windows.Point currentPoint = e.GetPosition(this);
+                Point currentPoint = e.GetPosition(this);
 
                 // Determine the new amount to scroll.
-                System.Windows.Point delta = new System.Windows.Point(scrollStartPoint.X -
+                Point delta = new Point(scrollStartPoint.X -
                     currentPoint.X, scrollStartPoint.Y - currentPoint.Y);
 
                 scrollTarget.X = scrollStartOffset.X + delta.X;
@@ -143,7 +139,7 @@ namespace Terminal
                 }
             }        
             OpenPictureWin openPictureWin = new OpenPictureWin(image);
-            openPictureWin.Show();
+            openPictureWin.ShowDialog();
         }
     }
 }

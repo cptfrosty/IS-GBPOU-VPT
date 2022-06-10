@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Terminal
@@ -26,6 +19,7 @@ namespace Terminal
         public Workshops()
         {
             InitializeComponent();
+
             Init();
 
             //Закрытие окна из-за бездейстивия
@@ -52,21 +46,27 @@ namespace Terminal
             int count = WorkshopsXml.Instance().GetCountWorkshops;
             for (int i = 1; i <= count; i++)
             {
-                Button btn = new Button();
-                btn.Width = 261;
-                btn.Height = 210;
-                btn.Margin = new Thickness(90, 600, 15, 15);
+                Button btn = new Button
+                {
+                    Width = 261,
+                    Height = 210,
+                    Margin = new Thickness(90, 600, 15, 15),
 
-                btn.Name = "id" + i;
+                    Name = "id" + i
+                };
 
                 btn.Click += WorkshopsInformation;
 
-                Label label = new Label();
-                label.Height = 40;
-                label.Margin = new Thickness(0, 130, 0, 0);
-                label.Content = "";
-                DockPanel dp = new DockPanel();
-                dp.LastChildFill = true;
+                Label label = new Label
+                {
+                    Height = 40,
+                    Margin = new Thickness(0, 130, 0, 0),
+                    Content = ""
+                };
+                DockPanel dp = new DockPanel
+                {
+                    LastChildFill = true
+                };
                 DockPanel.SetDock(label, Dock.Bottom);
                 dp.Children.Add(label);
 
@@ -78,8 +78,10 @@ namespace Terminal
                 btn.BorderBrush = Brushes.Black;
                 btn.BorderThickness = new Thickness(2);
 
-                ImageBrush imageBrush = new ImageBrush(bm);
-                imageBrush.Stretch = Stretch.UniformToFill;
+                ImageBrush imageBrush = new ImageBrush(bm)
+                {
+                    Stretch = Stretch.UniformToFill
+                };
                 btn.Background = imageBrush;
 
                 btn.Content = dp;

@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Terminal
@@ -22,6 +14,10 @@ namespace Terminal
     public partial class FAQWin : Window
     {
         private DispatcherTimer timer;
+
+        private System.Windows.Point scrollTarget;
+        private System.Windows.Point scrollStartPoint;
+        private System.Windows.Point scrollStartOffset;
 
         public FAQWin()
         {
@@ -51,11 +47,6 @@ namespace Terminal
         {
             this.Close();
         }
-
-        private System.Windows.Point scrollTarget;
-        private System.Windows.Point scrollStartPoint;
-        private System.Windows.Point scrollStartOffset;
-
 
         protected override void OnPreviewMouseDown(MouseButtonEventArgs e)
         {
@@ -124,7 +115,7 @@ namespace Terminal
 
                 //Бордер
                 Border border = new Border();
-                border.Width = 1750;               
+                border.Width = 1750;
                 border.Margin = new Thickness(65, 40, 0, 0);
                 border.CornerRadius = new CornerRadius(5, 5, 5, 5);
 
@@ -154,13 +145,13 @@ namespace Terminal
                 atrText.MaxHeight = 40;
                 atrText.TextWrapping = TextWrapping.Wrap;
 
-                answerText.Text = xmlFaq.informationXmlFaqList[i].answerElement.ToString();                
+                answerText.Text = xmlFaq.informationXmlFaqList[i].answerElement.ToString();
                 answerText.Width = 1600;
                 answerText.Margin = new Thickness(0, 50, 0, 0);
                 answerText.MaxHeight = 500;
                 //Бордер завист от ответа
                 border.Height = answerText.Height + 100;
-                answerText.TextWrapping = TextWrapping.Wrap;              
+                answerText.TextWrapping = TextWrapping.Wrap;
 
                 grid.Children.Add(atrText);
                 grid.Children.Add(answerText);

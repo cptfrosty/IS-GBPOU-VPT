@@ -267,33 +267,33 @@ namespace Terminal
                 $" Расписание: {countOpenings.ruspisanie}\n" +
                 $" Факью: {countOpenings.faq}\n\n\n";
 
-            if (System.IO.File.Exists("Logs.txt"))
+            if (System.IO.File.Exists("Log.txt"))
             {
-                using (StreamWriter writer = new StreamWriter("Logs.txt", true))
+                using (StreamWriter writer = new StreamWriter("Log.txt", true))
                 {
                     await writer.WriteLineAsync(textLog);
                 }
             }
             else
             {
-                var f = File.Create("Logs.txt");
+                var f = File.Create("Log.txt");
                 f.Close();
 
-                using (StreamWriter writer = new StreamWriter("Logs.txt", true))
+                using (StreamWriter writer = new StreamWriter("Log.txt", true))
                 {
                     await writer.WriteLineAsync(textLog);
                 }
             }
         }
 
-        private void OpenExploer()
+        private void OpenExplorer()
         {
             Process.Start("OpenShow.bat");
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            OpenExploer();
+            OpenExplorer();
         }
     }
 }

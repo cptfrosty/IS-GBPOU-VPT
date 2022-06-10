@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Interop;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Terminal
@@ -24,15 +15,18 @@ namespace Terminal
     {
         public int choice;
         int id;
+
         public bool isCheck = false;
+
         private DispatcherTimer timer;
 
         public WorkshopsInf(int id)
         {
+            InitializeComponent();
+
             this.id = id;
 
             choice = id;
-            InitializeComponent();
 
             string path1 = $"Image/Workshops/Room/{id}.png";
             string path2 = $"Image/Workshops/Room/{id + 100}.png";
@@ -45,20 +39,22 @@ namespace Terminal
             if (fileInfo1.Exists)
                 Picture_1.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id}.png"));
             if (fileInfo2.Exists)
-                Picture_2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id+100}.png"));
+                Picture_2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id + 100}.png"));
             if (fileInfo3.Exists)
-                Picture_3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id+1000}.png"));
+                Picture_3.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id + 1000}.png"));
 
             InitButton(id);
 
             //Закрытие окна из-за бездейстивия
             ComponentDispatcher.ThreadIdle += new EventHandler(ComponentDispatcher_ThreadIdle);
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(180);
-            timer.Tick += new EventHandler(timer_Tick);
+            timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(180)
+            };
+            timer.Tick += new EventHandler(Timer_Tick);
         }
 
-        void timer_Tick(object sender, EventArgs e)
+        void Timer_Tick(object sender, EventArgs e)
         {
             this.Close();
             timer.Stop();
@@ -68,11 +64,13 @@ namespace Terminal
         {
             timer.Start();
         }
+
         public void InitButton(int id)
         {
             InformationWorkshops informationWorkshops = WorkshopsXml.Instance().GetWorkshopsInfo[id - 1];
             PlaceInfo(informationWorkshops);
         }
+
         /// <param name="nameAttribute"></param>
         /// <param name="dataElement"></param>
         public void PlaceInfo(InformationWorkshops wor)
@@ -82,11 +80,9 @@ namespace Terminal
         }
 
         private void Exit(object sender, RoutedEventArgs e)
-        {          
+        {
             this.Close();
         }
-
-
 
         //Расширить картинку
         private void Button_OpenPicture(object sender, RoutedEventArgs e)
@@ -101,7 +97,7 @@ namespace Terminal
                 {
                     image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id}.png"));
                 }
-                catch (System.IO.FileNotFoundException)
+                catch (FileNotFoundException)
                 {
                     image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
                 }
@@ -112,7 +108,7 @@ namespace Terminal
                 {
                     image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id + 100}.png"));
                 }
-                catch (System.IO.FileNotFoundException)
+                catch (FileNotFoundException)
                 {
                     image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
                 }
@@ -123,12 +119,11 @@ namespace Terminal
                 {
                     image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/{id + 1000}.png"));
                 }
-                catch (System.IO.FileNotFoundException)
+                catch (FileNotFoundException)
                 {
                     image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/Workshops/Room/mistake.jpg"));
                 }
             }
-
             OpenPictureWin openPictureWin = new OpenPictureWin(image);
             openPictureWin.Show();
         }
