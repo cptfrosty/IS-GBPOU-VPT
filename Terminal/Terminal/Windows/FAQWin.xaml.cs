@@ -15,9 +15,9 @@ namespace Terminal
     {
         private DispatcherTimer timer;
 
-        private System.Windows.Point scrollTarget;
-        private System.Windows.Point scrollStartPoint;
-        private System.Windows.Point scrollStartOffset;
+        private Point scrollTarget;
+        private Point scrollStartPoint;
+        private Point scrollStartOffset;
 
         public FAQWin()
         {
@@ -73,10 +73,10 @@ namespace Terminal
         {
             if (this.IsMouseCaptured)
             {
-                System.Windows.Point currentPoint = e.GetPosition(this);
+                Point currentPoint = e.GetPosition(this);
 
                 // Determine the new amount to scroll.
-                System.Windows.Point delta = new System.Windows.Point(scrollStartPoint.X -
+                Point delta = new Point(scrollStartPoint.X -
                     currentPoint.X, scrollStartPoint.Y - currentPoint.Y);
 
                 scrollTarget.X = scrollStartOffset.X + delta.X;
@@ -105,7 +105,7 @@ namespace Terminal
         {
             XmlFaq xmlFaq = new XmlFaq();
             xmlFaq.FindFaq();
-            int count = xmlFaq.GetCountinformationinformationXmlFaqList;
+            int count = xmlFaq.GetCountinformationinformationXmlFaqList;         
 
             for (int i = 0; i < count; i++)
             {
@@ -125,21 +125,25 @@ namespace Terminal
                 /* Размер шрифта и цвет */
 
                 //Вопрос
-                TextBlock atrText = new TextBlock();
-                atrText.FontFamily = new FontFamily("Arial");
-                atrText.FontWeight = FontWeights.Bold;
-                atrText.Foreground = Brushes.Black;
-                atrText.FontSize = 28;
+                TextBlock atrText = new TextBlock
+                {
+                    FontFamily = new FontFamily("Arial"),
+                    FontWeight = FontWeights.Bold,
+                    Foreground = Brushes.Black,
+                    FontSize = 28
+                };
 
                 //Ответ на вопрос
-                TextBlock answerText = new TextBlock();
-                answerText.Foreground = Brushes.Black;
-                answerText.FontSize = 20;
+                TextBlock answerText = new TextBlock
+                {
+                    Foreground = Brushes.Black,
+                    FontSize = 22
+                };
 
                 /* Размер, растояние, путь */
 
                 atrText.Text = xmlFaq.informationXmlFaqList[i].nameAttribute.ToString();
-                atrText.Margin = new Thickness(20, 5, 0, 0);
+                atrText.Margin = new Thickness(35, 5, 0, 0);
                 atrText.VerticalAlignment = VerticalAlignment.Top;
                 atrText.Width = 1600;
                 atrText.MaxHeight = 40;
@@ -152,6 +156,9 @@ namespace Terminal
                 //Бордер завист от ответа
                 border.Height = answerText.Height + 100;
                 answerText.TextWrapping = TextWrapping.Wrap;
+
+                //Установка размера wrapPanel
+                panelFaq.Height += border.Height;
 
                 grid.Children.Add(atrText);
                 grid.Children.Add(answerText);
