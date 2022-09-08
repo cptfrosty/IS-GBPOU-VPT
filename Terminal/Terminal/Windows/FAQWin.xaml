@@ -33,7 +33,7 @@
         </Image>
 
         <ScrollViewer x:Name="scrollViewer" Margin="0, 150, 0, 0" PanningMode="Both">
-            <WrapPanel x:Name="panelFaq" Orientation="Horizontal" VerticalAlignment="Top" Height="969"/>
+            <WrapPanel x:Name="panelFaq" Orientation="Horizontal" VerticalAlignment="Top" Height="2804"/>
         </ScrollViewer>
 
     </Grid>
