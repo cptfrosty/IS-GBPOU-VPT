@@ -6,7 +6,6 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Threading;
 using Telegram.Bot;
 using Telegram.Bot.Extensions.Polling;
 using Telegram.Bot.Types;
@@ -16,9 +15,11 @@ namespace TelegramBot
 
     class Program
     {
-        public static List<Terminal> terminalsList = new List<Terminal>();
+        static string remoteAddress; // хост для отправки данных
+        static int remotePort; // порт для отправки данных
+        static int localPort = 8888; // локальный порт для прослушивания входящих подключений
 
-        static DispatcherTimer timer = new DispatcherTimer();
+        public static List<Terminal> terminalsList = new List<Terminal>();
 
         static bool IsLogged = false;
 
@@ -34,14 +35,14 @@ namespace TelegramBot
 
                 try
                 {
-                    if (IsLogged == false)
-                    {
-                        Login(botClient, update);
-                    }
-                    else
-                    {
-                        Functional(botClient, update);
-                    }
+                    //    if (IsLogged == false)
+                    //    {
+                    //        Login(botClient, update);
+                    //    }
+                    //    else
+                    //    {
+                    Functional(botClient, update);
+                    //    }
 
                 }
                 catch (Exception)
@@ -83,48 +84,121 @@ namespace TelegramBot
             if (update.Type == Telegram.Bot.Types.Enums.UpdateType.Message)
             {
                 var message = update.Message;
-                String[] words = message.Text.ToLower().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                switch (message.Text.ToLower())
+                String[] words = message.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                switch (words[0])
                 {
                     case "/start":
-                        await botClient.SendTextMessageAsync(message.Chat, "ОБЯЗАТЕЛЬНО К ПРОЧТЕНИЮ!\n" +
-                                                                            "После того как попользовались ботом нужно обязательно выйти '/exit'\n" +
+                        await botClient.SendTextMessageAsync(message.Chat, " ОБЯЗАТЕЛЬНО К ПРОЧТЕНИЮ\n" +
+                                                                            "После того как попользовались ботом нужно обязательно выйти '/exit' - не актуально\n" +
                                                                             "Для просмотра всех команд пропишите '/help'\n" +
                                                                             "Команды не спамить!!!\n" +
-                                                                            "");
+                                                                            ""); //psexec \\172.16.122.19 -u AdminVPT -p Ugh6joosh -i 3 -s -d c:\Users\AdminVPT\Desktop\Release\Terminal.exe
+                        break;
+
+                    case "/on":
+                        if (terminalsList.Count != 0)
+                        {
+                            for (int i = 0; i < terminalsList.Count; i++)
+                            {
+                                if (terminalsList[i].name == words[1])
+                                {
+                                    string command1 = $"psexec \\\\{terminalsList[i].ip} -u {terminalsList[i].name} -p Ugh6joosh -i 3 -s -d c:/Users/{terminalsList[i].name}/Desktop/Release/Terminal.exe";
+
+                                    string command2 = $@"psexec \\172.16.122.19 -u {terminalsList[i].name} -p Ugh6joosh -i 3 -s -d taskkill /F /IM explorer.exe";
+
+                                    Process p = new Process();
+                                    p.StartInfo.UseShellExecute = false;
+                                    p.StartInfo.FileName = "cmd.exe";
+                                    p.StartInfo.Arguments = "/C " + command1;
+                                    p.StartInfo.CreateNoWindow = false;
+                                    p.Start();
+
+                                    Process p2 = new Process();
+                                    p2.StartInfo.UseShellExecute = false;
+                                    p2.StartInfo.FileName = "cmd.exe";
+                                    p2.StartInfo.Arguments = "/C " + command2;
+                                    p2.StartInfo.CreateNoWindow = false;
+                                    p2.Start();
+
+                                    await botClient.SendTextMessageAsync(message.Chat, "Выполнено!");
+                                }
+                            }
+                        }
+                        else
+                            await botClient.SendTextMessageAsync(message.Chat, "Терминалы не подключенны!");
+                        break;
+
+                    case "/off":
+                        if (terminalsList.Count != 0)
+                        {
+                            for (int i = 0; i < terminalsList.Count; i++)
+                            {
+                                if (terminalsList[i].name == words[1])
+                                {
+                                    string command = $"psexec \\\\{terminalsList[i].ip} -i 3 -s -d -u {terminalsList[i].name} -p Ugh6joosh taskkill /F /IM Terminal.exe";
+                                    string command1 = $"psexec \\\\{terminalsList[i].ip} -i 3 -s -d -u {terminalsList[i].name} -p Ugh6joosh explorer";
+
+                                    Process p = new Process();
+                                    p.StartInfo.UseShellExecute = false;
+                                    p.StartInfo.FileName = "cmd.exe";
+                                    p.StartInfo.Arguments = "/C " + command;
+                                    p.StartInfo.CreateNoWindow = false;
+                                    p.Start();
+
+                                    Process p2 = new Process();
+                                    p2.StartInfo.UseShellExecute = false;
+                                    p2.StartInfo.FileName = "cmd.exe";
+                                    p2.StartInfo.Arguments = "/C " + command1;
+                                    p2.StartInfo.CreateNoWindow = false;
+                                    p2.Start();
+
+                                    await botClient.SendTextMessageAsync(message.Chat, "Выполнено!");
+                                }
+                            }
+                        }
+                        else
+                            await botClient.SendTextMessageAsync(message.Chat, "Терминалы не подключенны!");
+                        break;
+
+                    case "/showterminal":
+                        if (terminalsList.Count != 0)
+                        {
+                            for (int i = 0; i < terminalsList.Count; i++)
+                            {
+                                await botClient.SendTextMessageAsync(message.Chat, $"{i + 1}) name: {terminalsList[i].name} ip: {terminalsList[i].ip}");
+                            }
+                        }
+                        else
+                            await botClient.SendTextMessageAsync(message.Chat, "Терминалы не подключенны!");
                         break;
 
                     case "/help":
                         await botClient.SendTextMessageAsync(message.Chat, "\tВсе команды:\n\b" +
                                                                         " /start - Инструкция\n" +
-                                                                        " /addterminal - Добавить терминал\n" +
-                                                                        " / - Выбор терминала\n" +
+                                                                        " /showterminal - Показать терминалы" +
+                                                                        " /on name - вместо name, указать название терминала\n" +
+                                                                        " /off name - вместо name, указать название терминала\n" +
                                                                         " /exit - Выйти\n");
                         break;
 
-                    case "/addterminal":
-                        //await botClient.SendTextMessageAsync(message.Chat, "Введите имя терминала и его ip (Пример[terminal 192.168.0.1])");
-                        Terminal terminal = new Terminal();                        
-                        break;
+                    //case "/exit":
+                    //    IsLogged = false;
+                    //    await botClient.SendTextMessageAsync(message.Chat, "Вы вышли!");
+                    //    break;
 
-                    case "/exit":
-                        IsLogged = false;
-                        await botClient.SendTextMessageAsync(message.Chat, "Вы вышли!");
-                        break;
+                    //case "/startterminal":
+                    //    Process.Start("KillExplorer.bat");
 
-                    case "/startterminal":
-                        Process.Start("KillExplorer.bat");
+                    //    await botClient.SendTextMessageAsync(message.Chat, "Терминал запущен!");
+                    //    break;
 
-                        await botClient.SendTextMessageAsync(message.Chat, "Терминал запущен!");
-                        break;
+                    //case "/offterminal":
+                    //    Process.Start("Explorer.exe");
+                    //    Process[] proc = Process.GetProcessesByName("Terminal");
+                    //    proc[0].Kill();
 
-                    case "/offterminal":
-                        Process.Start("Explorer.exe");
-                        Process[] proc = Process.GetProcessesByName("Terminal");
-                        proc[0].Kill();
-
-                        await botClient.SendTextMessageAsync(message.Chat, "Терминал выключен!");
-                        break;
+                    //    await botClient.SendTextMessageAsync(message.Chat, "Терминал выключен!");
+                    //    break;
 
                     default:
                         await botClient.SendTextMessageAsync(message.Chat, "Я не распознаю вашу команду!\n" +
@@ -136,7 +210,7 @@ namespace TelegramBot
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Запущен Терминал бот\n Telegram: @TerminalVPTBot   Pass: Ugh6joosh\n" + bot.GetMeAsync().Result.FirstName);
+            Console.WriteLine("Запущен Терминал бот: " + bot.GetMeAsync().Result.FirstName + "\n Telegram: @TerminalVPTBot  Login: AdminVPT  Pass: Ugh6joosh\n");
 
             var cts = new CancellationTokenSource();
             var cancellationToken = cts.Token;
@@ -148,56 +222,64 @@ namespace TelegramBot
                 HandleUpdateAsync,
                 HandleErrorAsync,
                 receiverOptions,
-                cancellationToken
-            );
-            Console.ReadLine();
+                cancellationToken);
+
+            try
+            {
+                Thread receiveThread = new Thread(new ThreadStart(ReceiveMessage));
+                receiveThread.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
 
-        static async void Client(string address, ITelegramBotClient botClient, Update update)
+        static void ReceiveMessage()
         {
-            if (update.Type == Telegram.Bot.Types.Enums.UpdateType.Message)
+            UdpClient receiver = new UdpClient(localPort); // UdpClient для получения данных
+            IPEndPoint remoteIp = null; // адрес входящего подключения
+            try
             {
-                var message = update.Message;
-                try
+                while (true)
                 {
+                    byte[] data = receiver.Receive(ref remoteIp); // получаем данные
+                    string message = Encoding.Unicode.GetString(data);
+                    String[] words = message.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries); // Преобразуем строку в массив слов (0 - name 1 - ip)
 
-                    Console.WriteLine("Идёт подключение...\n");
-
-                    await botClient.SendTextMessageAsync(message.Chat, "Идёт подключение...");
-
-                    IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), 8005);
-
-                    Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                    // подключаемся к удаленному хосту
-                    socket.Connect(ipPoint);
-                    Console.Write("Выберите команду:\n" +
-                        "1) Открыть проводник\n");
-                    Console.Write("Команда: ");
-                    string answer = Console.ReadLine();
-                    byte[] data = Encoding.Unicode.GetBytes(answer);
-                    socket.Send(data);
-
-                    // получаем ответ
-                    data = new byte[256]; // буфер для ответа
-                    StringBuilder builder = new StringBuilder();
-                    int bytes = 0; // количество полученных байт
-
-                    do
+                    for (int i = 0; i < terminalsList.Count; i++)
                     {
-                        bytes = socket.Receive(data, data.Length, 0);
-                        builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+                        if (terminalsList[0].name == words[0])
+                        {
+                            terminalsList.RemoveAt(i);
+                        }
                     }
-                    while (socket.Available > 0);
-                    Console.WriteLine("ответ сервера: " + builder.ToString());
 
-                    // закрываем сокет
-                    socket.Shutdown(SocketShutdown.Both);
-                    socket.Close();
+                    Terminal terminal = new Terminal
+                    {
+                        name = words[0],
+                        ip = words[1]
+                    };
+
+                    terminalsList.Add(terminal);
+
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                    Console.WriteLine($"\nТерминал: {words[0]} добавлен!\n");
+
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\n   " + ex.Message + "\n");
+            }
+            finally
+            {
+                receiver.Close();
             }
         }
     }
