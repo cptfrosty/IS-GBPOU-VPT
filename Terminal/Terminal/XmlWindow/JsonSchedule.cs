@@ -18,8 +18,6 @@ namespace Terminal.XmlWindow
 
     public class JsonSchedule
     {
-        public int countDay { get; set; }
-
         public JsonSchedule()
         {
             FindSchedule();
@@ -40,11 +38,7 @@ namespace Terminal.XmlWindow
         }
 
         public void FindSchedule()
-        {
-            InformationSchedule informationSchedule = new InformationSchedule();
-
-            InformationDay informationDay = new InformationDay();
-
+        {                       
             string path = "JsonShedule.txt";
 
             string jsonShedule;
@@ -59,6 +53,8 @@ namespace Terminal.XmlWindow
 
             foreach (var i in corpusOne)
             {
+                InformationDay informationDay = new InformationDay();
+
                 informationDay.nameDay = i.Key;
                 informationDaysList.Add(informationDay);
 
@@ -71,6 +67,8 @@ namespace Terminal.XmlWindow
                         foreach (var groupSc in j.Value)
                         {
                             JProperty groupSc1 = (JProperty)groupSc;
+
+                            InformationSchedule informationSchedule = new InformationSchedule();
 
                             informationSchedule.nameDay = i.Key.ToString();
                             informationSchedule.nameGroup = groupSc1.Name;

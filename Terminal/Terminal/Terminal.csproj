@@ -168,6 +168,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -179,6 +182,12 @@
     </Compile>
     <Compile Include="Windows\Schedule.xaml.cs">
       <DependentUpon>Schedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ScheduleCurentGroup.xaml.cs">
+      <DependentUpon>ScheduleCurentGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ScheduleGroupsWin.xaml.cs">
+      <DependentUpon>ScheduleGroupsWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="XmlWindow\CountOpenings.cs" />
     <Compile Include="XmlWindow\EdgeGestureUtil.cs" />
@@ -301,6 +310,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\ScheduleCurentGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ScheduleGroupsWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Specialties.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -355,6 +372,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="AllPicture\air.png" />
+    <Resource Include="AllPicture\Gif\rain.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="AllPicture\logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

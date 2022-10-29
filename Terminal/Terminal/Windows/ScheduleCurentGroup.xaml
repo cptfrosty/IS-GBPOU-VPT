@@ -1,0 +1,47 @@
+﻿<Window x:Class="Terminal.Windows.ScheduleCurentGroup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Terminal.Windows"
+        mc:Ignorable="d"
+        Title="ScheduleCurentGroup"
+        Height="1080" Width="1920"
+        WindowState="Maximized" 
+        ResizeMode="NoResize" 
+        WindowStyle="None"
+        Background="#ECF0F5">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="151*"/>
+            <RowDefinition Height="929*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="1921" CornerRadius="0,0,20,20" Margin="-1,0,0,0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#273340" Offset="0"/>
+                    <GradientStop Color="#1b252f" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150" Margin="50,35,0,0" Source="pack://application:,,,/AllPicture/logo.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/logo.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <Button Height="100" HorizontalAlignment="Right" Width="90" VerticalAlignment="Top" Click="Exit" Margin="0,21,26,0">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF273340" Opacity="0"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="pack://application:,,,/AllPicture/back.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+
+        <Grid Grid.Row="1" Margin="40,40,40,40">
+            <TextBlock x:Name="tb_Schedule" Width="1800" Height="800" FontSize="20" Text="" FontWeight="Bold" Foreground="#1C2631"/>
+        </Grid>
+    </Grid>
+</Window>

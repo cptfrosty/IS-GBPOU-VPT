@@ -1,7 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
@@ -61,18 +59,24 @@ namespace Terminal.Windows
                 {
                     Width = 261,
                     Height = 210,
-                    //Margin = new Thickness(90, 170, 15, 15),
-                    Margin = new Thickness(30),
-
-                    Name = "id" + i
+                    Margin = new Thickness(90, 170, 15, 15),
+                    Tag = $"{informationDaysList[i].nameDay}"
                 };
 
-                //btn.Click += WorkshopsInformation;
+                btn.Click += ScheduleGroups_Click;
+
+                //конвертер для foreground
+                var bc = new BrushConverter();
 
                 Label label = new Label
                 {
                     Height = 40,
-                    Margin = new Thickness(0, 130, 0, 0),
+                    FontSize = 18,
+                    FontWeight = FontWeights.Bold,
+                    Foreground = (Brush)bc.ConvertFrom("#1C2631"),
+                    Margin = new Thickness(0, 10, 0, 0),
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Center,
                     Content = $"{informationDaysList[i].nameDay}"
                 };
                 DockPanel dp = new DockPanel
@@ -101,6 +105,14 @@ namespace Terminal.Windows
 
                 panelDay.Children.Add(btn);
             }
+        }
+
+        private void ScheduleGroups_Click(object sender, RoutedEventArgs e)
+        {
+            string nameButton = ((Button)sender).Tag.ToString();
+
+            ScheduleGroupsWin scheduleGroupsWin = new ScheduleGroupsWin(nameButton);
+            scheduleGroupsWin.Show();
         }
     }
 }

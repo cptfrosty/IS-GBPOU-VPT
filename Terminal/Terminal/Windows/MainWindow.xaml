@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         xmlns:local="clr-namespace:Terminal"
         mc:Ignorable="d"
@@ -22,6 +23,7 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
+        <Image Visibility="Hidden" x:Name="Rain" Grid.ColumnSpan="3" Margin="0,150,0,0" Height="1000" Width="1920" gif:ImageBehavior.AnimatedSource="pack://application:,,,/AllPicture/Gif/rain.gif" />
         <Image HorizontalAlignment="Left" Width="274" Height="148" VerticalAlignment="Top" Margin="305,20,0,0" RenderTransformOrigin="0.5,0.5" Source="pack://application:,,,/AllPicture/logo.png">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -41,6 +43,8 @@
         <Label Content=" Основные сведения" HorizontalAlignment="Left" Margin="50,348,0,0" VerticalAlignment="Top" Width="252" Foreground="#1C2631" FontSize="24" FontFamily="Arial"/>
         <Button Content="" HorizontalAlignment="Left" Margin="50,210,0,0" VerticalAlignment="Top" Width="252" Height="174" BorderBrush="Black" Click="MainInformation" >
 
+            
+            
             <Button.Background>
                 <ImageBrush ImageSource="pack://application:,,,/AllPicture/osnSvedenia.png" Stretch="Uniform"/>
             </Button.Background>

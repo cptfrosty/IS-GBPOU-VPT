@@ -26,6 +26,9 @@ namespace Terminal
             InitializeComponent();
             try
             {
+
+                //test1();
+
                 StartTerminal();
 
                 UpdateShedule();
@@ -168,6 +171,11 @@ namespace Terminal
                 Translate translate = new Translate(oW.weather[0].main);
 
                 LabelMain.Content = translate.GetWord();
+
+                if (translate.GetWord() == "Дождь")
+                    Rain.Visibility = Visibility.Visible;
+                else if (Rain.Visibility == Visibility.Visible)
+                    Rain.Visibility = Visibility.Hidden;
 
                 LabelCity.Content = city;
 
