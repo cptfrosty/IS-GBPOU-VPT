@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Terminal.Weather;
+using Terminal.Windows;
 
 namespace Terminal
 {
@@ -26,6 +27,8 @@ namespace Terminal
             try
             {
                 StartTerminal();
+
+                UpdateShedule();
 
                 //Все таймеры
                 Times();
@@ -58,6 +61,12 @@ namespace Terminal
             timerLogs.IsEnabled = true;
             timerLogs.Tick += (o, t) => { SaveLog(); };
             timerLogs.Start();
+
+            var timerSchedule = new System.Windows.Threading.DispatcherTimer();
+            timerLogs.Interval = new TimeSpan(0, 15, 0);
+            timerLogs.IsEnabled = true;
+            timerLogs.Tick += (o, t) => { UpdateShedule(); };
+            timerLogs.Start();
         }
 
         //Отключение жестов WINDOWS 10(режим планшета)
@@ -81,6 +90,48 @@ namespace Terminal
             windowInf.ShowDialog();
         }
 
+        private void UpdateShedule()
+        {
+            string data = Get("http://194.226.49.192:2222/");
+
+            object dec = JsonConvert.DeserializeObject(data);
+
+            string path = "JsonShedule.txt";
+            string text = dec.ToString();
+
+            using (StreamWriter writer = new StreamWriter(path, false))
+            {
+                writer.WriteLine(text);
+            }
+        }
+
+        public static string Get(string url)
+        {
+            try
+            {
+                string rt = "";
+
+                WebRequest request = WebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+
+                Stream dataStream = response.GetResponseStream();
+
+                if (dataStream != null)
+                {
+                    StreamReader reader = new StreamReader(dataStream);
+
+                    rt = reader.ReadToEnd();
+                    reader.Close();
+                }
+                response.Close();
+
+                return rt;
+            }
+            catch (Exception ex)
+            {
+                return "Error: " + ex.Message;
+            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -217,11 +268,8 @@ namespace Terminal
         {
             countOpenings.ruspisanie += 1;
 
-            Image image = new Image();
-            image.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"Image/QR/QRSchedule.png"));
-
-            OpenQRWin openQRWin = new OpenQRWin(image);
-            openQRWin.ShowDialog();
+            Schedule schedule = new Schedule();
+            schedule.Show();
         }
 
         private void Qvantorium_Click(object sender, RoutedEventArgs e)

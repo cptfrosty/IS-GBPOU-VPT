@@ -177,6 +177,9 @@
     <Compile Include="Windows\AdditionalWin.xaml.cs">
       <DependentUpon>AdditionalWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Schedule.xaml.cs">
+      <DependentUpon>Schedule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XmlWindow\CountOpenings.cs" />
     <Compile Include="XmlWindow\EdgeGestureUtil.cs" />
     <Compile Include="Windows\FAQWin.xaml.cs">
@@ -206,6 +209,7 @@
     <Compile Include="Windows\QvantoriumWin.xaml.cs">
       <DependentUpon>QvantoriumWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="XmlWindow\JsonSchedule.cs" />
     <Compile Include="XmlWindow\SmsRu.cs" />
     <Compile Include="Windows\Specialties.xaml.cs">
       <DependentUpon>Specialties.xaml</DependentUpon>
@@ -290,6 +294,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\QvantoriumWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Schedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

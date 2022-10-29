@@ -103,7 +103,7 @@ namespace Terminal
 
         private void Init()
         {
-            XmlFaq xmlFaq = new XmlFaq();
+            Shedule xmlFaq = new Shedule();
             xmlFaq.FindFaq();
             int count = xmlFaq.GetCountinformationinformationXmlFaqList;         
 

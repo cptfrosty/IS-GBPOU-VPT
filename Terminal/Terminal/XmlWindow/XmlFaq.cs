@@ -4,19 +4,15 @@ using System.Xml.Linq;
 
 namespace Terminal
 {
-
     public class InformationXmlFaq
     {
         public string nameAttribute;
-        public string answerElement;
-        
+        public string answerElement;       
     }
 
-
-    public class XmlFaq
+    public class Shedule
     {
-
-        private XmlFaq _instance;
+        private Shedule _instance;
         public List<InformationXmlFaq> informationXmlFaqList = new List<InformationXmlFaq>();
 
         //public List<InformationSpecialties> GetSpecialtiesInfo
@@ -29,11 +25,11 @@ namespace Terminal
             get => informationXmlFaqList.Count;
         }
 
-        public XmlFaq Instance()
+        public Shedule Instance()
         {
             if (_instance == null)
             {
-                _instance = new XmlFaq();
+                _instance = new Shedule();
                 FindFaq();
             }
             return _instance;
@@ -52,5 +48,4 @@ namespace Terminal
             }
         }
     }
-
 }
