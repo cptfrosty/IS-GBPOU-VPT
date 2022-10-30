@@ -95,16 +95,23 @@ namespace Terminal
 
         private void UpdateShedule()
         {
-            string data = Get("http://194.226.49.192:2222/");
-
-            object dec = JsonConvert.DeserializeObject(data);
-
-            string path = "JsonShedule.txt";
-            string text = dec.ToString();
-
-            using (StreamWriter writer = new StreamWriter(path, false))
+            try
             {
-                writer.WriteLine(text);
+                string data = Get("http://194.226.49.192:2222/");
+
+                object dec = JsonConvert.DeserializeObject(data);
+
+                string path = "JsonShedule.txt";
+                string text = dec.ToString();
+
+                using (StreamWriter writer = new StreamWriter(path, false))
+                {
+                    writer.WriteLine(text);
+                }
+            }
+            catch(Exception ex)
+            {
+
             }
         }
 

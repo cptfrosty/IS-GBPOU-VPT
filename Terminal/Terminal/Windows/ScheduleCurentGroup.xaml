@@ -41,7 +41,9 @@
         </Button>
 
         <Grid Grid.Row="1" Margin="40,40,40,40">
-            <TextBlock x:Name="tb_Schedule" Width="1800" Height="800" FontSize="20" Text="" FontWeight="Bold" Foreground="#1C2631"/>
+            <Border BorderBrush="#1C2631" BorderThickness="4" CornerRadius="15">
+                <TextBlock x:Name="tb_Schedule" Margin="20" Width="1800" Height="800" FontSize="20" Text="" FontWeight="Bold" Foreground="#1C2631"/>
+            </Border>
         </Grid>
     </Grid>
 </Window>
