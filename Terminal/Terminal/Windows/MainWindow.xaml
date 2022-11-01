@@ -23,7 +23,7 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Image Visibility="Visible" x:Name="Rain" Grid.ColumnSpan="3" Margin="0,150,0,0" Height="1000" Width="1920" gif:ImageBehavior.AnimatedSource="pack://application:,,,/AllPicture/Gif/rain.gif" />
+        <Image Visibility="Hidden" x:Name="Rain" Grid.ColumnSpan="3" Margin="0,150,0,0" Height="1000" Width="1920" gif:ImageBehavior.AnimatedSource="pack://application:,,,/AllPicture/Gif/rain.gif" />
         <Image Grid.ColumnSpan="3" Margin="0,150,0,0" Height="1000" Width="1920" Source="pack://application:,,,/AllPicture/foliage.png" Stretch="UniformToFill"/>
         <Image HorizontalAlignment="Left" Width="274" Height="148" VerticalAlignment="Top" Margin="305,20,0,0" RenderTransformOrigin="0.5,0.5" Source="pack://application:,,,/AllPicture/logo.png">
             <Image.RenderTransform>

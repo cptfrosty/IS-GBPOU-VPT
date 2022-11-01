@@ -97,7 +97,7 @@ namespace Terminal
         {
             try
             {
-                string data = Get("http://194.226.49.192:2222/");
+                string data = Get("http://194.226.49.192/vptApi/timer.json");
 
                 object dec = JsonConvert.DeserializeObject(data);
 
@@ -179,9 +179,9 @@ namespace Terminal
 
                 LabelMain.Content = translate.GetWord();
 
-                if (translate.GetWord() == "Дождь")
+                if (translate.GetWord() == "Дождь" && Rain.Visibility != Visibility.Visible)
                     Rain.Visibility = Visibility.Visible;
-                else if (Rain.Visibility == Visibility.Visible)
+                else if (translate.GetWord() != "Дождь" && Rain.Visibility == Visibility.Visible)
                     Rain.Visibility = Visibility.Hidden;
 
                 LabelCity.Content = city;
